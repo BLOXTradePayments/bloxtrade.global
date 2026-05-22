@@ -160,14 +160,32 @@
     </div>
 
     <!-- 4. PROBLEM (Dark Section) -->
-    <section class="section section-dark">
-      <div class="container">
+    <section class="section section-dark" style="position: relative; overflow: hidden;">
+      <!-- Premium Dark Animated Gradient -->
+      <div class="dark-mesh-bg">
+        <div class="dark-orb dark-orb-1"></div>
+        <div class="dark-orb dark-orb-2"></div>
+        <div class="dark-orb dark-orb-3"></div>
+      </div>
+      <div class="container" style="position: relative; z-index: 10;">
 
-        <div style="max-width: 800px;">
-          <h2 class="h2 reveal-up" data-i18n="problem_title">Operações globais não deveriam depender do ritmo dos bancos.</h2>
-          <p class="body-large reveal-up" style="margin-top: 2rem;" data-i18n="problem_body">
-            Importadores, exportadores, fintechs e empresas com operação internacional perdem tempo...
-          </p>
+        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 6rem; align-items: center; margin-bottom: 3rem;">
+          <div>
+            <h2 class="h2 reveal-up" data-i18n="problem_title" style="padding-right: 2rem;">Operações globais exigem mais velocidade que os bancos.</h2>
+            <p class="body-large reveal-up" style="margin-top: 1.5rem; max-width: 480px; color: var(--color-text-inverse-muted);" data-i18n="problem_body">
+              Empresas com operação internacional perdem tempo, margem e previsibilidade com processos bancários lentos, múltiplos intermediários e janelas de liquidação restritas.
+            </p>
+          </div>
+          <div class="reveal-scale delay-100" style="position: relative; width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: flex-end;">
+            <div class="dot-map">
+              <div class="flashing-dot" style="top: 25%; left: 22%; animation-delay: 0s;"></div>
+              <div class="flashing-dot" style="top: 35%; left: 48%; animation-delay: 1.5s;"></div>
+              <div class="flashing-dot" style="top: 20%; left: 52%; animation-delay: 0.5s;"></div>
+              <div class="flashing-dot" style="top: 45%; left: 78%; animation-delay: 2s;"></div>
+              <div class="flashing-dot" style="top: 65%; left: 30%; animation-delay: 1s;"></div>
+              <div class="flashing-dot" style="top: 70%; left: 82%; animation-delay: 2.5s;"></div>
+            </div>
+          </div>
         </div>
         <div class="problem-grid">
           <div class="problem-card reveal-up">
@@ -215,48 +233,69 @@
       <div class="container">
         <h2 class="h3 reveal-up" style="margin-bottom: 3rem; max-width: 600px;" data-i18n="services_title">Soluções para operações que já pensam globalmente.</h2>
         
-        <div class="bento-grid">
-          <div class="bento-card reveal-scale" style="grid-column: span 6;">
-            <div class="bento-icon" style="margin-bottom: 1.5rem; color: var(--color-accent);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-            </div>
-            <h3 class="h4" data-i18n="services_card1_title">Pagamentos internacionais</h3>
-            <p data-i18n="services_card1_text">Envie recursos para fornecedores, parceiros e operações no exterior com liquidação ágil e rotas mais eficientes.</p>
+        <div class="solutions-interactive reveal-up">
+          <div class="solutions-sidebar">
+            <button class="solution-tab active" data-tab="0">
+              <span class="tab-label" data-i18n="services_card1_title">Pagamentos internacionais</span>
+            </button>
+            <button class="solution-tab" data-tab="1">
+              <span class="tab-label" data-i18n="services_card2_title">Contas a pagar e a receber</span>
+            </button>
+            <button class="solution-tab" data-tab="2">
+              <span class="tab-label" data-i18n="services_card3_title">Tesouraria global</span>
+            </button>
+            <button class="solution-tab" data-tab="3">
+              <span class="tab-label" data-i18n="services_card4_title">On-ramp e off-ramp</span>
+            </button>
+            <button class="solution-tab" data-tab="4">
+              <span class="tab-label" data-i18n="services_card5_title">Trade finance</span>
+            </button>
+            <button class="solution-tab" data-tab="5">
+              <span class="tab-label" data-i18n="services_card6_title">API para pagamentos globais</span>
+            </button>
           </div>
-          <div class="bento-card reveal-scale delay-100" style="grid-column: span 6;">
-            <div class="bento-icon" style="margin-bottom: 1.5rem; color: var(--color-accent);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2.1l4 4-4 4"/><path d="M3 12.2v-2a4 4 0 0 1 4-4h13.8"/><path d="M7 21.9l-4-4 4-4"/><path d="M21 11.8v2a4 4 0 0 1-4 4H3.2"/></svg>
+          <div class="solutions-display">
+            <!-- Backgrounds -->
+            <!-- 1. Pagamentos internacionais: Global/Finance -->
+            <div class="solution-bg active" style="background-image: url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1200&q=80');"></div>
+            <!-- 2. Contas a pagar e a receber: Dashboard/Accounting -->
+            <div class="solution-bg" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80');"></div>
+            <!-- 3. Tesouraria global: Global finance/Analytics -->
+            <div class="solution-bg" style="background-image: url('https://images.unsplash.com/photo-1642543492481-44e81e3914a7?auto=format&fit=crop&w=1200&q=80');"></div>
+            <!-- 4. On-ramp e off-ramp: Crypto/Blocks -->
+            <div class="solution-bg" style="background-image: url('https://images.unsplash.com/photo-1621504450181-5d156f065317?auto=format&fit=crop&w=1200&q=80');"></div>
+            <!-- 5. Trade finance: Shipping/Global Trade -->
+            <div class="solution-bg" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80');"></div>
+            <!-- 6. API para pagamentos globais: Code/Dev -->
+            <div class="solution-bg" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80');"></div>
+            
+            <div class="solution-display-overlay"></div>
+
+            <!-- Content -->
+            <div class="solution-content active">
+              <h3 class="h3" data-i18n="services_card1_title">Pagamentos internacionais</h3>
+              <p data-i18n="services_card1_text">Envie recursos para fornecedores, parceiros e operações no exterior com liquidação ágil e rotas mais eficientes.</p>
             </div>
-            <h3 class="h4" data-i18n="services_card2_title">Contas a pagar e a receber</h3>
-            <p data-i18n="services_card2_text">Centralize pagamentos e recebimentos internacionais sem precisar replicar estrutura local em cada mercado.</p>
-          </div>
-          <div class="bento-card reveal-scale" style="grid-column: span 4;">
-            <div class="bento-icon" style="margin-bottom: 1.5rem; color: var(--color-accent);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            <div class="solution-content">
+              <h3 class="h3" data-i18n="services_card2_title">Contas a pagar e a receber</h3>
+              <p data-i18n="services_card2_text">Centralize pagamentos e recebimentos internacionais sem precisar replicar estrutura local em cada mercado.</p>
             </div>
-            <h3 class="h4" data-i18n="services_card3_title">Tesouraria global</h3>
-            <p data-i18n="services_card3_text">Aceite, converta, liquide e saque com mais flexibilidade entre moedas e geografias.</p>
-          </div>
-          <div class="bento-card reveal-scale delay-100" style="grid-column: span 4;">
-            <div class="bento-icon" style="margin-bottom: 1.5rem; color: var(--color-accent);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <div class="solution-content">
+              <h3 class="h3" data-i18n="services_card3_title">Tesouraria global</h3>
+              <p data-i18n="services_card3_text">Aceite, converta, liquide e saque com mais flexibilidade entre moedas e geografias.</p>
             </div>
-            <h3 class="h4" data-i18n="services_card4_title">On-ramp e off-ramp</h3>
-            <p data-i18n="services_card4_text">Conecte moeda local e stablecoins em uma infraestrutura preparada para fluxos globais.</p>
-          </div>
-          <div class="bento-card reveal-scale delay-200" style="grid-column: span 4;">
-            <div class="bento-icon" style="margin-bottom: 1.5rem; color: var(--color-accent);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <div class="solution-content">
+              <h3 class="h3" data-i18n="services_card4_title">On-ramp e off-ramp</h3>
+              <p data-i18n="services_card4_text">Conecte moeda local e stablecoins em uma infraestrutura preparada para fluxos globais.</p>
             </div>
-            <h3 class="h4" data-i18n="services_card5_title">Trade finance</h3>
-            <p data-i18n="services_card5_text">Apoie importação e exportação com soluções financeiras mais rápidas e adaptadas à nova economia global.</p>
-          </div>
-          <div class="bento-card reveal-scale" style="grid-column: span 12; background: var(--color-bg-dark); color: white;">
-            <div class="bento-icon" style="margin-bottom: 1.5rem; color: var(--color-accent);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <div class="solution-content">
+              <h3 class="h3" data-i18n="services_card5_title">Trade finance</h3>
+              <p data-i18n="services_card5_text">Apoie importação e exportação com soluções financeiras mais rápidas e adaptadas à nova economia global.</p>
             </div>
-            <h3 class="h4" style="color: white;" data-i18n="services_card6_title">API para pagamentos globais</h3>
-            <p style="color: var(--color-text-inverse-muted); max-width: 600px;" data-i18n="services_card6_text">Adicione pagamentos cross-border e fluxos com stablecoins ao seu produto com integração simples para times técnicos.</p>
+            <div class="solution-content">
+              <h3 class="h3" data-i18n="services_card6_title">API para pagamentos globais</h3>
+              <p data-i18n="services_card6_text">Adicione pagamentos cross-border e fluxos com stablecoins ao seu produto com integração simples para times técnicos.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -388,8 +427,7 @@
           </div>
         </div>
         <div class="reveal-up delay-200">
-          <div style="aspect-ratio: 1; background: var(--color-bg-primary); border-radius: var(--radius-md); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
-            Imagem / Gráfico Compliance
+          <div style="aspect-ratio: 1; background: url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80') center/cover; border-radius: var(--radius-md); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
           </div>
         </div>
       </div>
@@ -410,8 +448,7 @@
           </div>
         </div>
         <div class="reveal-up delay-200" style="order: 1;">
-          <div style="aspect-ratio: 1; background: var(--color-bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
-            Imagem / Gráfico Ecossistema
+          <div style="aspect-ratio: 1; background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80') center/cover; border-radius: var(--radius-md); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
           </div>
         </div>
       </div>
@@ -430,21 +467,21 @@
 
         <div class="insights-grid">
           <div class="reveal-scale bento-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-            <div style="height: 200px; background: #E5E7EB;"></div>
+            <div style="height: 200px; background: url('https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&w=600&q=80') center/cover;"></div>
             <div style="padding: 1.5rem;">
               <h3 class="h4" data-i18n="insights_card1">Pagamentos internacionais com stablecoins</h3>
               <span style="display:inline-block; margin-top:1.5rem; font-weight:500; font-size:0.875rem;">Ler mais →</span>
             </div>
           </div>
           <div class="reveal-scale bento-card delay-100" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-            <div style="height: 200px; background: #E5E7EB;"></div>
+            <div style="height: 200px; background: url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=600&q=80') center/cover;"></div>
             <div style="padding: 1.5rem;">
               <h3 class="h4" data-i18n="insights_card2">Como funcionam os pagamentos no Brasil</h3>
               <span style="display:inline-block; margin-top:1.5rem; font-weight:500; font-size:0.875rem;">Ler mais →</span>
             </div>
           </div>
           <div class="reveal-scale bento-card delay-200" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-            <div style="height: 200px; background: #E5E7EB;"></div>
+            <div style="height: 200px; background: url('https://images.unsplash.com/photo-1508804185872-d7bad8697116?auto=format&fit=crop&w=600&q=80') center/cover;"></div>
             <div style="padding: 1.5rem;">
               <h3 class="h4" data-i18n="insights_card3">Guia para pagamentos bancários à China</h3>
               <span style="display:inline-block; margin-top:1.5rem; font-weight:500; font-size:0.875rem;">Ler mais →</span>

@@ -57,4 +57,27 @@ document.addEventListener("DOMContentLoaded", () => {
       heroVisual.style.transform = `translateY(${scrollY * 0.15}px)`;
     });
   }
+
+  // 5. Interactive Solutions Component
+  const solutionTabs = document.querySelectorAll('.solution-tab');
+  const solutionBgs = document.querySelectorAll('.solution-bg');
+  const solutionContents = document.querySelectorAll('.solution-content');
+
+  if (solutionTabs.length > 0) {
+    solutionTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const index = tab.getAttribute('data-tab');
+        
+        // Remove active class from all
+        solutionTabs.forEach(t => t.classList.remove('active'));
+        solutionBgs.forEach(bg => bg.classList.remove('active'));
+        solutionContents.forEach(c => c.classList.remove('active'));
+        
+        // Add active class to selected
+        tab.classList.add('active');
+        if (solutionBgs[index]) solutionBgs[index].classList.add('active');
+        if (solutionContents[index]) solutionContents[index].classList.add('active');
+      });
+    });
+  }
 });
