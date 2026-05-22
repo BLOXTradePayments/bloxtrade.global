@@ -1010,3 +1010,22 @@
   0% { opacity: 0.2; transform: scale(0.8); box-shadow: 0 0 5px 0px var(--color-accent); }
   100% { opacity: 1; transform: scale(1.5); box-shadow: 0 0 15px 4px var(--color-accent); }
 }
+
+/* Responsive Grid for Problem Section */
+.problem-header-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 992px) {
+  .problem-header-grid {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 6rem;
+  }
+  .problem-header-grid h2 {
+    padding-right: 2rem;
+  }
+}
