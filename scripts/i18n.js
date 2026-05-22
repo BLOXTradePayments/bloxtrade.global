@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const defaultLang = "pt";
+  const defaultLang = "en";
   let currentLang = localStorage.getItem("bloxtrade_lang") || defaultLang;
 
   const translationsData = {
