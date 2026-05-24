@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "btn_platform_login": "Entrar na plataforma",
       "btn_book_demo": "Agendar demo",
       "hero_eyebrow": "Infraestrutura global de pagamentos",
-      "hero_headline": "Pagamentos globais em <span style=\"color: #61b12f; font-weight: 700;\">minutos.</span>",
+      "hero_headline": "Pagamentos globais em <span style=\"color: #61b12f; font-weight: 700;\">minutos!</span>",
       "hero_subheadline": "Pague, receba e liquide operações internacionais em minutos.",
       "hero_support_line": "8 anos de experiência · 100 mil transações · USD 2,5 bilhões transacionados · operação em mais de 40 países",
       "metrics_title": "Infraestrutura validada em escala real.",
