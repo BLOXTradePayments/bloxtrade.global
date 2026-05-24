@@ -48,24 +48,43 @@ import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
     const points = [];
     
     // Grid density (sample every N pixels)
-    const GRID_SIZE = 5; 
+    // Adjust GRID_SIZE based on image width to get around 150-180 columns for a nice dot look
+    let GRID_SIZE = Math.round(w / 160);
+    if (GRID_SIZE < 1) GRID_SIZE = 1;
 
     for (let py = 0; py < h; py += GRID_SIZE) {
       for (let px = 0; px < w; px += GRID_SIZE) {
         
         const idx = (py * w + px) * 4;
-        const isLand = imgData[idx] < 128; // Water is bright, land is dark in this mask
+        
+        // Handling both transparent maps and white/black maps
+        // If image has transparency, use alpha. Otherwise, check brightness (red channel).
+        const alpha = imgData[idx + 3];
+        const red = imgData[idx];
+        
+        let isLand = false;
+        if (alpha < 10) {
+          // It's completely transparent, so it's not land (assuming land is opaque)
+          isLand = false;
+        } else {
+          // If the image is opaque, usually water is white and land is black in earth-water maps
+          // Or water is black and land is white.
+          // Let's assume darker pixels are land (typical for earth-water).
+          // If it turns out inverted, we could flip it, but most earth masks use dark for land or bright for land.
+          // In 'earth-water.png', water is white (255) and land is black (0).
+          isLand = red < 128;
+        }
         
         if (isLand) {
           // Map to 3D plane coordinates (-width/2 to width/2)
           const x = (px / w - 0.5) * MAP_WIDTH;
-          const y = -(py / h - 0.5) * MAP_HEIGHT; // Invert Y
+          const y = -(py / h - 0.5) * MAP_HEIGHT; 
           const z = 0;
           
           const vec = new THREE.Vector3(x, y, z);
           points.push(vec.x, vec.y, vec.z);
           
-          // Save a subset for arcs
+          // Save a subset for arcs (cities)
           if (Math.random() < 0.05) validPositions.push(vec);
         }
       }
@@ -84,9 +103,14 @@ import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
     dotCtx.fill();
     const dotTexture = new THREE.CanvasTexture(dotCanvas);
 
+    // Calculate proper dot size so they don't overlap
+    const columns = w / GRID_SIZE;
+    const spacing = MAP_WIDTH / columns;
+    const dotSize = spacing * 0.65; // 65% of the grid cell
+
     const mat = new THREE.PointsMaterial({
       color: COLOR_DOTS,
-      size: 0.22,
+      size: dotSize,
       map: dotTexture,
       transparent: true,
       opacity: 0.85,
