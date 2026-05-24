@@ -4,6 +4,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+@font-face {
+  font-family: 'Morganite';
+  src: url('../assets/fonts/Morganite-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('../assets/fonts/Morganite-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
   /* Colors */
   --color-bg-primary: #ffffff;
@@ -26,7 +40,7 @@
 
   /* Typography */
   --font-family: 'Inter', sans-serif;
-  --font-family-heading: 'Archivo', sans-serif;
+  --font-family-heading: 'Morganite', sans-serif;
 
   
   /* Spacing */
@@ -132,7 +146,6 @@ ul {
 .h1, .h2, .h3, .h4 {
   font-family: var(--font-family-heading);
   font-weight: 900;
-  font-stretch: 75%; /* Condensed */
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 1.05;
