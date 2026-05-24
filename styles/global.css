@@ -132,7 +132,9 @@ ul {
 .h1, .h2, .h3, .h4 {
   font-family: var(--font-family-heading);
   font-weight: 900;
-  letter-spacing: -0.04em;
+  font-stretch: 75%; /* Condensed */
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
   line-height: 1.05;
 }
 
