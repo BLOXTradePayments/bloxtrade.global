@@ -26,6 +26,7 @@
 
   /* Typography */
   --font-family: 'Inter', sans-serif;
+  --font-family-heading: 'Space Grotesk', sans-serif;
 
   
   /* Spacing */
@@ -129,8 +130,8 @@ ul {
 
 /* Typography Classes */
 .h1, .h2, .h3, .h4 {
-  font-family: var(--font-family);
-  font-weight: 500;
+  font-family: var(--font-family-heading);
+  font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.05;
 }
@@ -141,9 +142,9 @@ ul {
 .h4 { font-size: 1.25rem; letter-spacing: -0.02em; }
 
 .eyebrow {
-  font-family: var(--font-family);
+  font-family: var(--font-family-heading);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-text-muted);
