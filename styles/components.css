@@ -1001,3 +1001,16 @@
     gap: 4rem;
   }
 }
+.bento-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.bento-card-header .bento-icon {
+  margin-bottom: 0 !important;
+}
+.bento-card-header h3 {
+  margin-bottom: 0;
+  line-height: 1;
+}
