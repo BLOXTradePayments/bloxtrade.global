@@ -70,7 +70,7 @@
 
     <!-- 3. METRICS / PROOF -->
     <section class="section container">
-      <h2 class="h3 reveal-up" data-i18n="metrics_title" style="margin-bottom: 2rem;">Infraestrutura validada em escala real.</h2>
+      <h2 class="h3 reveal-up" data-i18n="metrics_title" data-i18n-html style="margin-bottom: 2rem;">Infraestrutura validada em escala real.</h2>
       <div class="metrics-grid">
         <div class="metric-item reveal-up">
           <div class="metric-value">2.5B</div>
@@ -160,57 +160,15 @@
       <div class="container" style="max-width: 800px; margin: 0 auto; text-align: center;">
 
         <h2 class="h2 reveal-up" data-i18n="solution_title" data-i18n-html>Uma camada financeira<br>moderna para operações<br>internacionais.</h2>
-        <p class="body-large reveal-up" style="margin-top: 2rem; text-align: justify; text-align-last: center;" data-i18n="solution_body" data-i18n-html>
-          A BLOXtrade conecta stablecoins, moeda local e liquidação global em uma infraestrutura pensada para empresas...
-        </p>
+        <p class="body-large reveal-up" style="margin-top: 2rem; text-align: justify; text-align-last: center;" data-i18n="solution_body_1" data-i18n-html></p>
+        
+        <div class="solution-image reveal-up" style="margin: 3rem 0; width: 100%; height: 400px; background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200') center/cover; border-radius: var(--radius-md);"></div>
+        
+        <p class="body-large reveal-up" style="text-align: justify; text-align-last: center;" data-i18n="solution_body_2" data-i18n-html></p>
       </div>
     </section>
 
-    <!-- 4. PROBLEM (Dark Section) -->
-    <section class="section section-dark problem-section">
-      <div class="container">
-        <div class="problem-layout">
-          <div class="problem-text-col">
-            <h2 class="h2 reveal-up" data-i18n="problem_title">Operações globais não deveriam depender do ritmo dos bancos.</h2>
-            <p class="body-large reveal-up" style="margin-top: 2rem;" data-i18n="problem_body">
-              Importadores, exportadores, fintechs e empresas com operação internacional perdem tempo...
-            </p>
-            <div class="problem-grid">
-              <div class="problem-card reveal-up">
-                <div class="problem-card-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                </div>
-                <p data-i18n="problem_bullet_1">Liquidação em dias, não em minutos</p>
-              </div>
-              <div class="problem-card reveal-up delay-100">
-                <div class="problem-card-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-                </div>
-                <p data-i18n="problem_bullet_2">Dependência de horário bancário</p>
-              </div>
-              <div class="problem-card reveal-up delay-200">
-                <div class="problem-card-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                </div>
-                <p data-i18n="problem_bullet_3">Múltiplas taxas ao longo da rota</p>
-              </div>
-              <div class="problem-card reveal-up delay-300">
-                <div class="problem-card-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                </div>
-                <p data-i18n="problem_bullet_4">Baixa flexibilidade para operações globais</p>
-              </div>
-            </div>
-          </div>
-          <div class="problem-visual-col reveal-scale delay-200">
-            <div class="globe-wrapper">
-              <canvas id="networkGlobe" width="600" height="600"></canvas>
-              <div class="globe-glow"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
     <!-- 6. SERVICES (Bento Grid) -->
     <section id="solutions" class="section section-secondary">
@@ -541,7 +499,6 @@
 
   <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js" defer></script>
   <script src="./scripts/i18n.js" defer></script>
-  <script type="module" src="./scripts/globe.js" defer></script>
   <script src="./scripts/main.js" defer></script>
 </body>
 </html>
