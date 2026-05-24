@@ -986,3 +986,18 @@
     background-attachment: fixed;
   }
 }
+.solution-text-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .solution-text-grid {
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    gap: 4rem;
+  }
+}
