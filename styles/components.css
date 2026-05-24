@@ -402,24 +402,33 @@
 }
 
 .step-item {
-  border-top: 2px solid var(--color-border);
-  padding-top: 1.5rem;
-  transition: border-color 0.4s ease, transform 0.4s ease;
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: default;
 }
 .step-item .step-number {
   font-family: var(--font-family);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--color-text-muted);
-  transition: color 0.4s ease;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: transform 0.4s ease;
+}
+.step-item h3 {
+  color: #fff;
+}
+.step-item p {
+  color: rgba(255, 255, 255, 0.85);
 }
 .step-item:hover {
-  border-top-color: var(--color-accent);
-  transform: translateY(-4px);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(97, 177, 47, 0.25);
 }
 .step-item:hover .step-number {
-  color: var(--color-accent);
+  transform: scale(1.05);
 }
 
 /* Marquee Ecosystem */
