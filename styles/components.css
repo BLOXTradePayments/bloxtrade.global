@@ -947,7 +947,7 @@
 @media (min-width: 1024px) {
   .services-title-wrapper {
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
     gap: 1.5rem;
   }
   .services-subtitle {

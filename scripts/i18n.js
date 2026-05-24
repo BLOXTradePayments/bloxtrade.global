@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero_headline": "Pagamentos<br>globais<br><span style=\"color: #81CD4E; font-weight: 700;\">em minutos!</span>",
       "hero_subheadline": "Pague, receba e liquide operações internacionais em minutos.",
       "hero_support_line": "8 anos de experiência · 100 mil transações · USD 2,5 bilhões transacionados · operação em mais de 40 países",
-      "metrics_title": "Infraestrutura<br>validada em<br>escala real",
+      "metrics_title": "Infraestrutura validada<br>em escala real",
       "metrics_1": "USD 2,5 bi transacionados",
       "metrics_2": "100 mil transações executadas",
       "metrics_3": "8 anos de experiência",
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "services_card6_title": "API para pagamentos globais",
       "services_card6_text": "Adicione pagamentos cross-border e fluxos com stablecoins ao seu produto com integração simples para times técnicos.",
       "howitworks_eyebrow": "Como funciona",
-      "howitworks_title": "<span class=\"h1\" style=\"font-size: clamp(6rem, 15vw, 12rem); color: white; line-height: 1;\">3 passos</span><span class=\"h3\" style=\"color: var(--color-text-inverse-muted); max-width: 250px; font-weight: 400; text-transform: none; line-height: 1;\">para operar globalmente</span>",
+      "howitworks_title": "<span class=\"h1\" style=\"font-size: clamp(6rem, 15vw, 12rem); color: white; line-height: 1;\">3 passos</span><span class=\"h3\" style=\"color: var(--color-text-inverse-muted); max-width: 250px; font-weight: 400; text-transform: none; line-height: 1; transform: translateY(-0.2em);\">para operar globalmente</span>",
       "howitworks_step1_title": "Abra sua operação global",
       "howitworks_step1_text": "Onboarding 100% digital e acesso à estrutura para operar USD, EUR e USDT sem burocracia desnecessária.",
       "howitworks_step2_title": "Configure a operação",
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "footer_col4_1": "Política de privacidade",
       "footer_col4_2": "Termos de uso",
       "footer_col4_3": "Compliance",
-      "footer_legal_note": "Bloxtrade Ltda., CNPJ 50.473.200/0001-40, com sede em São Paulo. A empresa atua na intermediação digital de operações com ativos virtuais e não é instituição financeira. Operações em moeda fiduciária são processadas por instituições autorizadas, em conformidade com a legislação aplicável."
+      "footer_legal_note": "BLOXtrade - ALL RIGHTS RESERVED"
     },
     en: {
       "nav_solutions": "Solutions",
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero_headline": "Global<br>transactions<br><span style=\"color: #81CD4E; font-weight: 700;\">in minutes!</span>",
       "hero_subheadline": "A next-generation payments infrastructure powered by stablecoins, designed to make global transactions faster, simpler, and more efficient.",
       "hero_support_line": "8 years of experience · 100,000 transactions · USD 2.5 billion transacted · operations in 40+ countries",
-      "metrics_title": "Infrastructure<br>proven at<br>real scale",
+      "metrics_title": "Infrastructure proven at<br>real scale",
       "metrics_1": "USD 2.5B transacted",
       "metrics_2": "100,000 executed transactions",
       "metrics_3": "8 years of experience",
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "services_card6_title": "API for global payments",
       "services_card6_text": "Add cross-border payments and stablecoin flows to your product with lightweight integration for technical teams.",
       "howitworks_eyebrow": "How it works",
-      "howitworks_title": "<span class=\"h1\" style=\"font-size: clamp(6rem, 15vw, 12rem); color: white; line-height: 1;\">3 steps</span><span class=\"h3\" style=\"color: var(--color-text-inverse-muted); max-width: 250px; font-weight: 400; text-transform: none; line-height: 1;\">to operate globally</span>",
+      "howitworks_title": "<span class=\"h1\" style=\"font-size: clamp(6rem, 15vw, 12rem); color: white; line-height: 1;\">3 steps</span><span class=\"h3\" style=\"color: var(--color-text-inverse-muted); max-width: 250px; font-weight: 400; text-transform: none; line-height: 1; transform: translateY(-0.2em);\">to operate globally</span>",
       "howitworks_step1_title": "Open your global operation",
       "howitworks_step1_text": "100% digital onboarding and access to infrastructure for USD, EUR, and USDT operations without unnecessary friction.",
       "howitworks_step2_title": "Configure the transaction",
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "footer_col4_1": "Privacy policy",
       "footer_col4_2": "Terms of use",
       "footer_col4_3": "Compliance",
-      "footer_legal_note": "Bloxtrade Ltda. is a Brazil-based company focused on the digital intermediation of virtual asset operations and is not a financial institution. Fiat transactions are processed through authorized institutions in accordance with applicable regulation."
+      "footer_legal_note": "BLOXtrade - ALL RIGHTS RESERVED"
     }
   };
 
