@@ -11,8 +11,8 @@
   "hero_headline": "Global payments in minutes.",
   "hero_subheadline": "BLOXtrade enables businesses to pay, receive, convert, and settle international transactions through stablecoins and local currency rails, with settlement in minutes, 24/7 availability, and global reach for operations that cannot wait on traditional banking timelines.",
   "hero_support_line": "8 years of experience · 100,000 transactions · USD 2.5 billion transacted · operations in 40+ countries",
-  "metrics_title": "Infrastructure proven at real scale.",
-  "metrics_1": "USD 2.5B transacted",
+  "metrics_title": "Proven infrastructure at real scale.",
+  "metrics_1": "Annual TPV",
   "metrics_2": "100,000 executed transactions",
   "metrics_3": "8 years of experience",
   "metrics_4": "40+ countries served",
@@ -101,5 +101,12 @@
   "footer_col4_1": "Privacy policy",
   "footer_col4_2": "Terms of use",
   "footer_col4_3": "Compliance",
-  "footer_legal_note": "Bloxtrade Ltda. is a Brazil-based company focused on the digital intermediation of virtual asset operations and is not a financial institution. Fiat transactions are processed through authorized institutions in accordance with applicable regulation."
+  "footer_legal_note": "Bloxtrade Ltda., CNPJ 50.473.200/0001-40, headquartered in São Paulo. The company operates in the digital intermediation of virtual asset operations and is not a financial institution. Fiat currency operations are processed by authorized institutions, in compliance with applicable legislation.",
+  "news_back": "&larr; Back to News",
+  "news_read_more": "Read more &rarr;",
+  "news_read_full": "Read Full Article &rarr;",
+  "news_load_more": "Load more publications",
+  "news_latest": "Latest Publications",
+  "article_share": "Share:",
+  "article_related": "Read also"
 }

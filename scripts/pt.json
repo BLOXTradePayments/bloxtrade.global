@@ -12,7 +12,7 @@
   "hero_subheadline": "A BLOXtrade permite pagar, receber, converter e liquidar operações internacionais com stablecoins e moeda local, com liquidação em minutos, operação 24/7 e alcance global para empresas que não podem depender do ritmo dos bancos tradicionais.",
   "hero_support_line": "8 anos de experiência · 100 mil transações · USD 2,5 bilhões transacionados · operação em mais de 40 países",
   "metrics_title": "Infraestrutura validada em escala real.",
-  "metrics_1": "USD 2,5 bi transacionados",
+  "metrics_1": "TPV Anual",
   "metrics_2": "100 mil transações executadas",
   "metrics_3": "8 anos de experiência",
   "metrics_4": "40+ países atendidos",
@@ -101,5 +101,12 @@
   "footer_col4_1": "Política de privacidade",
   "footer_col4_2": "Termos de uso",
   "footer_col4_3": "Compliance",
-  "footer_legal_note": "Bloxtrade Ltda., CNPJ 50.473.200/0001-40, com sede em São Paulo. A empresa atua na intermediação digital de operações com ativos virtuais e não é instituição financeira. Operações em moeda fiduciária são processadas por instituições autorizadas, em conformidade com a legislação aplicável."
+  "footer_legal_note": "Bloxtrade Ltda., CNPJ 50.473.200/0001-40, com sede em São Paulo. A empresa atua na intermediação digital de operações com ativos virtuais e não é instituição financeira. Operações em moeda fiduciária são processadas por instituições autorizadas, em conformidade com a legislação aplicável.",
+  "news_back": "&larr; Voltar para News",
+  "news_read_more": "Ler mais &rarr;",
+  "news_read_full": "Ler Artigo Completo &rarr;",
+  "news_load_more": "Carregar mais publicações",
+  "news_latest": "Últimas Publicações",
+  "article_share": "Compartilhar:",
+  "article_related": "Leia também"
 }

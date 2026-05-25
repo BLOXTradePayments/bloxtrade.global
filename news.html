@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BLOXtrade News - Insights e novidades sobre pagamentos globais e infraestrutura financeira.">
+  <title>News & Insights | BLOXtrade</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./styles/global.css">
+  <link rel="stylesheet" href="./styles/components.css">
+  <style>
+    /* Premium hover effects for News Cards */
+    .news-card {
+      padding: 0; 
+      overflow: hidden; 
+      display: flex; 
+      flex-direction: column;
+      position: relative;
+      background: var(--color-bg-primary);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+    
+    .news-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-md);
+      padding: 2px;
+      background: linear-gradient(135deg, transparent, rgba(97, 177, 47, 0.5), transparent);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      z-index: 10;
+    }
+
+    .news-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px -12px rgba(27, 36, 23, 0.15);
+    }
+    
+    .news-card:hover::before {
+      opacity: 1;
+    }
+
+    .news-img-wrapper {
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .news-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .news-card:hover .news-img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .news-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(27, 36, 23, 0.8);
+      color: #fff;
+      backdrop-filter: blur(8px);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      z-index: 2;
+    }
+
+    .news-content {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-date {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .news-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--color-text-primary);
+      line-height: 1.1;
+      font-family: var(--font-family-heading);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .news-excerpt {
+      color: var(--color-text-secondary);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .news-read-more {
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--color-accent-hover);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: gap 0.3s ease;
+    }
+
+    .news-card:hover .news-read-more {
+      gap: 0.75rem;
+    }
+
+    /* Featured News Grid */
+    .featured-news-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .featured-card-main {
+      grid-column: 1 / 2;
+    }
+    
+    .featured-card-side {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 992px) {
+      .featured-news-grid {
+        grid-template-columns: 1fr;
+      }
+      .featured-card-main {
+        grid-column: 1 / -1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="./assets/logos/Logotipo-BloxTrade/SVG/LOGO-BLOXTRADE-VS1-BG-VERDE-ESCURO.svg" alt="BLOXtrade Logo" width="180" height="36">
+      </a>
+      
+      <nav class="nav-links">
+        <a href="index.html#solutions" class="nav-link" data-i18n="nav_solutions">Soluções</a>
+        <a href="index.html#infrastructure" class="nav-link" data-i18n="nav_infrastructure">Infraestrutura</a>
+        <a href="compliance.html" class="nav-link" data-i18n="nav_compliance">Compliance</a>
+        <a href="news.html" class="nav-link" style="color: #ffffff; font-weight: 700;" data-i18n="nav_insights">Conteúdos</a>
+        <a href="index.html#company" class="nav-link" data-i18n="nav_company">Empresa</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switcher">
+          <span class="lang-btn" data-lang-toggle="pt">PT</span>
+          <span class="lang-sep">/</span>
+          <span class="lang-btn" data-lang-toggle="en">EN</span>
+        </div>
+        <a href="https://kyc.bloxtrade.com.br/login" class="nav-link" data-i18n="btn_platform_login">Entrar na plataforma</a>
+      </div>
+      
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO NEWS -->
+    <section class="section section-dark" style="padding-top: 10rem; padding-bottom: 6rem; position: relative; overflow: hidden;">
+      <div class="hero-mesh-bg">
+        <div class="hero-orb hero-orb-1" style="opacity: 0.5;"></div>
+        <div class="hero-orb hero-orb-3" style="opacity: 0.3;"></div>
+      </div>
+      
+      <div class="container" style="position: relative; z-index: 10;">
+        <div class="eyebrow reveal-up" style="color: var(--color-accent);">BLOXtrade News</div>
+        <h1 class="h1 reveal-up delay-100" style="max-width: 800px; line-height: 0.85;">Inteligência Global <br><span style="color: var(--color-text-inverse-muted);">para Operações Financeiras</span></h1>
+        <p class="body-large reveal-up delay-200" style="margin-top: 2rem; max-width: 600px;">
+          Acompanhe as novidades, guias práticos e insights do mercado de pagamentos cross-border e infraestrutura web3.
+        </p>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS / FEATURED -->
+    <section class="section container" style="padding-top: 4rem; padding-bottom: 2rem;">
+      <div class="featured-news-grid">
+        
+        <!-- Main Featured -->
+        <a href="artigo.html" class="news-card featured-card-main reveal-scale">
+          <div class="news-badge">Destaque</div>
+          <div class="news-img-wrapper" style="height: 400px;">
+            <img src="./assets/images/blog/blog-01.jpeg" alt="Pagamentos internacionais com stablecoins" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop'">
+          </div>
+          <div class="news-content" style="background: linear-gradient(180deg, rgba(27,36,23,0) 0%, rgba(27,36,23,0.9) 100%); position: absolute; bottom: 0; width: 100%; color: white; padding: 3rem 2rem 2rem;">
+            <div class="news-date" style="color: #ccc;">24 Mai 2026 • 5 min de leitura</div>
+            <h2 class="news-title" style="color: white; font-size: 3rem;">O impacto das Stablecoins nas Tesourarias Globais em 2026</h2>
+            <div class="news-read-more" style="color: var(--color-accent);">Ler Artigo Completo &rarr;</div>
+          </div>
+        </a>
+
+        <!-- Side Featured -->
+        <div class="featured-card-side">
+          <a href="artigo.html" class="news-card reveal-scale delay-100">
+            <div class="news-badge">Guia Prático</div>
+            <div class="news-img-wrapper" style="height: 180px;">
+              <img src="./assets/images/blog/blog-02.jpeg" alt="Pagamentos no Brasil" onerror="this.src='https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=800&auto=format&fit=crop'">
+            </div>
+            <div class="news-content" style="padding: 1.5rem;">
+              <div class="news-date">18 Mai 2026</div>
+              <h3 class="news-title" style="font-size: 1.5rem;">Como funcionam os pagamentos internacionais para o Brasil</h3>
+            </div>
+          </a>
+
+          <a href="artigo.html" class="news-card reveal-scale delay-200">
+            <div class="news-badge">Mercado</div>
+            <div class="news-img-wrapper" style="height: 180px;">
+              <img src="./assets/images/blog/blog-03.jpeg" alt="Mercado Asiático" onerror="this.src='https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?q=80&w=800&auto=format&fit=crop'">
+            </div>
+            <div class="news-content" style="padding: 1.5rem;">
+              <div class="news-date">10 Mai 2026</div>
+              <h3 class="news-title" style="font-size: 1.5rem;">Rotas de liquidação e eficiência para fornecedores na Ásia</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALL ARTICLES GRID -->
+    <section class="section container" style="padding-top: 2rem;">
+      <div class="eyebrow reveal-up">Últimas Publicações</div>
+      <div class="insights-grid" id="news-grid-container">
+        <!-- These cards will eventually be populated dynamically by Javascript when the Backend is ready, 
+             but for now they are styled mockups for visual approval. -->
+             
+        <a href="artigo.html" class="news-card reveal-scale delay-100">
+          <div class="news-badge" style="background: var(--color-accent); color: var(--color-bg-dark);">Compliance</div>
+          <div class="news-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop" alt="Regulação">
+          </div>
+          <div class="news-content">
+            <div class="news-date">02 Mai 2026</div>
+            <h3 class="news-title">O Marco Legal dos Ativos Virtuais e o futuro das transações</h3>
+            <p class="news-excerpt">Entenda como a regulamentação brasileira está moldando um ambiente mais seguro para operações corporativas.</p>
+            <div class="news-read-more">Ler mais &rarr;</div>
+          </div>
+        </a>
+
+        <a href="artigo.html" class="news-card reveal-scale delay-200">
+          <div class="news-badge">Case de Sucesso</div>
+          <div class="news-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop" alt="Case de sucesso">
+          </div>
+          <div class="news-content">
+            <div class="news-date">25 Abr 2026</div>
+            <h3 class="news-title">Reduzindo o tempo de liquidação de D+2 para Minutos</h3>
+            <p class="news-excerpt">Como uma empresa de importação conseguiu otimizar seu fluxo de caixa utilizando nossa infraestrutura global.</p>
+            <div class="news-read-more">Ler mais &rarr;</div>
+          </div>
+        </a>
+
+        <a href="artigo.html" class="news-card reveal-scale delay-300">
+          <div class="news-badge">Infraestrutura</div>
+          <div class="news-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop" alt="Tecnologia">
+          </div>
+          <div class="news-content">
+            <div class="news-date">15 Abr 2026</div>
+            <h3 class="news-title">API para Pagamentos: Como integrar fluxos cross-border</h3>
+            <p class="news-excerpt">Guia técnico para desenvolvedores adicionarem trilhos de pagamento globais e estáveis aos seus produtos.</p>
+            <div class="news-read-more">Ler mais &rarr;</div>
+          </div>
+        </a>
+      </div>
+      
+      <div style="text-align: center; margin-top: 4rem;" class="reveal-up">
+        <button class="btn btn-primary" id="load-more-btn">Carregar mais publicações</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- 14. FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="./assets/logos/Logotipo-BloxTrade/SVG/LOGO-BLOXTRADE-VS1-BG-VERDE-ESCURO.svg" alt="BLOXtrade Logo" width="180" height="36">
+          </a>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/company/bloxtradeofficial/" aria-label="LinkedIn" class="social-link">
+              <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://x.com/_BLOXtrade" aria-label="X (Twitter)" class="social-link">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col1_title">Empresa</div>
+          <div class="footer-links">
+            <a href="index.html#company">Sobre</a>
+            <a href="contact.html">Contato</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col2_title">Soluções</div>
+          <div class="footer-links">
+            <a href="index.html#solutions">Pagamentos internacionais</a>
+            <a href="index.html#solutions">Tesouraria global</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col3_title">Conteúdos</div>
+          <div class="footer-links">
+            <a href="news.html">Blog / News</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col4_title">Legal</div>
+          <div class="footer-links">
+            <a href="privacy-policy.html">Política de privacidade</a>
+            <a href="terms.html">Termos de uso</a>
+            <a href="compliance.html">Compliance</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-legal">
+        <p>
+          Bloxtrade Ltda., CNPJ 50.473.200/0001-40, com sede em São Paulo. A empresa atua na intermediação digital de operações com ativos virtuais e não é instituição financeira.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js" defer></script>
+  <script src="./scripts/i18n.js" defer></script>
+  <script src="./scripts/main.js" defer></script>
+</body>
+</html>
