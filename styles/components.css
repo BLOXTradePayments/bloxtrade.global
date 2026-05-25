@@ -987,17 +987,11 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  mix-blend-mode: screen;
-  opacity: 0.8;
+  mix-blend-mode: lighten;
+  opacity: 0.6;
+  filter: sepia(100%) hue-rotate(50deg) saturate(500%) brightness(1.2);
 }
-.solution-image::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background-color: var(--color-accent);
-  mix-blend-mode: multiply;
-  pointer-events: none;
-}
+
 @media (min-width: 768px) {
   .solution-image {
     height: 500px;
