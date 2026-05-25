@@ -80,8 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-});
-
 
   // Mobile Menu Toggle
   const menuToggle = document.querySelector('.menu-toggle');
@@ -98,3 +96,5 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+});

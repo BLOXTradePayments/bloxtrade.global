@@ -863,6 +863,22 @@
   .header-actions .nav-link {
     display: none;
   }
+  .nav-links.active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-bg-dark);
+    padding: 1.5rem 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .nav-links.active .nav-link {
+    margin: 1rem 2rem;
+    font-size: 1.25rem;
+  }
   .header-actions {
     gap: 1rem;
   }
