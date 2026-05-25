@@ -876,8 +876,9 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
   .nav-links.active .nav-link {
-    margin: 1rem 2rem;
-    font-size: 1.25rem;
+    margin: 0.5rem 2rem;
+    font-size: 1rem;
+    text-align: center;
   }
   .header-actions {
     gap: 1rem;
