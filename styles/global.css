@@ -246,3 +246,9 @@ html.lenis, html.lenis body {
     transform: none;
   }
 }
+
+
+.bg-dark {
+  background-color: var(--color-bg-dark) !important;
+  color: var(--color-text-inverse) !important;
+}
