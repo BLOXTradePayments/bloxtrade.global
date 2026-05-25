@@ -109,7 +109,22 @@ document.addEventListener("DOMContentLoaded", () => {
       "footer_col4_1": "Política de privacidade",
       "footer_col4_2": "Termos de uso",
       "footer_col4_3": "Compliance",
-      "footer_legal_note": "BLOXtrade - ALL RIGHTS RESERVED"
+      "footer_legal_note": "BLOXtrade - ALL RIGHTS RESERVED",
+      "contact_title": "Contato",
+      "contact_subtitle": "Fale com nossos especialistas em pagamentos globais.",
+      "contact_name_label": "Nome completo",
+      "contact_name_placeholder": "Como podemos te chamar?",
+      "contact_email_label": "E-mail corporativo",
+      "contact_email_placeholder": "seu@email.com",
+      "contact_message_label": "Mensagem",
+      "contact_message_placeholder": "Como podemos ajudar sua operação global?",
+      "contact_submit_btn": "Enviar mensagem",
+      "privacy_title": "Política de Privacidade",
+      "privacy_content": "A BLOXtrade está comprometida em proteger sua privacidade. Esta política descreve como coletamos, usamos e protegemos seus dados pessoais de acordo com a legislação vigente. As informações completas serão disponibilizadas em breve.",
+      "terms_title": "Termos de Uso",
+      "terms_content": "Estes termos regulam o acesso e o uso da plataforma BLOXtrade. Ao utilizar nossos serviços, você concorda com nossas diretrizes operacionais, de segurança e compliance. O documento completo será disponibilizado em breve.",
+      "compliance_page_title": "Compliance Institucional",
+      "compliance_page_content": "A BLOXtrade opera em estrita conformidade com as regulações de cada jurisdição em que atua. Nosso programa de compliance inclui KYC/AML rigorosos e parceiros licenciados para garantir a segurança de todas as transações globais."
     },
     en: {
       "nav_solutions": "Solutions",
@@ -217,7 +232,22 @@ document.addEventListener("DOMContentLoaded", () => {
       "footer_col4_1": "Privacy policy",
       "footer_col4_2": "Terms of use",
       "footer_col4_3": "Compliance",
-      "footer_legal_note": "BLOXtrade - ALL RIGHTS RESERVED"
+      "footer_legal_note": "BLOXtrade - ALL RIGHTS RESERVED",
+      "contact_title": "Contact",
+      "contact_subtitle": "Speak with our global payments specialists.",
+      "contact_name_label": "Full Name",
+      "contact_name_placeholder": "How should we call you?",
+      "contact_email_label": "Corporate E-mail",
+      "contact_email_placeholder": "you@company.com",
+      "contact_message_label": "Message",
+      "contact_message_placeholder": "How can we help your global operation?",
+      "contact_submit_btn": "Send message",
+      "privacy_title": "Privacy Policy",
+      "privacy_content": "BLOXtrade is committed to protecting your privacy. This policy outlines how we collect, use, and protect your personal data according to applicable laws. The full information will be available soon.",
+      "terms_title": "Terms of Use",
+      "terms_content": "These terms govern the access and use of the BLOXtrade platform. By using our services, you agree to our operational, security, and compliance guidelines. The full document will be available soon.",
+      "compliance_page_title": "Institutional Compliance",
+      "compliance_page_content": "BLOXtrade operates in strict compliance with the regulations of each jurisdiction it operates in. Our compliance program includes rigorous KYC/AML and licensed partners to ensure the security of all global transactions."
     }
   };
 
