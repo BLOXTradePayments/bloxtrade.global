@@ -1,11 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Header scroll effect
   const header = document.querySelector(".header");
+  let headerTicking = false;
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
+    if (!headerTicking) {
+      requestAnimationFrame(() => {
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+        headerTicking = false;
+      });
+      headerTicking = true;
     }
   });
 
@@ -52,10 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // Subtle Parallax for Hero Visual
     const heroVisual = document.querySelector(".hero-visual");
     if (heroVisual) {
+      let ticking = false;
       lenis.on('scroll', (e) => {
-        const scrollY = window.scrollY;
-        // Slight downward translation on scroll for parallax depth
-        heroVisual.style.transform = `translateY(${scrollY * 0.15}px)`;
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const scrollY = window.scrollY;
+            // Slight downward translation on scroll for parallax depth
+            heroVisual.style.transform = `translateY(${scrollY * 0.15}px)`;
+            ticking = false;
+          });
+          ticking = true;
+        }
       });
     }
   }
