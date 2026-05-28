@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   const defaultLang = "en";
-  let currentLang = localStorage.getItem("bloxtrade_lang") || defaultLang;
+  let currentLang = defaultLang;
+  try {
+    currentLang = localStorage.getItem("bloxtrade_lang") || defaultLang;
+  } catch (e) {
+    console.warn("localStorage is not available, defaulting to " + defaultLang, e);
+  }
 
   const translationsData = {
     pt: {
@@ -137,7 +142,13 @@ document.addEventListener("DOMContentLoaded", () => {
       "news_load_more": "Carregar mais publicações",
       "news_latest": "Últimas Publicações",
       "article_share": "Compartilhar:",
-      "article_related": "Leia também"
+      "article_related": "Leia também",
+      "featured_title_1": "O impacto das Stablecoins nas Tesourarias Globais em 2026",
+      "featured_date_1": "24 Mai 2026 • 5 min de leitura",
+      "featured_title_2": "Como funcionam os pagamentos internacionais para o Brasil",
+      "featured_date_2": "18 Mai 2026",
+      "featured_title_3": "Rotas de liquidação e eficiência para fornecedores na Ásia",
+      "featured_date_3": "10 Mai 2026"
     },
     en: {
       "nav_solutions": "Solutions",
@@ -273,7 +284,13 @@ document.addEventListener("DOMContentLoaded", () => {
       "news_load_more": "Load more publications",
       "news_latest": "Latest Publications",
       "article_share": "Share:",
-      "article_related": "Read also"
+      "article_related": "Read also",
+      "featured_title_1": "The impact of Stablecoins on Global Treasuries in 2026",
+      "featured_date_1": "24 May 2026 • 5 min read",
+      "featured_title_2": "How international payments to Brazil work",
+      "featured_date_2": "18 May 2026",
+      "featured_title_3": "Settlement routes and efficiency for suppliers in Asia",
+      "featured_date_3": "10 May 2026"
     }
   };
 
@@ -288,7 +305,11 @@ document.addEventListener("DOMContentLoaded", () => {
       
       applyTranslations(translations);
       document.documentElement.lang = lang;
-      localStorage.setItem("bloxtrade_lang", lang);
+      try {
+        localStorage.setItem("bloxtrade_lang", lang);
+      } catch (e) {
+        console.warn("localStorage is not available, cannot save language preference", e);
+      }
       updateToggleUI(lang);
     } catch (error) {
       console.error("Error loading translations:", error);

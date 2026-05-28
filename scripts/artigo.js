@@ -15,7 +15,12 @@ const coverImgEl = document.getElementById('article-cover-img');
 let currentArticleData = null;
 
 function renderArticle(article) {
-  const currentLang = localStorage.getItem('bloxtrade_lang') || 'pt';
+  let currentLang = 'pt';
+  try {
+    currentLang = localStorage.getItem('bloxtrade_lang') || 'pt';
+  } catch (e) {
+    console.warn("localStorage is not available, defaulting to 'pt'", e);
+  }
 
   // Select title and content based on language, fallback to pt if en doesn't exist
   const title = article.title[currentLang] || article.title['pt'] || '';
