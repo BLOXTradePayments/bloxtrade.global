@@ -8,6 +8,9 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="./assets/fonts/Morganite-Bold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/fonts/Morganite-Black.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="./styles/global.css">
   <link rel="stylesheet" href="./styles/components.css">
   <style>
@@ -214,7 +217,7 @@
         <a href="artigo.html" class="news-card featured-card-main reveal-scale">
           <div class="news-badge">Destaque</div>
           <div class="news-img-wrapper" style="height: 400px;">
-            <img src="./assets/images/blog/blog-01.jpeg" alt="Pagamentos internacionais com stablecoins" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop'">
+            <img src="./assets/images/blog/blog-01.webp" width="800" height="528" alt="Pagamentos internacionais com stablecoins" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop'">
           </div>
           <div class="news-content" style="background: linear-gradient(180deg, rgba(27,36,23,0) 0%, rgba(27,36,23,0.9) 100%); position: absolute; bottom: 0; width: 100%; color: white; padding: 3rem 2rem 2rem;">
             <div class="news-date" style="color: #ccc;">24 Mai 2026 • 5 min de leitura</div>
@@ -228,7 +231,7 @@
           <a href="artigo.html" class="news-card reveal-scale delay-100">
             <div class="news-badge">Guia Prático</div>
             <div class="news-img-wrapper" style="height: 180px;">
-              <img src="./assets/images/blog/blog-02.jpeg" alt="Pagamentos no Brasil" onerror="this.src='https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=800&auto=format&fit=crop'">
+              <img src="./assets/images/blog/blog-02.webp" width="800" height="533" alt="Pagamentos no Brasil" onerror="this.src='https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=800&auto=format&fit=crop'">
             </div>
             <div class="news-content" style="padding: 1.5rem;">
               <div class="news-date">18 Mai 2026</div>
@@ -239,7 +242,7 @@
           <a href="artigo.html" class="news-card reveal-scale delay-200">
             <div class="news-badge">Mercado</div>
             <div class="news-img-wrapper" style="height: 180px;">
-              <img src="./assets/images/blog/blog-03.jpeg" alt="Mercado Asiático" onerror="this.src='https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?q=80&w=800&auto=format&fit=crop'">
+              <img src="./assets/images/blog/blog-03.webp" width="800" height="533" alt="Mercado Asiático" onerror="this.src='https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?q=80&w=800&auto=format&fit=crop'">
             </div>
             <div class="news-content" style="padding: 1.5rem;">
               <div class="news-date">10 Mai 2026</div>
@@ -254,47 +257,8 @@
     <section class="section container" style="padding-top: 2rem;">
       <div class="eyebrow reveal-up">Últimas Publicações</div>
       <div class="insights-grid" id="news-grid-container">
-        <!-- These cards will eventually be populated dynamically by Javascript when the Backend is ready, 
-             but for now they are styled mockups for visual approval. -->
-             
-        <a href="artigo.html" class="news-card reveal-scale delay-100">
-          <div class="news-badge" style="background: var(--color-accent); color: var(--color-bg-dark);">Compliance</div>
-          <div class="news-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop" alt="Regulação">
-          </div>
-          <div class="news-content">
-            <div class="news-date">02 Mai 2026</div>
-            <h3 class="news-title">O Marco Legal dos Ativos Virtuais e o futuro das transações</h3>
-            <p class="news-excerpt">Entenda como a regulamentação brasileira está moldando um ambiente mais seguro para operações corporativas.</p>
-            <div class="news-read-more">Ler mais &rarr;</div>
-          </div>
-        </a>
-
-        <a href="artigo.html" class="news-card reveal-scale delay-200">
-          <div class="news-badge">Case de Sucesso</div>
-          <div class="news-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop" alt="Case de sucesso">
-          </div>
-          <div class="news-content">
-            <div class="news-date">25 Abr 2026</div>
-            <h3 class="news-title">Reduzindo o tempo de liquidação de D+2 para Minutos</h3>
-            <p class="news-excerpt">Como uma empresa de importação conseguiu otimizar seu fluxo de caixa utilizando nossa infraestrutura global.</p>
-            <div class="news-read-more">Ler mais &rarr;</div>
-          </div>
-        </a>
-
-        <a href="artigo.html" class="news-card reveal-scale delay-300">
-          <div class="news-badge">Infraestrutura</div>
-          <div class="news-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop" alt="Tecnologia">
-          </div>
-          <div class="news-content">
-            <div class="news-date">15 Abr 2026</div>
-            <h3 class="news-title">API para Pagamentos: Como integrar fluxos cross-border</h3>
-            <p class="news-excerpt">Guia técnico para desenvolvedores adicionarem trilhos de pagamento globais e estáveis aos seus produtos.</p>
-            <div class="news-read-more">Ler mais &rarr;</div>
-          </div>
-        </a>
+        <!-- Notícias serão injetadas aqui pelo news.js -->
+        <p style="grid-column: 1 / -1; text-align: center; color: var(--color-text-secondary); padding: 4rem;">Carregando publicações...</p>
       </div>
       
       <div style="text-align: center; margin-top: 4rem;" class="reveal-up">
@@ -365,5 +329,6 @@
   <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js" defer></script>
   <script src="./scripts/i18n.js" defer></script>
   <script src="./scripts/main.js" defer></script>
+  <script type="module" src="./scripts/news.js" defer></script>
 </body>
 </html>

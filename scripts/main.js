@@ -1,24 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Initialize Lenis for Smooth Scrolling
-  const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // premium easing
-    direction: 'vertical',
-    gestureDirection: 'vertical',
-    smooth: true,
-    mouseMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
-    infinite: false,
-  });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
-  // 2. Header scroll effect
+  // 1. Header scroll effect
   const header = document.querySelector(".header");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
@@ -28,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 3. Scroll Reveal Animations (Intersection Observer)
+  // 2. Scroll Reveal Animations (Intersection Observer)
   const revealElements = document.querySelectorAll(".reveal-up, .reveal-scale");
   const revealOptions = {
     threshold: 0.1,
@@ -48,17 +29,44 @@ document.addEventListener("DOMContentLoaded", () => {
     revealObserver.observe(el);
   });
 
-  // 4. Subtle Parallax for Hero Visual
-  const heroVisual = document.querySelector(".hero-visual");
-  if (heroVisual) {
-    lenis.on('scroll', (e) => {
-      const scrollY = window.scrollY;
-      // Slight downward translation on scroll for parallax depth
-      heroVisual.style.transform = `translateY(${scrollY * 0.15}px)`;
+  // 3. Defer Lenis scroll initialization to window.onload to avoid layout thrashing / forced reflows
+  function initLenis() {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // premium easing
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
     });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Subtle Parallax for Hero Visual
+    const heroVisual = document.querySelector(".hero-visual");
+    if (heroVisual) {
+      lenis.on('scroll', (e) => {
+        const scrollY = window.scrollY;
+        // Slight downward translation on scroll for parallax depth
+        heroVisual.style.transform = `translateY(${scrollY * 0.15}px)`;
+      });
+    }
   }
 
-  // 5. Interactive Solutions Component
+  if (document.readyState === "complete") {
+    initLenis();
+  } else {
+    window.addEventListener("load", initLenis);
+  }
+
+  // 4. Interactive Solutions Component
   const solutionTabs = document.querySelectorAll('.solution-tab');
   const solutionBgs = document.querySelectorAll('.solution-bg');
   const solutionContents = document.querySelectorAll('.solution-content');

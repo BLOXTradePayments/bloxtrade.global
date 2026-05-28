@@ -1,5 +1,4 @@
-import { auth } from './firebase-config.js';
-import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { supabase } from './supabase-config.js';
 
 // Handle Login Form (admin-login.html)
 const loginForm = document.getElementById('login-form');
@@ -13,7 +12,14 @@ if (loginForm) {
     try {
       submitBtn.innerText = 'Entrando...';
       submitBtn.disabled = true;
-      await signInWithEmailAndPassword(auth, email, password);
+      
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password
+      });
+
+      if (error) throw error;
+
       // Success, redirect to panel
       window.location.href = 'admin-panel.html';
     } catch (error) {
@@ -28,20 +34,26 @@ if (loginForm) {
 // Handle Auth State and Protection (admin-panel.html)
 const logoutBtn = document.getElementById('logout-btn');
 if (logoutBtn) {
-  // We are on the panel, check if user is logged in
-  onAuthStateChanged(auth, (user) => {
-    if (!user) {
-      // Not logged in, kick out
+  // Check if session exists on load
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (!session) {
       window.location.href = 'admin-login.html';
     } else {
-      console.log('Admin logado:', user.email);
+      console.log('Admin logado:', session.user.email);
     }
   });
 
-  logoutBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    signOut(auth).then(() => {
+  // Listen for auth changes
+  supabase.auth.onAuthStateChange((event, session) => {
+    if (event === 'SIGNED_OUT' || (!session && event !== 'INITIAL_SESSION')) {
       window.location.href = 'admin-login.html';
-    });
+    }
+  });
+
+  logoutBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    await supabase.auth.signOut();
+    window.location.href = 'admin-login.html';
   });
 }
+

@@ -8,6 +8,9 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="./assets/fonts/Morganite-Bold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/fonts/Morganite-Black.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="./styles/global.css">
   <link rel="stylesheet" href="./styles/components.css">
   <style>
@@ -191,7 +194,7 @@
       <!-- ARTICLE COVER -->
       <div class="container reveal-up delay-200">
         <div class="article-cover">
-          <img id="article-cover-img" src="./assets/images/blog/blog-01.jpeg" alt="Capa do artigo" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop'">
+          <img id="article-cover-img" src="./assets/images/blog/blog-01.webp" width="800" height="528" alt="Capa do artigo" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop'">
         </div>
       </div>
 
@@ -247,7 +250,7 @@
         <div class="insights-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 900px;">
           <a href="artigo.html" class="news-card reveal-scale" style="background: var(--color-bg-primary); padding: 0; overflow: hidden; display: flex; flex-direction: column; border-radius: var(--radius-md); border: 1px solid var(--color-border); text-decoration: none;">
             <div class="news-img-wrapper" style="height: 200px;">
-              <img src="./assets/images/blog/blog-02.jpeg" alt="Post" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=800&auto=format&fit=crop'">
+              <img src="./assets/images/blog/blog-02.webp" width="800" height="533" alt="Post" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=800&auto=format&fit=crop'">
             </div>
             <div style="padding: 2rem;">
               <div style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 0.5rem;">18 Mai 2026</div>
@@ -257,7 +260,7 @@
 
           <a href="artigo.html" class="news-card reveal-scale delay-100" style="background: var(--color-bg-primary); padding: 0; overflow: hidden; display: flex; flex-direction: column; border-radius: var(--radius-md); border: 1px solid var(--color-border); text-decoration: none;">
             <div class="news-img-wrapper" style="height: 200px;">
-              <img src="./assets/images/blog/blog-03.jpeg" alt="Post" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?q=80&w=800&auto=format&fit=crop'">
+              <img src="./assets/images/blog/blog-03.webp" width="800" height="533" alt="Post" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?q=80&w=800&auto=format&fit=crop'">
             </div>
             <div style="padding: 2rem;">
               <div style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 0.5rem;">10 Mai 2026</div>
@@ -304,5 +307,6 @@
   <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js" defer></script>
   <script src="./scripts/i18n.js" defer></script>
   <script src="./scripts/main.js" defer></script>
+  <script type="module" src="./scripts/artigo.js" defer></script>
 </body>
 </html>

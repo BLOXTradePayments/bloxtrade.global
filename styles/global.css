@@ -2,13 +2,12 @@
    Design Tokens & Global Styles for BLOXtrade
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 @font-face {
   font-family: 'Morganite';
   src: url('../assets/fonts/Morganite-Black.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -16,6 +15,7 @@
   src: url('../assets/fonts/Morganite-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 :root {
