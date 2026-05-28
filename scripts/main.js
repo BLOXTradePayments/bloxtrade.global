@@ -61,9 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (document.readyState === "complete") {
-    initLenis();
+    setTimeout(initLenis, 200);
   } else {
-    window.addEventListener("load", initLenis);
+    window.addEventListener("load", () => {
+      setTimeout(initLenis, 200);
+    });
   }
 
   // 4. Interactive Solutions Component
