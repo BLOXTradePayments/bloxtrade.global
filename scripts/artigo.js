@@ -36,7 +36,12 @@ function renderArticle(article) {
   }
   
   if (themeEl) themeEl.innerText = article.category || 'News';
-  if (authorEl) authorEl.innerText = article.author ? `Por ${article.author}` : 'Por Equipe BLOXtrade';
+  if (authorEl) {
+    const isPt = currentLang === 'pt';
+    authorEl.innerText = article.author 
+      ? (isPt ? `Por ${article.author}` : `By ${article.author}`) 
+      : (isPt ? 'Por Equipe BLOXtrade' : 'By BLOXtrade Team');
+  }
   if (coverImgEl) {
     coverImgEl.src = article.image_url || 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop';
     coverImgEl.alt = title;

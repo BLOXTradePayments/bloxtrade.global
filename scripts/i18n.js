@@ -124,7 +124,20 @@ document.addEventListener("DOMContentLoaded", () => {
       "terms_title": "Termos de Uso",
       "terms_content": "Estes termos regulam o acesso e o uso da plataforma BLOXtrade. Ao utilizar nossos serviços, você concorda com nossas diretrizes operacionais, de segurança e compliance. O documento completo será disponibilizado em breve.",
       "compliance_page_title": "Compliance Institucional",
-      "compliance_page_content": "A BLOXtrade opera em estrita conformidade com as regulações de cada jurisdição em que atua. Nosso programa de compliance inclui KYC/AML rigorosos e parceiros licenciados para garantir a segurança de todas as transações globais."
+      "compliance_page_content": "A BLOXtrade opera em estrita conformidade com as regulações de cada jurisdição em que atua. Nosso programa de compliance inclui KYC/AML rigorosos e parceiros licenciados para garantir a segurança de todas as transações globais.",
+      "news_eyebrow": "BLOXtrade News",
+      "news_title": "Inteligência Global <br><span style=\"color: var(--color-text-inverse-muted);\">para Operações Financeiras</span>",
+      "news_subheadline": "Acompanhe as novidades, guias práticos e insights do mercado de pagamentos cross-border e infraestrutura web3.",
+      "news_badge_featured": "Destaque",
+      "news_badge_guide": "Guia Prático",
+      "news_badge_market": "Mercado",
+      "news_back": "&larr; Voltar para News",
+      "news_read_more": "Ler mais &rarr;",
+      "news_read_full": "Ler Artigo Completo &rarr;",
+      "news_load_more": "Carregar mais publicações",
+      "news_latest": "Últimas Publicações",
+      "article_share": "Compartilhar:",
+      "article_related": "Leia também"
     },
     en: {
       "nav_solutions": "Solutions",
@@ -247,7 +260,20 @@ document.addEventListener("DOMContentLoaded", () => {
       "terms_title": "Terms of Use",
       "terms_content": "These terms govern the access and use of the BLOXtrade platform. By using our services, you agree to our operational, security, and compliance guidelines. The full document will be available soon.",
       "compliance_page_title": "Institutional Compliance",
-      "compliance_page_content": "BLOXtrade operates in strict compliance with the regulations of each jurisdiction it operates in. Our compliance program includes rigorous KYC/AML and licensed partners to ensure the security of all global transactions."
+      "compliance_page_content": "BLOXtrade operates in strict compliance with the regulations of each jurisdiction it operates in. Our compliance program includes rigorous KYC/AML and licensed partners to ensure the security of all global transactions.",
+      "news_eyebrow": "BLOXtrade News",
+      "news_title": "Global Intelligence <br><span style=\"color: var(--color-text-inverse-muted);\">for Financial Operations</span>",
+      "news_subheadline": "Follow the news, practical guides, and insights on the cross-border payments and web3 infrastructure market.",
+      "news_badge_featured": "Featured",
+      "news_badge_guide": "Practical Guide",
+      "news_badge_market": "Market",
+      "news_back": "&larr; Back to News",
+      "news_read_more": "Read more &rarr;",
+      "news_read_full": "Read Full Article &rarr;",
+      "news_load_more": "Load more publications",
+      "news_latest": "Latest Publications",
+      "article_share": "Share:",
+      "article_related": "Read also"
     }
   };
 
