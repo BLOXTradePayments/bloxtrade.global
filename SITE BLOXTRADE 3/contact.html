@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact BLOXtrade specialists for global payments infrastructure.">
+  <title>Contato | BLOXtrade</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="./assets/fonts/Morganite-Bold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/fonts/Morganite-Black.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body class="bg-dark">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="./assets/logos/Logotipo-BloxTrade/SVG/LOGO-BLOXTRADE-VS1-BG-VERDE-ESCURO.svg" alt="BLOXtrade Logo" width="180" height="36" fetchpriority="high" decoding="async">
+      </a>
+      
+      <nav class="nav-links">
+        <a href="index.html#infrastructure" class="nav-link" data-i18n="nav_infrastructure">Infraestrutura</a>
+        <a href="index.html#company" class="nav-link" data-i18n="nav_company">Empresa</a>
+        <a href="index.html#solutions" class="nav-link" data-i18n="nav_solutions">Soluções</a>
+        <a href="compliance.html" class="nav-link" data-i18n="nav_compliance">Compliance</a>
+        <a href="news.html" class="nav-link" data-i18n="nav_insights">Conteúdos</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switcher">
+          <span class="lang-btn" data-lang-toggle="pt">PT</span>
+          <span class="lang-sep">/</span>
+          <span class="lang-btn" data-lang-toggle="en">EN</span>
+        </div>
+        <a href="https://kyc.bloxtrade.com.br/login" class="nav-link" data-i18n="btn_platform_login">Entrar na plataforma</a>
+      </div>
+      
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main style="padding-top: 150px; padding-bottom: 100px;">
+    <div class="container" style="max-width: 600px; margin: 0 auto;">
+      <h1 class="h2 reveal-up" style="margin-bottom: 1rem;" data-i18n="contact_title">Contato</h1>
+      <p class="body-large reveal-up delay-100" style="color: var(--color-text-inverse-muted); margin-bottom: 3rem;" data-i18n="contact_subtitle">Fale com nossos especialistas em pagamentos globais.</p>
+
+      <form action="#" method="POST" class="reveal-up delay-200">
+        <div class="form-group">
+          <label for="name" class="form-label" data-i18n="contact_name_label">Nome completo</label>
+          <input type="text" id="name" name="name" class="form-input" data-i18n="contact_name_placeholder" data-i18n-attr="placeholder" placeholder="Como podemos te chamar?" required>
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label" data-i18n="contact_email_label">E-mail corporativo</label>
+          <input type="email" id="email" name="email" class="form-input" data-i18n="contact_email_placeholder" data-i18n-attr="placeholder" placeholder="seu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message" class="form-label" data-i18n="contact_message_label">Mensagem</label>
+          <textarea id="message" name="message" class="form-textarea" data-i18n="contact_message_placeholder" data-i18n-attr="placeholder" placeholder="Como podemos ajudar sua operação global?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;" data-i18n="contact_submit_btn">Enviar mensagem</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="./assets/logos/Logotipo-BloxTrade/SVG/LOGO-BLOXTRADE-VS1-BG-VERDE-ESCURO.svg" alt="BLOXtrade Logo" width="180" height="36" loading="lazy" decoding="async">
+          </a>
+        </div>
+        
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col1_title">Empresa</div>
+          <div class="footer-links">
+            <a href="index.html#company" data-i18n="footer_col1_1">Sobre</a>
+            <a href="index.html#company" data-i18n="footer_col1_2">Carreiras</a>
+            <a href="contact.html" data-i18n="footer_col1_3">Contato</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col2_title">Soluções</div>
+          <div class="footer-links">
+            <a href="index.html#solutions" data-i18n="footer_col2_1">Pagamentos internacionais</a>
+            <a href="index.html#solutions" data-i18n="footer_col2_2">Tesouraria global</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col3_title">Conteúdos</div>
+          <div class="footer-links">
+            <a href="index.html#insights" data-i18n="footer_col3_1">Blog</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col4_title">Legal</div>
+          <div class="footer-links">
+            <a href="privacy-policy.html" data-i18n="footer_col4_1">Política de privacidade</a>
+            <a href="terms.html" data-i18n="footer_col4_2">Termos de uso</a>
+            <a href="compliance.html" data-i18n="footer_col4_3">Compliance</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-legal">
+        <p data-i18n="footer_legal_note">BLOXtrade - ALL RIGHTS RESERVED</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lenis & Custom Scripts -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="./scripts/main.js" defer></script>
+  <script src="./scripts/i18n.js" defer></script>
+</body>
+</html>
