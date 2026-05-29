@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "footer_col2_3": "Trade finance",
       "footer_col2_4": "API",
       "footer_col3_title": "Content",
-      "footer_col3_1": "NEWS",
+      "footer_col3_1": "News",
       "footer_col3_2": "Guides",
       "footer_col3_3": "Insights",
       "footer_col4_title": "Legal",
