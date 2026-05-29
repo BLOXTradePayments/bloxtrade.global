@@ -4,18 +4,20 @@ import { supabase } from './supabase-config.js';
 const navDashboard = document.getElementById('nav-dashboard');
 const navNewArticle = document.getElementById('nav-new-article');
 const navPublishedArticles = document.getElementById('nav-published-articles');
+const navCandidates = document.getElementById('nav-candidates');
 
 const viewDashboard = document.getElementById('view-dashboard');
 const viewNewArticle = document.getElementById('view-new-article');
 const viewPublishedArticles = document.getElementById('view-published-articles');
+const viewCandidates = document.getElementById('view-candidates');
 const pageTitle = document.getElementById('admin-page-title');
 
 function switchTab(activeNav, activeView, titleText) {
   // Remove active classes
-  [navDashboard, navNewArticle, navPublishedArticles].forEach(nav => {
+  [navDashboard, navNewArticle, navPublishedArticles, navCandidates].forEach(nav => {
     if (nav) nav.classList.remove('active');
   });
-  [viewDashboard, viewNewArticle, viewPublishedArticles].forEach(view => {
+  [viewDashboard, viewNewArticle, viewPublishedArticles, viewCandidates].forEach(view => {
     if (view) view.classList.remove('active');
   });
 
@@ -29,12 +31,15 @@ function switchTab(activeNav, activeView, titleText) {
     loadDashboardStats();
   } else if (activeNav === navPublishedArticles) {
     loadPublishedArticles();
+  } else if (activeNav === navCandidates) {
+    loadCandidates();
   }
 }
 
 if (navDashboard) navDashboard.addEventListener('click', () => switchTab(navDashboard, viewDashboard, 'Dashboard'));
 if (navNewArticle) navNewArticle.addEventListener('click', () => switchTab(navNewArticle, viewNewArticle, 'Publicar Novo Artigo'));
 if (navPublishedArticles) navPublishedArticles.addEventListener('click', () => switchTab(navPublishedArticles, viewPublishedArticles, 'Artigos Publicados'));
+if (navCandidates) navCandidates.addEventListener('click', () => switchTab(navCandidates, viewCandidates, 'Candidatos Recebidos'));
 
 
 // --- Image Upload Handling ---
@@ -301,3 +306,163 @@ document.addEventListener('DOMContentLoaded', () => {
     loadDashboardStats();
   }
 });
+
+// --- CANDIDATE APPLICATIONS MANAGEMENT ---
+const candidatesListTbody = document.getElementById('candidates-list');
+
+async function loadCandidates() {
+  if (!candidatesListTbody) return;
+
+  candidatesListTbody.innerHTML = `
+    <tr>
+      <td colspan="6" style="padding: 3rem; text-align: center; color: #888;">Carregando candidaturas...</td>
+    </tr>
+  `;
+
+  try {
+    const { data: candidates, error } = await supabase
+      .from('careers_applications')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) throw error;
+
+    if (!candidates || candidates.length === 0) {
+      candidatesListTbody.innerHTML = `
+        <tr>
+          <td colspan="6" style="padding: 3rem; text-align: center; color: #888;">Nenhuma candidatura recebida até o momento.</td>
+        </tr>
+      `;
+      return;
+    }
+
+    candidatesListTbody.innerHTML = '';
+
+    candidates.forEach(candidate => {
+      const tr = document.createElement('tr');
+      
+      const date = new Date(candidate.created_at).toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+
+      // Contact info
+      const contactInfo = `
+        <div style="font-size: 0.875rem;">
+          <div style="font-weight: 600; color: #333;">${candidate.email}</div>
+          <div style="color: #555; margin-top: 0.1rem;">${candidate.phone}</div>
+          <div style="color: #777; font-size: 0.75rem; margin-top: 0.1rem; font-style: italic;">${candidate.city_state}</div>
+        </div>
+      `;
+
+      // Social URLs
+      let linkedinBtn = '';
+      if (candidate.linkedin_url) {
+        linkedinBtn = `<a href="${candidate.linkedin_url}" target="_blank" rel="noopener noreferrer" style="color: #0077b5; font-weight: 500; font-size: 0.8125rem; display: block; margin-top: 0.25rem;">LinkedIn &rarr;</a>`;
+      }
+      let portfolioBtn = '';
+      if (candidate.portfolio_url) {
+        portfolioBtn = `<a href="${candidate.portfolio_url}" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent-hover); font-weight: 500; font-size: 0.8125rem; display: block; margin-top: 0.25rem;">Portfólio &rarr;</a>`;
+      }
+
+      tr.innerHTML = `
+        <td><span style="font-size: 0.875rem; color: #555;">${date}</span></td>
+        <td>
+          <div style="font-weight: 600; color: #1B2417; font-size: 0.95rem;">${candidate.name}</div>
+          ${linkedinBtn}
+          ${portfolioBtn}
+        </td>
+        <td>${contactInfo}</td>
+        <td>
+          <span style="background: rgba(129, 205, 78, 0.1); color: var(--color-accent-hover); padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; display: inline-block;">
+            ${candidate.area}
+          </span>
+          <div style="font-size: 0.8125rem; color: #555; margin-top: 0.25rem;">${candidate.level}</div>
+        </td>
+        <td><span style="font-size: 0.875rem; color: #555;">${candidate.source}</span></td>
+        <td style="text-align: right; white-space: nowrap;">
+          <button class="btn-view-cv" data-resume="${candidate.resume_url}">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 0.25rem;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Ver CV
+          </button>
+          <button class="btn-delete" data-id="${candidate.id}" data-resume="${candidate.resume_url}">Excluir</button>
+        </td>
+      `;
+
+      // Bind View CV click (generates signed URL)
+      const viewCvBtn = tr.querySelector('.btn-view-cv');
+      viewCvBtn.addEventListener('click', async () => {
+        const resumePath = viewCvBtn.getAttribute('data-resume');
+        viewCvBtn.disabled = true;
+        try {
+          const { data, error } = await supabase.storage
+            .from('resumes')
+            .createSignedUrl(resumePath, 60); // 60 seconds expiry
+
+          if (error) throw error;
+          window.open(data.signedUrl, '_blank');
+        } catch (err) {
+          console.error('Erro ao gerar link do CV:', err);
+          alert('Erro ao carregar currículo: ' + err.message);
+        } finally {
+          viewCvBtn.disabled = false;
+        }
+      });
+
+      // Bind Delete click
+      const deleteBtn = tr.querySelector('.btn-delete');
+      deleteBtn.addEventListener('click', async () => {
+        const id = deleteBtn.getAttribute('data-id');
+        const resumePath = deleteBtn.getAttribute('data-resume');
+
+        if (!confirm('Tem certeza de que deseja excluir esta candidatura? Esta ação não pode ser desfeita.')) {
+          return;
+        }
+
+        deleteBtn.innerText = 'Excluindo...';
+        deleteBtn.disabled = true;
+
+        try {
+          // 1. Delete from database
+          const { error: dbError } = await supabase
+            .from('careers_applications')
+            .delete()
+            .eq('id', id);
+
+          if (dbError) throw dbError;
+
+          // 2. Delete file from storage
+          try {
+            await supabase.storage
+              .from('resumes')
+              .remove([resumePath]);
+            console.log('Currículo excluído do storage:', resumePath);
+          } catch (storageErr) {
+            console.warn('Erro ao remover currículo do storage (não-fatal):', storageErr);
+          }
+
+          alert('Candidatura excluída com sucesso!');
+          loadCandidates(); // reload
+        } catch (err) {
+          console.error('Erro ao excluir candidatura:', err);
+          alert('Erro ao excluir candidatura: ' + err.message);
+          deleteBtn.innerText = 'Excluir';
+          deleteBtn.disabled = false;
+        }
+      });
+
+      candidatesListTbody.appendChild(tr);
+    });
+
+  } catch (err) {
+    console.error('Erro ao carregar candidatos:', err);
+    candidatesListTbody.innerHTML = `
+      <tr>
+        <td colspan="6" style="padding: 3rem; text-align: center; color: red;">Erro ao carregar candidatos: ${err.message}</td>
+      </tr>
+    `;
+  }
+}

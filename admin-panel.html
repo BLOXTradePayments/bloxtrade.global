@@ -269,6 +269,28 @@
       box-shadow: 0 4px 12px rgba(198, 40, 40, 0.15);
       transform: translateY(-1px);
     }
+    .btn-view-cv {
+      background: #eef9e6;
+      color: var(--color-accent-hover);
+      border: 1px solid rgba(97, 177, 47, 0.2);
+      padding: 0.5rem 1rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all var(--transition-fast);
+      margin-right: 0.5rem;
+    }
+    .btn-view-cv:hover {
+      background: var(--color-accent);
+      color: var(--color-bg-dark);
+      border-color: var(--color-accent);
+      transform: translateY(-1px);
+    }
     .nav-item {
       cursor: pointer;
     }
@@ -311,6 +333,10 @@
       <a id="nav-published-articles" class="nav-item">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
         Artigos Publicados
+      </a>
+      <a id="nav-candidates" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        Candidatos
       </a>
     </nav>
     <div class="sidebar-footer">
@@ -440,6 +466,31 @@
             <tbody id="published-articles-list">
               <tr>
                 <td colspan="6" style="padding: 3rem; text-align: center; color: #888;">Carregando artigos...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: CANDIDATES -->
+    <div id="view-candidates" class="admin-view">
+      <div class="editor-card" style="padding: 2rem;">
+        <div style="overflow-x: auto;">
+          <table class="articles-table">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Nome</th>
+                <th>Contato</th>
+                <th>Área / Nível</th>
+                <th>Origem</th>
+                <th style="text-align: right;">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="candidates-list">
+              <tr>
+                <td colspan="6" style="padding: 3rem; text-align: center; color: #888;">Carregando candidatos...</td>
               </tr>
             </tbody>
           </table>
