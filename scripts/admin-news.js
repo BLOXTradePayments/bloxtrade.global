@@ -1,5 +1,42 @@
 import { supabase } from './supabase-config.js';
 
+// --- Navigation Tab Toggling ---
+const navDashboard = document.getElementById('nav-dashboard');
+const navNewArticle = document.getElementById('nav-new-article');
+const navPublishedArticles = document.getElementById('nav-published-articles');
+
+const viewDashboard = document.getElementById('view-dashboard');
+const viewNewArticle = document.getElementById('view-new-article');
+const viewPublishedArticles = document.getElementById('view-published-articles');
+const pageTitle = document.getElementById('admin-page-title');
+
+function switchTab(activeNav, activeView, titleText) {
+  // Remove active classes
+  [navDashboard, navNewArticle, navPublishedArticles].forEach(nav => {
+    if (nav) nav.classList.remove('active');
+  });
+  [viewDashboard, viewNewArticle, viewPublishedArticles].forEach(view => {
+    if (view) view.classList.remove('active');
+  });
+
+  // Add active classes
+  if (activeNav) activeNav.classList.add('active');
+  if (activeView) activeView.classList.add('active');
+  if (pageTitle) pageTitle.innerText = titleText;
+
+  // Load appropriate data
+  if (activeNav === navDashboard) {
+    loadDashboardStats();
+  } else if (activeNav === navPublishedArticles) {
+    loadPublishedArticles();
+  }
+}
+
+if (navDashboard) navDashboard.addEventListener('click', () => switchTab(navDashboard, viewDashboard, 'Dashboard'));
+if (navNewArticle) navNewArticle.addEventListener('click', () => switchTab(navNewArticle, viewNewArticle, 'Publicar Novo Artigo'));
+if (navPublishedArticles) navPublishedArticles.addEventListener('click', () => switchTab(navPublishedArticles, viewPublishedArticles, 'Artigos Publicados'));
+
+
 // --- Image Upload Handling ---
 const imageUploadBox = document.getElementById('image-upload-box');
 const imageInput = document.getElementById('cover-image-input');
@@ -28,6 +65,7 @@ if (imageInput) {
     }
   });
 }
+
 
 // --- Publish Article Handling ---
 const btnPublish = document.getElementById('btn-publish');
@@ -115,3 +153,151 @@ if (btnPublish) {
     }
   });
 }
+
+
+// --- Dashboard Stats Logic ---
+async function loadDashboardStats() {
+  const statTotal = document.getElementById('stat-total-articles');
+  const statLatest = document.getElementById('stat-latest-date');
+
+  try {
+    const { data: articles, error } = await supabase
+      .from('articles')
+      .select('created_at')
+      .order('created_at', { ascending: false });
+
+    if (error) throw error;
+
+    if (statTotal) statTotal.innerText = articles.length;
+
+    if (statLatest) {
+      if (articles.length > 0 && articles[0].created_at) {
+        const date = new Date(articles[0].created_at);
+        statLatest.innerText = date.toLocaleDateString('pt-BR', {
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric'
+        });
+      } else {
+        statLatest.innerText = 'Nenhum artigo';
+      }
+    }
+  } catch (err) {
+    console.error('Erro ao buscar estatísticas:', err);
+  }
+}
+
+
+// --- Published Articles List & Delete Logic ---
+const articlesListTbody = document.getElementById('published-articles-list');
+
+async function loadPublishedArticles() {
+  if (!articlesListTbody) return;
+  
+  articlesListTbody.innerHTML = `
+    <tr>
+      <td colspan="6" style="padding: 3rem; text-align: center; color: #888;">Carregando artigos...</td>
+    </tr>
+  `;
+
+  try {
+    const { data: articles, error } = await supabase
+      .from('articles')
+      .select('id, title, category, author, created_at, image_url')
+      .order('created_at', { ascending: false });
+
+    if (error) throw error;
+
+    if (articles.length === 0) {
+      articlesListTbody.innerHTML = `
+        <tr>
+          <td colspan="6" style="padding: 3rem; text-align: center; color: #888;">Nenhum artigo publicado.</td>
+        </tr>
+      `;
+      return;
+    }
+
+    articlesListTbody.innerHTML = '';
+    articles.forEach(article => {
+      const titlePt = article.title.pt || article.title.en || 'Sem título';
+      const date = new Date(article.created_at);
+      const dateFormatted = date.toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+      });
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td style="padding: 1rem;"><img src="${article.image_url}" class="table-thumbnail" alt="Thumb"></td>
+        <td style="padding: 1rem; font-weight: 600; color: var(--color-bg-dark);">${titlePt}</td>
+        <td style="padding: 1rem;"><span style="background: rgba(97, 177, 47, 0.1); color: var(--color-accent-hover); padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;">${article.category}</span></td>
+        <td style="padding: 1rem; color: #666; font-size: 14px;">${article.author || 'Equipe BLOXtrade'}</td>
+        <td style="padding: 1rem; color: #888; font-size: 14px;">${dateFormatted}</td>
+        <td style="padding: 1rem; text-align: right;">
+          <button class="btn-delete" data-id="${article.id}">Excluir</button>
+        </td>
+      `;
+
+      // Attach Delete Listener
+      const deleteBtn = tr.querySelector('.btn-delete');
+      deleteBtn.addEventListener('click', async () => {
+        const confirmDelete = confirm(`Tem certeza que deseja excluir o artigo "${titlePt}"?`);
+        if (!confirmDelete) return;
+
+        try {
+          deleteBtn.innerText = 'Excluindo...';
+          deleteBtn.disabled = true;
+
+          // Attempt to delete row from database
+          const { error: deleteError } = await supabase
+            .from('articles')
+            .delete()
+            .eq('id', article.id);
+
+          if (deleteError) throw deleteError;
+
+          // Also try to delete image from storage if we can extract the filename
+          try {
+            const urlParts = article.image_url.split('/public/articles_images/');
+            if (urlParts.length > 1) {
+              const fileToDelete = urlParts[1];
+              await supabase.storage
+                .from('articles_images')
+                .remove([fileToDelete]);
+              console.log('Imagem removida do storage:', fileToDelete);
+            }
+          } catch (storageErr) {
+            console.warn('Erro ao remover imagem do storage (não-fatal):', storageErr);
+          }
+
+          alert('Artigo excluído com sucesso!');
+          loadPublishedArticles(); // reload
+        } catch (err) {
+          console.error('Erro ao excluir artigo:', err);
+          alert('Erro ao excluir artigo: ' + err.message);
+          deleteBtn.innerText = 'Excluir';
+          deleteBtn.disabled = false;
+        }
+      });
+
+      articlesListTbody.appendChild(tr);
+    });
+
+  } catch (err) {
+    console.error('Erro ao carregar lista de artigos:', err);
+    articlesListTbody.innerHTML = `
+      <tr>
+        <td colspan="6" style="padding: 3rem; text-align: center; color: red;">Erro ao carregar artigos: ${err.message}</td>
+      </tr>
+    `;
+  }
+}
+
+
+// Initialize stats on load if we are on dashboard
+document.addEventListener('DOMContentLoaded', () => {
+  if (viewDashboard && viewDashboard.classList.contains('active')) {
+    loadDashboardStats();
+  }
+});

@@ -1,0 +1,320 @@
+/* ==========================================================================
+   Legal Documents Styles (Privacy Policy & Terms of Service) for BLOXtrade
+   ========================================================================== */
+
+.legal-page {
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+  background-color: var(--color-bg-primary);
+}
+
+.legal-header-section {
+  margin-bottom: 5rem;
+  text-align: center;
+  position: relative;
+}
+
+.legal-header-section .eyebrow {
+  justify-content: center;
+}
+
+.legal-header-section .h1 {
+  margin-bottom: 1.5rem;
+  color: var(--color-text-primary);
+}
+
+.last-updated {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+/* Page Layout */
+.legal-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Sidebar navigation */
+.legal-sidebar {
+  position: sticky;
+  top: 120px;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  padding-right: 1.5rem;
+  border-right: 1px solid var(--color-border);
+}
+
+.legal-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+.legal-sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.toc-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.toc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.toc-link {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  line-height: 1.4;
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+}
+
+.toc-link:hover {
+  color: var(--color-accent);
+  padding-left: 4px;
+}
+
+/* Content Container */
+.legal-content {
+  max-width: 800px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.policy-block {
+  margin-bottom: 4rem;
+  scroll-margin-top: 120px;
+}
+
+.policy-block:not(:last-child) {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 4rem;
+}
+
+.policy-block h2 {
+  font-size: 1.75rem;
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.policy-block h3 {
+  font-size: 1.25rem;
+  color: var(--color-text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.policy-block p {
+  margin-bottom: 1.25rem;
+}
+
+.policy-block p strong {
+  color: var(--color-text-primary);
+}
+
+.highlight-box {
+  background-color: var(--color-bg-secondary);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  border-top: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+/* Definitions list */
+.definitions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.definition-item {
+  padding: 1.25rem;
+  background-color: var(--color-bg-secondary);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  border-top: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.definition-term {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.definition-desc {
+  font-size: 0.9375rem;
+  margin-bottom: 0 !important;
+}
+
+/* Bullet list standard styling */
+.policy-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.policy-list li {
+  position: relative;
+  padding-left: 1.75rem;
+}
+
+.policy-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0.5rem;
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+/* Internal Security Grid */
+.internal-policies-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.internal-policy-card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.internal-policy-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: 0 10px 20px rgba(27, 36, 23, 0.03);
+}
+
+.card-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(97, 177, 47, 0.1);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.internal-policy-card h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+}
+
+.internal-policy-card .card-bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.internal-policy-card .card-bullet-list li {
+  list-style: none;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.internal-policy-card .card-bullet-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+/* Info Banner for regulatory compliances */
+.compliance-banner {
+  background: rgba(97, 177, 47, 0.05);
+  border: 1px solid rgba(97, 177, 47, 0.2);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.compliance-banner-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.compliance-banner-content h4 {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.compliance-banner-content p {
+  margin-bottom: 0 !important;
+  font-size: 0.9375rem;
+}
+
+/* Language hiding styles */
+html[lang="pt"] .lang-en {
+  display: none !important;
+}
+
+html[lang="en"] .lang-pt {
+  display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .legal-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .legal-sidebar {
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+    max-height: none;
+  }
+  .toc-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .internal-policies-grid {
+    grid-template-columns: 1fr;
+  }
+  .compliance-banner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

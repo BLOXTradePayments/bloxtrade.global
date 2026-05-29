@@ -40,6 +40,8 @@ if (logoutBtn) {
       window.location.href = 'admin-login.html';
     } else {
       console.log('Admin logado:', session.user.email);
+      const userEmailEl = document.getElementById('admin-user-email');
+      if (userEmailEl) userEmailEl.innerText = session.user.email;
     }
   });
 

@@ -65,7 +65,7 @@
     a { color: inherit; text-decoration: none; }
     .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
     @media (max-width: 768px) { .container { padding: 0 1.5rem; } }
-    .section { padding-top: var(--space-xl); padding-bottom: var(--space-xl); position: relative; }
+    .section { padding-top: var(--space-xl); padding-bottom: var(--space-xl); position: relative; scroll-margin-top: 120px; }
     .section-dark { background-color: var(--color-bg-dark); color: var(--color-text-inverse); }
     .h1, .h2, .h3, .h4 { font-family: var(--font-family-heading); font-weight: 900; text-transform: uppercase; letter-spacing: 0.02em; line-height: 0.9; }
     .h1 { font-size: clamp(4.5rem, 14vw, 12rem); }
@@ -407,34 +407,31 @@
           <!-- Logo Garden Placeholders -->
           <div class="reveal-up" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
             <div class="partner-logo-box">
-               <img src="./assets/logo/bank-of-china.svg" alt="Bank of China" width="2500" height="707" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 1'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
+               <img src="./assets/logo/bank-of-china.svg" alt="Bank of China" width="2500" height="707" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Bank of China'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/chainalysis.svg" alt="Chainalysis" width="617" height="100" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 2'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
+               <img src="./assets/logo/chainalysis.svg" alt="Chainalysis" width="617" height="100" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Chainalysis'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/dbs-bank.svg" alt="DBS Bank" width="94" height="28" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 3'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
+               <img src="./assets/logo/dbs-bank.svg" alt="DBS Bank" width="94" height="28" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='DBS Bank'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/full-logo.svg" alt="Full Logo" width="2832" height="961" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 4'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
+               <img src="./assets/logo/full-logo.svg" alt="Full Logo" width="2832" height="961" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Full Logo'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/utila.png" alt="Utila" width="59" height="59" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 5'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
+               <img src="./assets/logo/utila.png" alt="Utila" style="max-width: 65%; max-height: 65%; object-fit: contain; opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Utila'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/abtoken.svg" alt="ABToken" width="200" height="36" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: brightness(0); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 6'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
+               <img src="./assets/logo/abtoken.svg" alt="ABToken" width="200" height="36" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: brightness(0); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='ABToken'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/bigdatacorp.svg" alt="BigDataCorp" width="300" height="150" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 7'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
+               <img src="./assets/logo/bigdatacorp.svg" alt="BigDataCorp" width="300" height="150" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='BigDataCorp'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/fintrac-resized.webp" alt="Fintrac" width="150" height="237" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Fintrac'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
+               <img src="./assets/logo/lead bank.webp" alt="Lead Bank" style="max-width: 75%; max-height: 75%; object-fit: contain; opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Lead Bank'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/montana-msb.webp" alt="Montana MSB" width="300" height="28" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 9'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
-            </div>
-            <div class="partner-logo-box">
-               <img src="./assets/logo/standard-chartered.webp" alt="Standard Chartered" width="300" height="119" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 10'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
+               <img src="./assets/logo/standard-chartered.webp" alt="Standard Chartered" width="300" height="119" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Standard Chartered'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
           </div>
         </div>
