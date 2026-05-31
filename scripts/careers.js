@@ -1,4 +1,4 @@
-import { supabase } from './supabase-config.js';
+﻿import { supabase } from './supabase-config.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("careers-form");
@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fallback translation mappings
     const fallbacks = {
       pt: {
-        careers_error_pdf_type: "Erro: O arquivo selecionado não é um PDF. Por favor, envie apenas arquivos em formato PDF.",
-        careers_error_pdf_size: "Erro: O arquivo é muito grande. O limite máximo permitido é de 5MB.",
+        careers_error_pdf_type: "Erro: O arquivo selecionado nÃ£o Ã© um PDF. Por favor, envie apenas arquivos em formato PDF.",
+        careers_error_pdf_size: "Erro: O arquivo Ã© muito grande. O limite mÃ¡ximo permitido Ã© de 5MB.",
         careers_error_submit: "Ocorreu um erro ao enviar sua candidatura. Por favor, tente novamente mais tarde.",
-        careers_error_file_select: "Por favor, selecione seu currículo em formato PDF antes de enviar.",
-        careers_dropzone_selected: "Currículo selecionado:",
-        careers_dropzone_text: "Arraste e solte o currículo em PDF aqui ou clique para selecionar",
+        careers_error_file_select: "Por favor, selecione seu currÃ­culo em formato PDF antes de enviar.",
+        careers_dropzone_selected: "CurrÃ­culo selecionado:",
+        careers_dropzone_text: "Arraste e solte o currÃ­culo em PDF aqui ou clique para selecionar",
         careers_submit_loading: "Enviando...",
         careers_submit_btn: "Enviar candidatura"
       },
@@ -243,3 +243,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
