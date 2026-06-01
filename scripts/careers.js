@@ -1,4 +1,4 @@
-﻿import { supabase } from './supabase-config.js';
+// FormSubmit integration for static page email submissions
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("careers-form");
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Form Submission Integration with Supabase ---
+  // --- Form Submission Integration with FormSubmit ---
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -159,22 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     submitBtnText.textContent = getTranslation("careers_submit_loading");
 
     try {
-      // 1. Upload CV to Supabase Storage
-      const fileExt = selectedFile.name.split('.').pop();
-      const uniqueId = Math.random().toString(36).substring(2, 15) + '_' + Date.now();
-      const fileName = `${uniqueId}.${fileExt}`;
-      
-      const { data: storageData, error: storageError } = await supabase
-        .storage
-        .from('resumes')
-        .upload(fileName, selectedFile);
-
-      if (storageError) {
-        console.error("Storage upload error:", storageError);
-        throw new Error("Failed to upload file");
-      }
-
-      // 2. Gather values
+      // 1. Gather values and build FormData
       const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
       const phone = document.getElementById("phone").value;
@@ -185,36 +170,39 @@ document.addEventListener("DOMContentLoaded", () => {
       const linkedin = document.getElementById("linkedin").value;
       const portfolio = document.getElementById("portfolio").value;
 
-      // 3. Insert candidate data into Supabase Database
-      const { error: dbError } = await supabase
-        .from('careers_applications')
-        .insert({
-          name: name,
-          email: email,
-          phone: phone,
-          city_state: city,
-          area: area,
-          level: level,
-          source: source,
-          linkedin_url: linkedin || null,
-          portfolio_url: portfolio || null,
-          resume_url: storageData.path // Save storage filepath
-        });
+      const formData = new FormData();
+      formData.append("Nome / Name", name);
+      formData.append("E-mail / Email", email);
+      formData.append("Telefone / Phone", phone);
+      formData.append("Cidade-Estado / City-State", city);
+      formData.append("Área / Area", area);
+      formData.append("Nível / Level", level);
+      formData.append("Como nos conheceu / Source", source);
+      formData.append("LinkedIn", linkedin || "Não informado / Not provided");
+      formData.append("Portfólio / Portfolio", portfolio || "Não informado / Not provided");
+      formData.append("attachment", selectedFile); // Attach the resume PDF file
 
-      if (dbError) {
-        console.error("Database insert error:", dbError);
-        // Attempt to clean up uploaded file if database record failed
-        await supabase.storage.from('resumes').remove([storageData.path]);
-        throw new Error("Failed to save database entry");
+      // FormSubmit config parameters
+      formData.append("_captcha", "false");
+      formData.append("_subject", `Nova Candidatura: ${name} (${area} - ${level})`);
+
+      // 2. Submit to FormSubmit via AJAX
+      const response = await fetch("https://formsubmit.co/ajax/relacionamento@bloxtrade.com.br", {
+        method: "POST",
+        body: formData
+      });
+
+      if (!response.ok) {
+        throw new Error("FormSubmit response was not ok");
       }
 
-      // 4. Show success popup
+      // 3. Show success popup
       successOverlay.classList.add("active");
       form.reset();
       resetFile();
 
     } catch (err) {
-      console.error(err);
+      console.error("Submission error:", err);
       alert(getTranslation("careers_error_submit"));
     } finally {
       // Restore submit button state
