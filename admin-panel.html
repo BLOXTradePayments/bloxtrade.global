@@ -11,7 +11,7 @@
   <link rel="preload" href="./assets/fonts/Morganite-Black.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
-  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/main.css?v=2">
   <style>
     body {
       background-color: #f4f6f4; /* Light clean bg for admin */
@@ -204,115 +204,6 @@
     .btn-draft:hover {
       background: #f4f6f4;
     }
-
-    /* Modern Table and Action Styles */
-    .admin-view {
-      display: none;
-    }
-    .admin-view.active {
-      display: block;
-      animation: fadeIn 0.4s ease-out forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .articles-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-      margin-top: 1rem;
-    }
-    .articles-table th, .articles-table td {
-      padding: 1.25rem 1rem;
-      vertical-align: middle;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-    .articles-table th {
-      color: #888;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-    }
-    .articles-table tbody tr {
-      transition: background var(--transition-fast);
-    }
-    .articles-table tbody tr:hover {
-      background: #fafafa;
-    }
-    .table-thumbnail {
-      width: 60px;
-      height: 40px;
-      object-fit: cover;
-      border-radius: 4px;
-      background: #eee;
-      border: 1px solid rgba(0,0,0,0.05);
-    }
-    .btn-delete {
-      background: #ffebee;
-      color: #c62828;
-      border: 1px solid #ffcdd2;
-      padding: 0.5rem 1rem;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      transition: all var(--transition-fast);
-    }
-    .btn-delete:hover {
-      background: #c62828;
-      color: white;
-      border-color: #c62828;
-      box-shadow: 0 4px 12px rgba(198, 40, 40, 0.15);
-      transform: translateY(-1px);
-    }
-    .btn-view-cv {
-      background: #eef9e6;
-      color: var(--color-accent-hover);
-      border: 1px solid rgba(97, 177, 47, 0.2);
-      padding: 0.5rem 1rem;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      transition: all var(--transition-fast);
-      margin-right: 0.5rem;
-    }
-    .btn-view-cv:hover {
-      background: var(--color-accent);
-      color: var(--color-bg-dark);
-      border-color: var(--color-accent);
-      transform: translateY(-1px);
-    }
-    .nav-item {
-      cursor: pointer;
-    }
-    
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-    .stat-card {
-      background: white;
-      padding: 2.5rem 2rem;
-      border-radius: var(--radius-md);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-      border: 1px solid rgba(0,0,0,0.04);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-    }
-    .stat-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.04);
-    }
   </style>
 </head>
 <body>
@@ -322,21 +213,17 @@
       <img src="./assets/logos/Logotipo-BloxTrade/SVG/LOGO-BLOXTRADE-VS1-BG-VERDE-ESCURO.svg" alt="BLOXtrade" style="filter: brightness(0) invert(1);">
     </div>
     <nav class="sidebar-nav">
-      <a id="nav-dashboard" class="nav-item active">
+      <a href="#" class="nav-item">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
         Dashboard
       </a>
-      <a id="nav-new-article" class="nav-item">
+      <a href="#" class="nav-item active">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
         Novo Artigo
       </a>
-      <a id="nav-published-articles" class="nav-item">
+      <a href="#" class="nav-item">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
         Artigos Publicados
-      </a>
-      <a id="nav-candidates" class="nav-item">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-        Candidatos
       </a>
     </nav>
     <div class="sidebar-footer">
@@ -349,152 +236,85 @@
 
   <main class="admin-main">
     <div class="admin-header">
-      <h1 id="admin-page-title">Dashboard</h1>
-      <div id="admin-user-email" style="font-size: 0.875rem; color: #666; font-weight: 500;">Admin User</div>
+      <h1>Publicar Novo Artigo</h1>
+      <div style="font-size: 0.875rem; color: #666;">Admin User</div>
     </div>
 
-    <!-- VIEW: DASHBOARD -->
-    <div id="view-dashboard" class="admin-view active">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div style="font-size: 0.75rem; color: #888; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Artigos Publicados</div>
-          <div id="stat-total-articles" style="font-size: 3rem; font-weight: 700; color: var(--color-bg-dark); line-height: 1;">0</div>
-        </div>
-        <div class="stat-card">
-          <div style="font-size: 0.75rem; color: #888; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Última Publicação</div>
-          <div id="stat-latest-date" style="font-size: 1.25rem; font-weight: 600; color: var(--color-bg-dark); margin-top: 0.5rem; line-height: 1.2;">Nenhum artigo</div>
+    <div class="editor-card">
+      <div class="form-group">
+        <label class="form-label">Imagem de Capa</label>
+        <div class="image-upload-box" id="image-upload-box">
+          <input type="file" id="cover-image-input" accept="image/*" style="display: none;">
+          <img id="cover-image-preview" style="max-width: 100%; max-height: 200px; display: none; margin-bottom: 1rem; border-radius: var(--radius-sm);" />
+          <div id="image-upload-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <div style="font-weight: 500; color: var(--color-bg-dark); margin-bottom: 0.5rem;">Clique para fazer upload da imagem</div>
+            <div style="font-size: 0.875rem; color: #888;">JPG, PNG ou WebP. Tamanho recomendado: 1200x600px</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- VIEW: NEW ARTICLE -->
-    <div id="view-new-article" class="admin-view">
-      <div class="editor-card">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+        <div class="form-group" style="margin-bottom: 0;">
+          <label class="form-label">Título (Português) <span style="background:var(--color-bg-dark);color:white;padding:2px 6px;border-radius:4px;font-size:10px;margin-left:4px;">PT</span></label>
+          <input type="text" id="title-pt" class="form-input" placeholder="Ex: O impacto das Stablecoins nas Tesourarias Globais">
+        </div>
+        <div class="form-group" style="margin-bottom: 0;">
+          <label class="form-label">Título (Inglês) <span style="background:#e0e0e0;color:var(--color-bg-dark);padding:2px 6px;border-radius:4px;font-size:10px;margin-left:4px;">EN</span></label>
+          <input type="text" id="title-en" class="form-input" placeholder="Ex: The impact of Stablecoins on Global Treasuries">
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
         <div class="form-group">
-          <label class="form-label">Imagem de Capa</label>
-          <div class="image-upload-box" id="image-upload-box">
-            <input type="file" id="cover-image-input" accept="image/*" style="display: none;">
-            <img id="cover-image-preview" style="max-width: 100%; max-height: 200px; display: none; margin-bottom: 1rem; border-radius: var(--radius-sm);" />
-            <div id="image-upload-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-              <div style="font-weight: 500; color: var(--color-bg-dark); margin-bottom: 0.5rem;">Clique para fazer upload da imagem</div>
-              <div style="font-size: 0.875rem; color: #888;">JPG, PNG ou WebP. Tamanho recomendado: 1200x600px</div>
-            </div>
-          </div>
+          <label class="form-label">Tema / Categoria</label>
+          <select id="category" class="form-select">
+            <option>Selecione uma categoria...</option>
+            <option>Destaque</option>
+            <option>Guia Prático</option>
+            <option>Mercado</option>
+            <option>Compliance</option>
+            <option>Infraestrutura</option>
+            <option>Case de Sucesso</option>
+          </select>
         </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-          <div class="form-group" style="margin-bottom: 0;">
-            <label class="form-label">Título (Português) <span style="background:var(--color-bg-dark);color:white;padding:2px 6px;border-radius:4px;font-size:10px;margin-left:4px;">PT</span></label>
-            <input type="text" id="title-pt" class="form-input" placeholder="Ex: O impacto das Stablecoins nas Tesourarias Globais">
-          </div>
-          <div class="form-group" style="margin-bottom: 0;">
-            <label class="form-label">Título (Inglês) <span style="background:#e0e0e0;color:var(--color-bg-dark);padding:2px 6px;border-radius:4px;font-size:10px;margin-left:4px;">EN</span></label>
-            <input type="text" id="title-en" class="form-input" placeholder="Ex: The impact of Stablecoins on Global Treasuries">
-          </div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-          <div class="form-group">
-            <label class="form-label">Tema / Categoria</label>
-            <select id="category" class="form-select">
-              <option>Selecione uma categoria...</option>
-              <option>Destaque</option>
-              <option>Guia Prático</option>
-              <option>Mercado</option>
-              <option>Compliance</option>
-              <option>Infraestrutura</option>
-              <option>Case de Sucesso</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Autor</label>
-            <input type="text" id="author" class="form-input" placeholder="Ex: Equipe BLOXtrade" value="Equipe BLOXtrade">
-          </div>
-        </div>
-
-        <div class="form-group" style="margin-bottom: 3rem;">
-          <label class="form-label">Conteúdo do Artigo (Português) <span style="background:var(--color-bg-dark);color:white;padding:2px 6px;border-radius:4px;font-size:10px;margin-left:4px;">PT</span></label>
-          <!-- Mock toolbar for visual purposes -->
-          <div style="background: #f0f0f0; padding: 0.5rem 1rem; border: 1px solid #e0e0e0; border-bottom: none; border-radius: var(--radius-sm) var(--radius-sm) 0 0; display: flex; gap: 1rem;">
-            <span style="font-weight: bold; cursor:pointer;">B</span>
-            <span style="font-style: italic; cursor:pointer;">I</span>
-            <span style="text-decoration: underline; cursor:pointer;">U</span>
-            <span style="cursor:pointer;">H2</span>
-            <span style="cursor:pointer;">H3</span>
-            <span style="cursor:pointer;">🔗</span>
-          </div>
-          <textarea id="content-pt" class="form-textarea" style="border-radius: 0 0 var(--radius-sm) var(--radius-sm);" placeholder="Escreva seu artigo em português aqui..."></textarea>
-        </div>
-
         <div class="form-group">
-          <label class="form-label">Conteúdo do Artigo (Inglês) <span style="background:#e0e0e0;color:var(--color-bg-dark);padding:2px 6px;border-radius:4px;font-size:10px;margin-left:4px;">EN</span></label>
-          <!-- Mock toolbar for visual purposes -->
-          <div style="background: #f0f0f0; padding: 0.5rem 1rem; border: 1px solid #e0e0e0; border-bottom: none; border-radius: var(--radius-sm) var(--radius-sm) 0 0; display: flex; gap: 1rem;">
-            <span style="font-weight: bold; cursor:pointer;">B</span>
-            <span style="font-style: italic; cursor:pointer;">I</span>
-            <span style="text-decoration: underline; cursor:pointer;">U</span>
-            <span style="cursor:pointer;">H2</span>
-            <span style="cursor:pointer;">H3</span>
-            <span style="cursor:pointer;">🔗</span>
-          </div>
-          <textarea id="content-en" class="form-textarea" style="border-radius: 0 0 var(--radius-sm) var(--radius-sm);" placeholder="Write your article in english here..."></textarea>
-        </div>
-
-        <div class="actions-bar">
-          <button class="btn btn-draft">Salvar Rascunho</button>
-          <button id="btn-publish" class="btn btn-publish">Publicar Artigo</button>
+          <label class="form-label">Autor</label>
+          <input type="text" id="author" class="form-input" placeholder="Ex: Equipe BLOXtrade" value="Equipe BLOXtrade">
         </div>
       </div>
-    </div>
 
-    <!-- VIEW: PUBLISHED ARTICLES -->
-    <div id="view-published-articles" class="admin-view">
-      <div class="editor-card" style="padding: 2rem;">
-        <div style="overflow-x: auto;">
-          <table class="articles-table">
-            <thead>
-              <tr>
-                <th>Capa</th>
-                <th>Título (PT)</th>
-                <th>Categoria</th>
-                <th>Autor</th>
-                <th>Data</th>
-                <th style="text-align: right;">Ações</th>
-              </tr>
-            </thead>
-            <tbody id="published-articles-list">
-              <tr>
-                <td colspan="6" style="padding: 3rem; text-align: center; color: #888;">Carregando artigos...</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="form-group" style="margin-bottom: 3rem;">
+        <label class="form-label">Conteúdo do Artigo (Português) <span style="background:var(--color-bg-dark);color:white;padding:2px 6px;border-radius:4px;font-size:10px;margin-left:4px;">PT</span></label>
+        <!-- Mock toolbar for visual purposes -->
+        <div style="background: #f0f0f0; padding: 0.5rem 1rem; border: 1px solid #e0e0e0; border-bottom: none; border-radius: var(--radius-sm) var(--radius-sm) 0 0; display: flex; gap: 1rem;">
+          <span style="font-weight: bold; cursor:pointer;">B</span>
+          <span style="font-style: italic; cursor:pointer;">I</span>
+          <span style="text-decoration: underline; cursor:pointer;">U</span>
+          <span style="cursor:pointer;">H2</span>
+          <span style="cursor:pointer;">H3</span>
+          <span style="cursor:pointer;">🔗</span>
         </div>
+        <textarea id="content-pt" class="form-textarea" style="border-radius: 0 0 var(--radius-sm) var(--radius-sm);" placeholder="Escreva seu artigo em português aqui..."></textarea>
       </div>
-    </div>
 
-    <!-- VIEW: CANDIDATES -->
-    <div id="view-candidates" class="admin-view">
-      <div class="editor-card" style="padding: 2rem;">
-        <div style="overflow-x: auto;">
-          <table class="articles-table">
-            <thead>
-              <tr>
-                <th>Data</th>
-                <th>Nome</th>
-                <th>Contato</th>
-                <th>Área / Nível</th>
-                <th>Origem</th>
-                <th style="text-align: right;">Ações</th>
-              </tr>
-            </thead>
-            <tbody id="candidates-list">
-              <tr>
-                <td colspan="6" style="padding: 3rem; text-align: center; color: #888;">Carregando candidatos...</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="form-group">
+        <label class="form-label">Conteúdo do Artigo (Inglês) <span style="background:#e0e0e0;color:var(--color-bg-dark);padding:2px 6px;border-radius:4px;font-size:10px;margin-left:4px;">EN</span></label>
+        <!-- Mock toolbar for visual purposes -->
+        <div style="background: #f0f0f0; padding: 0.5rem 1rem; border: 1px solid #e0e0e0; border-bottom: none; border-radius: var(--radius-sm) var(--radius-sm) 0 0; display: flex; gap: 1rem;">
+          <span style="font-weight: bold; cursor:pointer;">B</span>
+          <span style="font-style: italic; cursor:pointer;">I</span>
+          <span style="text-decoration: underline; cursor:pointer;">U</span>
+          <span style="cursor:pointer;">H2</span>
+          <span style="cursor:pointer;">H3</span>
+          <span style="cursor:pointer;">🔗</span>
         </div>
+        <textarea id="content-en" class="form-textarea" style="border-radius: 0 0 var(--radius-sm) var(--radius-sm);" placeholder="Write your article in english here..."></textarea>
+      </div>
+
+      <div class="actions-bar">
+        <button class="btn btn-draft">Salvar Rascunho</button>
+        <button id="btn-publish" class="btn btn-publish">Publicar Artigo</button>
       </div>
     </div>
   </main>

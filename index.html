@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
@@ -65,7 +65,7 @@
     a { color: inherit; text-decoration: none; }
     .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
     @media (max-width: 768px) { .container { padding: 0 1.5rem; } }
-    .section { padding-top: var(--space-xl); padding-bottom: var(--space-xl); position: relative; scroll-margin-top: 150px; }
+    .section { padding-top: var(--space-xl); padding-bottom: var(--space-xl); position: relative; }
     .section-dark { background-color: var(--color-bg-dark); color: var(--color-text-inverse); }
     .h1, .h2, .h3, .h4 { font-family: var(--font-family-heading); font-weight: 900; text-transform: uppercase; letter-spacing: 0.02em; line-height: 0.9; }
     .h1 { font-size: clamp(4.5rem, 14vw, 12rem); }
@@ -101,8 +101,8 @@
     .btn-secondary { background-color: var(--color-accent); color: var(--color-bg-dark); border: none; }
     .btn-secondary:hover { background-color: var(--color-accent-hover); transform: translateY(-2px); }
   </style>
-  <link rel="preload" href="./styles/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="./styles/main.css"></noscript>
+  <link rel="preload" href="./styles/main.css?v=2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="./styles/main.css?v=2"></noscript>
 </head>
 <body>
 
@@ -117,7 +117,8 @@
         <a href="index.html#infrastructure" class="nav-link" data-i18n="nav_infrastructure">Infraestrutura</a>
         <a href="index.html#company" class="nav-link" data-i18n="nav_company">Empresa</a>
         <a href="index.html#solutions" class="nav-link" data-i18n="nav_solutions">Soluções</a>
-        <a href="news.html" class="nav-link" data-i18n="nav_insights">Notícias</a>
+        <a href="compliance.html" class="nav-link" data-i18n="nav_compliance">Compliance</a>
+        <a href="news.html" class="nav-link" data-i18n="nav_insights">Conteúdos</a>
       </nav>
 
       <div class="header-actions">
@@ -248,7 +249,7 @@
     </div>
 
     <!-- 5. SOLUTION -->
-    <section id="company" class="section section-dark">
+    <section class="section section-dark">
       <div class="container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
 
         <h2 class="h2 reveal-up" data-i18n="solution_title" data-i18n-html>Uma camada financeira<br>moderna para operações<br>internacionais.</h2>
@@ -268,7 +269,7 @@
 
 
     <!-- 5. WE ARE GLOBAL -->
-    <section class="section" style="background-color: #81cd4e; color: #1B2417; text-align: center; padding-top: 4rem; padding-bottom: 4rem;">
+    <section id="company" class="section" style="background-color: #81cd4e; color: #1B2417; text-align: center; padding-top: 4rem; padding-bottom: 4rem;">
       <div class="container" style="max-width: 800px; margin: 0 auto;">
         <h2 class="h1 reveal-up" data-i18n="weareglobal_title" style="margin-bottom: 2rem; color: #1B2417;">WE ARE GLOBAL</h2>
         <p class="body-large reveal-up" data-i18n="weareglobal_text" style="color: #1B2417;">
@@ -388,7 +389,7 @@
         <div>
           <h2 class="h3 reveal-up" data-i18n="compliance_title">Estrutura global, operação alinhada ao ambiente regulatório.</h2>
           <p class="body-large reveal-up" style="margin: 2rem 0;" data-i18n="compliance_body">
-            Infraestrutura fintech de última geração que combina segurança de nível institucional, estruturas avançadas de compliance e capacidades de pagamentos globais integradas — garantindo que cada transação opere sob os mais altos padrões regulatórios e operacionais internacionais.
+            A BLOXtrade atua em conformidade com o Marco Legal dos Ativos Virtuais no Brasil...
           </p>
           <div class="reveal-up" style="padding: 1.5rem; background: var(--color-bg-primary); border-radius: var(--radius-sm); color: var(--color-text-secondary); font-size: 0.875rem;" data-i18n="compliance_support">
             Segurança, transparência e aderência regulatória não são anexos da operação. São parte da infraestrutura.
@@ -406,31 +407,34 @@
           <!-- Logo Garden Placeholders -->
           <div class="reveal-up" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
             <div class="partner-logo-box">
-               <img src="./assets/logo/bank-of-china.svg" alt="Bank of China" />
+               <img src="./assets/logo/bank-of-china.svg" alt="Bank of China" width="2500" height="707" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 1'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/chainalysis.svg" alt="Chainalysis" />
+               <img src="./assets/logo/chainalysis.svg" alt="Chainalysis" width="617" height="100" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 2'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/dbs-bank-logo-png-transparent.png" alt="DBS Bank" style="transform: scale(2.0);" />
+               <img src="./assets/logo/dbs-bank.svg" alt="DBS Bank" width="94" height="28" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 3'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/full-logo.svg" alt="Full Logo" />
+               <img src="./assets/logo/full-logo.svg" alt="Full Logo" width="2832" height="961" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 4'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/utila.png" alt="Utila" />
+               <img src="./assets/logo/utila.png" alt="Utila" width="59" height="59" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 5'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/abtoken.svg" alt="ABToken" />
+               <img src="./assets/logo/abtoken.svg" alt="ABToken" width="200" height="36" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: brightness(0); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 6'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/bigdatacorp.svg" alt="BigDataCorp" />
+               <img src="./assets/logo/bigdatacorp.svg" alt="BigDataCorp" width="300" height="150" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 7'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/lead bank.webp" alt="Lead Bank" />
+               <img src="./assets/logo/fintrac-resized.webp" alt="Fintrac" width="150" height="237" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Fintrac'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
             <div class="partner-logo-box">
-               <img src="./assets/logo/standard-chartered-seeklogo.png" alt="Standard Chartered" />
+               <img src="./assets/logo/montana-msb.webp" alt="Montana MSB" width="300" height="28" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 9'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
+            </div>
+            <div class="partner-logo-box">
+               <img src="./assets/logo/standard-chartered.webp" alt="Standard Chartered" width="300" height="119" style="max-width: 80%; max-height: 80%; mix-blend-mode: multiply; filter: grayscale(100%) contrast(150%); opacity: 0.8;" onerror="this.style.display='none'; this.parentElement.innerText='Logo 10'; this.parentElement.style.color='#1B2417'; this.parentElement.style.fontWeight='600';" />
             </div>
           </div>
         </div>
@@ -479,64 +483,61 @@
   </main>
 
   <!-- 14. FOOTER -->
-    <footer class="footer">
+  <footer class="footer">
     <div class="container">
-      <div class="footer-layout">
-        
-        <div class="footer-left">
-          <div class="footer-brand-row">
-            <a href="index.html" class="logo">
-              <img src="./assets/logos/Logotipo-BloxTrade/SVG/LOGO-BLOXTRADE-VS1-BG-VERDE-ESCURO.svg" alt="BLOXtrade Logo" width="180" height="36" loading="lazy" decoding="async">
-            </a>
-            <div class="social-links">
-              <a href="https://www.linkedin.com/company/bloxtradeofficial/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" class="social-link">
-                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-              </a>
-              <a href="https://x.com/_BLOXtrade" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer" class="social-link">
-                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              </a>
-              <a href="https://www.instagram.com/bloxtrade.global/" aria-label="Instagram" target="_blank" rel="noopener noreferrer" class="social-link">
-                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              </a>
-            </div>
-          </div>
-          
-          <div class="footer-legal">
-            <p data-i18n="footer_legal_note" data-i18n-html>A BLOXtrade Technology Inc. � registrada no Financial Transactions and Reports Analysis Centre of Canada (FINTRAC) e registrada na FinCEN como MSB no estado de Montana.<br><br>A BLOXtrade n�o � um banco. Os servi�os de pagamento podem ser fornecidos por institui��es financeiras licenciadas. As taxas variam com base no m�todo de pagamento e destino. A velocidade de transfer�ncia pode variar com base nos tempos de processamento do banco receptor e nas condi��es da rede de pagamentos. A disponibilidade do servi�o e os limites de transa��o podem variar de acordo com a regi�o e a institui��o parceira.</p>
-          </div>
-          
-          <div class="footer-copyright">
-            <span data-i18n="footer_copyright">�2026. ALL RIGHTS RESERVED. BLOXTRADE TECHNOLOGY INC.</span>
-            <div class="footer-bottom-links">
-              <a href="terms.html" data-i18n="footer_col4_2">Termos de uso</a>
-              <a href="privacy-policy.html" data-i18n="footer_col4_1">Pol�tica de privacidade</a>
-            </div>
+      <!-- 1. Brand & Socials -->
+      <div class="footer-brand" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2.5rem;">
+        <a href="index.html" class="logo" style="margin-bottom: 0;">
+          <img src="./assets/logos/Logotipo-BloxTrade/SVG/LOGO-BLOXTRADE-VS1-BG-VERDE-ESCURO.svg" alt="BLOXtrade Logo" width="180" height="36" loading="lazy" decoding="async">
+        </a>
+        <div class="social-links" style="margin-top: 0;">
+          <a href="https://www.linkedin.com/company/bloxtradeofficial/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://x.com/_BLOXtrade" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/bloxtrade.global/" aria-label="Instagram" target="_blank" rel="noopener noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Disclaimer Text -->
+      <div class="footer-legal" style="border-top: none; padding-top: 0; padding-bottom: 3rem; margin-bottom: 0;">
+        <p data-i18n="footer_legal_note" data-i18n-html>A BLOXtrade Technology Inc. é registrada no Financial Transactions and Reports Analysis Centre of Canada (FINTRAC) e registrada na FinCEN como MSB no estado de Montana.<br><br>A BLOXtrade não é um banco. Os serviços de pagamento podem ser fornecidos por instituições financeiras licenciadas. As taxas variam com base no método de pagamento e destino. A velocidade de transferência pode variar com base nos tempos de processamento do banco receptor e nas condições da rede de pagamentos. A disponibilidade do serviço e os limites de transação podem variar de acordo com a região e a instituição parceira.</p>
+      </div>
+
+      <!-- 3. Copyright & Legal Links -->
+      <div class="footer-bottom">
+        <span class="footer-copyright" data-i18n="footer_copyright">©2026. ALL RIGHTS RESERVED. BLOXTRADE TECHNOLOGY INC.</span>
+        <div class="footer-bottom-links">
+          <a href="terms.html" data-i18n="footer_col4_2">TERMS OF USE</a>
+          <a href="privacy-policy.html" data-i18n="footer_col4_1">PRIVACY POLICY</a>
+        </div>
+      </div>
+
+      <!-- 4. Navigation Grid -->
+      <div class="footer-grid">
+        <!-- Coluna 1 -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <a href="index.html#company" class="footer-col-title" style="display:block; text-decoration:none; margin-bottom: 0;" data-i18n="footer_col1_title">Company</a>
+          <a href="index.html#solutions" class="footer-col-title" style="display:block; text-decoration:none; margin-bottom: 0;" data-i18n="footer_col2_title">Solutions</a>
+          <a href="news.html" class="footer-col-title" style="display:block; text-decoration:none; margin-bottom: 0;" data-i18n="footer_col3_title">Content</a>
+          <div class="footer-links">
+            <a href="news.html" data-i18n="footer_col3_1">News</a>
           </div>
         </div>
 
-        <div class="footer-right">
-          <div class="footer-links-col">
-            <div class="footer-col-title" data-i18n="footer_col1_title">Empresa</div>
-            <div class="footer-links">
-              <a href="index.html#company" data-i18n="footer_col1_1">Sobre</a>
-              <a href="careers.html" data-i18n="footer_col1_2">Carreiras</a>
-              <a href="contact.html" data-i18n="footer_col1_3">Contato</a>
-              <a href="compliance.html" data-i18n="footer_col4_3">Compliance</a>
-            </div>
-          </div>
-  
-          <div class="footer-links-col">
-            <a href="index.html#solutions" class="footer-col-title" data-i18n="footer_col2_title">Soluções</a>
-          </div>
-  
-          <div class="footer-links-col">
-            <div class="footer-col-title" data-i18n="footer_col3_title">Conte�dos</div>
-            <div class="footer-links">
-              <a href="news.html" data-i18n="footer_col3_1">Blog</a>
-            </div>
+        <!-- Coluna 2 -->
+        <div>
+          <div class="footer-links" style="padding-top: 0.2rem; display: flex; flex-direction: column; gap: 1.5rem;">
+            <a href="index.html#company" data-i18n="footer_col1_1">About</a>
+            <a href="careers.html" data-i18n="footer_col1_2">Careers</a>
+            <a href="contact.html" data-i18n="footer_col1_3">Contact</a>
+            <a href="compliance.html" data-i18n="footer_col4_3">Compliance</a>
           </div>
         </div>
-        
       </div>
     </div>
   </footer>
