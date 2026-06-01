@@ -13,6 +13,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="./styles/main.css?v=2">
+  <link rel="stylesheet" href="./styles/legal.css">
 </head>
 <body class="bg-dark">
 
@@ -47,12 +48,685 @@
     </div>
   </header>
 
-  <main style="padding-top: 150px; padding-bottom: 100px;">
-    <div class="container" style="max-width: 800px; margin: 0 auto;">
-      <h1 class="h2 reveal-up" style="margin-bottom: 2rem;" data-i18n="privacy_title">Política de Privacidade</h1>
-      <div class="reveal-up delay-100" style="color: var(--color-text-inverse-muted); line-height: 1.8; font-size: 1.125rem;">
-        <p data-i18n="privacy_content">A BLOXtrade está comprometida em proteger sua privacidade. Esta política descreve como coletamos, usamos e protegemos seus dados pessoais de acordo com a legislação vigente. As informações completas serão disponibilizadas em breve.</p>
+  <main class="legal-page">
+    <div class="container">
+      
+      <!-- HEADER TITLE SECTION -->
+      <section class="legal-header-section">
+        <div class="lang-pt">
+          <div class="eyebrow">Legal</div>
+          <h1 class="h2">Política de Privacidade</h1>
+          <p class="last-updated">Última atualização: 29 de Maio de 2026</p>
+        </div>
+        <div class="lang-en">
+          <div class="eyebrow">Legal</div>
+          <h1 class="h2">Privacy Policy</h1>
+          <p class="last-updated">Last updated: May 29, 2026</p>
+        </div>
+      </section>
+
+      <!-- MAIN PRIVACY CONTENT LAYOUT -->
+      <div class="legal-layout">
+        
+        <!-- SIDEBAR TOC -->
+        <aside class="legal-sidebar">
+          <div class="lang-pt">
+            <h3 class="toc-title">Navegação</h3>
+            <div class="toc-list">
+              <a href="#acceptance" class="toc-link">1. Aceitação dos Termos</a>
+              <a href="#definitions" class="toc-link">2. Interpretação e Definições</a>
+              <a href="#collection" class="toc-link">3. Coleta de Dados Pessoais</a>
+              <a href="#use-of-data" class="toc-link">4. Uso de Dados Pessoais</a>
+              <a href="#sharing" class="toc-link">5. Compartilhamento de Dados</a>
+              <a href="#retention-transfer" class="toc-link">6. Retenção e Transferência</a>
+              <a href="#disclosure-security" class="toc-link">7. Divulgação e Segurança</a>
+              <a href="#compliance-regulations" class="toc-link">8. Proteção de Dados e GLBA</a>
+              <a href="#internal-policies" class="toc-link">9. Políticas de Segurança Internas</a>
+              <a href="#contact" class="toc-link">10. Informações de Contato</a>
+            </div>
+          </div>
+          <div class="lang-en">
+            <h3 class="toc-title">Navigation</h3>
+            <div class="toc-list">
+              <a href="#acceptance" class="toc-link">1. Acceptance of Terms</a>
+              <a href="#definitions" class="toc-link">2. Interpretation & Definitions</a>
+              <a href="#collection" class="toc-link">3. Collection of Personal Data</a>
+              <a href="#use-of-data" class="toc-link">4. Use of Personal Data</a>
+              <a href="#sharing" class="toc-link">5. Sharing Personal Data</a>
+              <a href="#retention-transfer" class="toc-link">6. Retention & Transfer</a>
+              <a href="#disclosure-security" class="toc-link">7. Disclosure & Security</a>
+              <a href="#compliance-regulations" class="toc-link">8. Data Protection & GLBA</a>
+              <a href="#internal-policies" class="toc-link">9. Internal Security Policies</a>
+              <a href="#contact" class="toc-link">10. Contact Information</a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- CONTENT -->
+        <article class="legal-content">
+
+          <!-- SECTION 1: ACCEPTANCE -->
+          <section id="acceptance" class="policy-block">
+            <div class="lang-pt">
+              <h2>1. Aceitação da Política de Privacidade</h2>
+              <p>Esta Política de Privacidade descreve nossas políticas e procedimentos sobre a coleta, uso e divulgação de suas informações quando você usa nossos serviços, informando sobre seus direitos de privacidade e como a lei o protege.</p>
+              <p>Ao utilizar nossos serviços, você concorda com a coleta e uso de informações de acordo com esta Política de Privacidade. Caso não concorde com algum dos termos descritos nesta política, recomendamos a não utilização dos nossos serviços.</p>
+            </div>
+            <div class="lang-en">
+              <h2>1. Acceptance of the Privacy Policy</h2>
+              <p>This Privacy Policy describes our policies and procedures on the collection, use, and disclosure of your information when you use our services and informs you about your privacy rights and how the law protects you.</p>
+              <p>By using our services, you agree to the collection and use of information in accordance with this Privacy Policy. If you do not agree with any terms described in this policy, we recommend that you do not use our services.</p>
+            </div>
+          </section>
+
+          <!-- SECTION 2: INTERPRETATION & DEFINITIONS -->
+          <section id="definitions" class="policy-block">
+            <!-- PORTUGUESE VERSION -->
+            <div class="lang-pt">
+              <h2>2. Interpretação e Definições</h2>
+              <h3>Interpretação</h3>
+              <p>As palavras cuja letra inicial é maiúscula têm significados definidos sob as seguintes condições. As definições a seguir devem ter o mesmo significado, independentemente de aparecerem no singular ou no plural.</p>
+              
+              <h3>Definições</h3>
+              <p>Para fins desta Política de Privacidade:</p>
+              
+              <div class="definitions-container">
+                <div class="definition-item">
+                  <div class="definition-term">Você (You)</div>
+                  <div class="definition-desc">Significa o indivíduo que acessa ou usa o serviço, ou a empresa ou outra entidade legal em nome da qual tal indivíduo está acessando ou usando o serviço, conforme aplicável.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Empresa (Company)</div>
+                  <div class="definition-desc">Refere-se à BLOXtrade LLC (neste contrato referida como "a Empresa", "Nós", "Nos" ou "Nosso").</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Website</div>
+                  <div class="definition-desc">Refere-se ao portal online da BLOXtrade LLC, acessível a partir do endereço <a href="https://bloxtrade.global" target="_blank" style="color: var(--color-accent); font-weight: 500;">bloxtrade.global</a>.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Serviço (Service)</div>
+                  <div class="definition-desc">Refere-se aos serviços prestados pela Empresa, especializada em financiamento comercial e soluções baseadas em tecnologia para diversos setores.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Dados Pessoais (Personal Data)</div>
+                  <div class="definition-desc">Qualquer informação relacionada a um indivíduo identificado ou identificável.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Dados de Uso (Usage Data)</div>
+                  <div class="definition-desc">Refere-se aos dados coletados automaticamente, gerados pelo uso do serviço ou a partir da própria infraestrutura do serviço (por exemplo, a duração da visita a uma página).</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Cookies</div>
+                  <div class="definition-desc">Pequenos arquivos colocados em seu computador, dispositivo móvel ou qualquer outro dispositivo por um website, contendo os detalhes de seu histórico de navegação nesse website, entre seus diversos usos.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Dispositivo (Device)</div>
+                  <div class="definition-desc">Significa qualquer dispositivo que possa acessar o serviço, como um computador, um telefone celular ou um tablet digital.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Prestador de Serviços (Service Provider)</div>
+                  <div class="definition-desc">Qualquer pessoa física ou jurídica que processe os dados em nome da empresa. Refere-se a empresas terceirizadas ou indivíduos contratados pela empresa para facilitar o serviço, fornecer o serviço em nome da empresa, executar serviços relacionados ao serviço ou auxiliar a empresa na análise de como o serviço é utilizado.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Afiliada (Affiliate)</div>
+                  <div class="definition-desc">Uma entidade que controla, é controlada por ou está sob controle comum com uma parte, onde "controle" significa a propriedade de 50% ou mais das ações, participações societárias ou outros valores mobiliários com direito a voto para a eleição de diretores ou outra autoridade administradora.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Conta (Account)</div>
+                  <div class="definition-desc">Significa uma conta exclusiva criada para você acessar nosso serviço ou partes de nosso serviço.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Serviço de Mídia Social de Terceiros</div>
+                  <div class="definition-desc">Refere-se a qualquer website ou rede social através do qual um usuário possa fazer login ou criar uma conta para usar o serviço.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">País (Country)</div>
+                  <div class="definition-desc">Refere-se aos Estados Unidos.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ENGLISH VERSION -->
+            <div class="lang-en">
+              <h2>2. Interpretation and Definitions</h2>
+              <h3>Interpretation</h3>
+              <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+              
+              <h3>Definitions</h3>
+              <p>For the purposes of this Privacy Policy:</p>
+              
+              <div class="definitions-container">
+                <div class="definition-item">
+                  <div class="definition-term">You</div>
+                  <div class="definition-desc">Means the individual accessing or using the service, or the company, or other legal entity on behalf of which such individual is accessing or using the service, as applicable.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Company</div>
+                  <div class="definition-desc">Refers to BLOXtrade LLC (referred to as either "the Company", "We", "Us" or "Our" in this Agreement).</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Website</div>
+                  <div class="definition-desc">Refers to BLOXtrade LLC accessible from <a href="https://bloxtrade.global" target="_blank" style="color: var(--color-accent); font-weight: 500;">bloxtrade.global</a>.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Service</div>
+                  <div class="definition-desc">Refers to the company that specializes in trade financing and technology-driven solutions for various industries.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Personal Data</div>
+                  <div class="definition-desc">Is any information that relates to an identified or identifiable individual.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Usage Data</div>
+                  <div class="definition-desc">Refers to data collected automatically, either generated by the use of the service or from the service infrastructure itself, for example, the duration of a page visit.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Cookies</div>
+                  <div class="definition-desc">Are small files that are placed on your computer, mobile device, or any other device by a website, containing the details of your browsing history on that website among its many uses.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Device</div>
+                  <div class="definition-desc">Means any device that can access the service such as a computer, a cell phone, or a digital tablet.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Service Provider</div>
+                  <div class="definition-desc">Means any natural or legal person who processes the data on behalf of the company. It refers to third-party companies or individuals employed by the company to facilitate the service, to provide the service on behalf of the company, to perform services related to the service, or to assist the company in analyzing how the service is used.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Affiliate</div>
+                  <div class="definition-desc">Means an entity that controls, is controlled by, or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Account</div>
+                  <div class="definition-desc">Means a unique account created for you to access our service or parts of our service.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Third-party Social Media Service</div>
+                  <div class="definition-desc">Refers to any website or any social network website through which a user can log in or create an account to use the service.</div>
+                </div>
+                <div class="definition-item">
+                  <div class="definition-term">Country</div>
+                  <div class="definition-desc">Refers to the United States.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 3: DATA COLLECTION -->
+          <section id="collection" class="policy-block">
+            <!-- PORTUGUESE VERSION -->
+            <div class="lang-pt">
+              <h2>3. Coleta de Dados Pessoais</h2>
+              <p>Coletamos diferentes tipos de informações para diversas finalidades, a fim de fornecer e melhorar nossos serviços para você.</p>
+              
+              <h3>Dados Pessoais Solicitados</h3>
+              <p>Ao usar nosso serviço, podemos solicitar que você nos forneça certas informações de identificação pessoal que podem ser usadas para contatá-lo ou identificá-lo. Isso inclui, mas não se limita a:</p>
+              <ul class="policy-list">
+                <li>Nome completo</li>
+                <li>Número de telefone</li>
+                <li>Endereço residencial completo (Cidade, Estado, Província, CEP)</li>
+                <li>Data de nascimento</li>
+                <li>Documento de identidade legal</li>
+                <li>Se necessário, Número de Seguro Social (SSN) ou Número de Identificação do Contribuinte (TIN/CPF)</li>
+                <li>Comprovante de endereço em alguns casos</li>
+              </ul>
+
+              <h3>Dados de Uso (Usage Data)</h3>
+              <p>Os Dados de Uso são coletados de forma automatizada ao utilizar o serviço e podem incluir:</p>
+              <ul class="policy-list">
+                <li>Endereço IP (Protocolo de Internet) do seu dispositivo</li>
+                <li>Tipo e versão do navegador da web</li>
+                <li>As páginas do nosso serviço que você visita, data e hora da sua visita</li>
+                <li>Tempo gasto nessas páginas</li>
+                <li>Identificadores exclusivos de dispositivo e outros dados de diagnóstico</li>
+              </ul>
+              <p>Ao acessar por meio de dispositivos móveis, informações adicionais podem ser coletadas, tais como tipo de dispositivo, ID exclusivo do celular, IP do celular, sistema operacional do dispositivo e navegador utilizado.</p>
+
+              <div class="compliance-banner">
+                <div class="compliance-banner-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="compliance-banner-content">
+                  <h4>Análise Regulatória Automatizada (KYC/AML)</h4>
+                  <p>Utilizamos serviços automatizados de triagem para avaliar os clientes ao realizar transações de criptoativos, visando cumprir as regras e regulamentos governamentais de "Conheça seu Cliente" (Know Your Customer - KYC), Prevenção à Lavagem de Dinheiro (AML) e outras normas aplicáveis.</p>
+                </div>
+              </div>
+
+              <h3>Tecnologias de Rastreamento e Cookies</h3>
+              <p>Utilizamos cookies e tecnologias de rastreamento semelhantes (como sinalizadores/beacons, tags e scripts) para acompanhar a atividade em nossa plataforma e armazenar certas informações analíticas de uso.</p>
+              <ul class="policy-list">
+                <li><strong>Cookies Persistentes:</strong> Permanecem no seu computador ou dispositivo móvel mesmo quando você fica offline.</li>
+                <li><strong>Cookies de Sessão:</strong> São excluídos automaticamente assim que você fecha o navegador.</li>
+              </ul>
+              <p>Você pode configurar seu navegador para recusar todos os cookies, no entanto, isso pode limitar o acesso a algumas funcionalidades do nosso serviço.</p>
+            </div>
+
+            <!-- ENGLISH VERSION -->
+            <div class="lang-en">
+              <h2>3. Collecting and Using Your Personal Data</h2>
+              <p>We collect several different types of information for various purposes to provide and improve our service to you.</p>
+              
+              <h3>Types of Data Collected</h3>
+              <p>While using our service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to:</p>
+              <ul class="policy-list">
+                <li>First name and last name</li>
+                <li>Phone number</li>
+                <li>Address, State, Province, ZIP/Postal code, City</li>
+                <li>Date of Birth</li>
+                <li>Legal identity document</li>
+                <li>If required, your Social Security Number or Taxpayer Identification Number</li>
+                <li>Proof of Address in some cases</li>
+              </ul>
+
+              <h3>Usage Data</h3>
+              <p>Usage Data is collected automatically when using the service. Usage Data may include:</p>
+              <ul class="policy-list">
+                <li>Device's Internet Protocol address (e.g. IP address)</li>
+                <li>Browser type and browser version</li>
+                <li>The pages of our service that you visit, the time and date of your visit</li>
+                <li>The time spent on those pages</li>
+                <li>Unique device identifiers and other diagnostic data</li>
+              </ul>
+              <p>When you access the service by or through a mobile device, we may collect certain information automatically, including the type of mobile device, unique ID, IP address, operating system, mobile browser, and other diagnostic data.</p>
+
+              <div class="compliance-banner">
+                <div class="compliance-banner-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="compliance-banner-content">
+                  <h4>Automated Customer Screening (KYC/AML)</h4>
+                  <p>We use automated services to screen customers when making crypto purchases or sales to comply with "know your customer" (KYC) and other government rules, regulations, and anti-money laundering (AML) laws.</p>
+                </div>
+              </div>
+
+              <h3>Tracking Technologies and Cookies</h3>
+              <p>We use cookies and similar tracking technologies to track the activity on our service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze our service.</p>
+              <ul class="policy-list">
+                <li><strong>Persistent Cookies:</strong> Remain on your personal computer or mobile device when you go offline.</li>
+                <li><strong>Session Cookies:</strong> Deleted as soon as you close your web browser.</li>
+              </ul>
+              <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some parts of our service.</p>
+            </div>
+          </section>
+
+          <!-- SECTION 4: USE OF DATA -->
+          <section id="use-of-data" class="policy-block">
+            <!-- PORTUGUESE VERSION -->
+            <div class="lang-pt">
+              <h2>4. Uso de Seus Dados Pessoais</h2>
+              <p>A Empresa pode utilizar os dados pessoais coletados para os seguintes propósitos específicos:</p>
+              <ul class="policy-list">
+                <li><strong>Fornecer e manter nosso serviço:</strong> Incluindo a monitoração e otimização do uso do serviço.</li>
+                <li><strong>Gerenciar sua Conta:</strong> Gerenciar seu registro como usuário. Os dados fornecidos oferecem acesso a diferentes recursos exclusivos disponíveis apenas para usuários registrados.</li>
+                <li><strong>Execução de contratos:</strong> Desenvolvimento, conformidade e execução de contratos de compra de produtos, itens ou serviços contratados.</li>
+                <li><strong>Contato com você:</strong> Contato via e-mail, correio postal, chamadas telefônicas, SMS ou notificações de aplicativo móvel para atualizações operacionais ou comunicados sobre recursos e segurança.</li>
+                <li><strong>Comunicações e ofertas:</strong> Envio de novidades, ofertas especiais e informações gerais sobre outros serviços e eventos semelhantes aos já adquiridos, a menos que você opte por não receber tais e-mails.</li>
+                <li><strong>Atendimento de solicitações:</strong> Gerenciamento e atendimento de requisições de suporte ou contato enviadas para nós.</li>
+              </ul>
+            </div>
+
+            <!-- ENGLISH VERSION -->
+            <div class="lang-en">
+              <h2>4. Use of Your Personal Data</h2>
+              <p>The Company may use Personal Data for the following purposes:</p>
+              <ul class="policy-list">
+                <li><strong>To provide and maintain our service:</strong> Including monitoring the usage of our service.</li>
+                <li><strong>To manage your account:</strong> To manage your registration as a user of the service. The personal data you provide can give you access to different functionalities of the service that are available to you as a registered user.</li>
+                <li><strong>For the performance of a contract:</strong> The development, compliance, and undertaking of the purchase contract for the products, items, or services you have purchased or of any other contract with us through the service.</li>
+                <li><strong>To contact you:</strong> To contact you by email, US Mail, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products, or contracted services, including security updates, when necessary or reasonable for their implementation.</li>
+                <li><strong>To provide you with news:</strong> Special offers, and general information about other goods, services, and events which we offer that are similar to those that you have already purchased or enquired about unless you have opted not to receive such information.</li>
+                <li><strong>To manage your requests:</strong> To attend and manage your requests to us.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- SECTION 5: SHARING -->
+          <section id="sharing" class="policy-block">
+            <!-- PORTUGUESE VERSION -->
+            <div class="lang-pt">
+              <h2>5. Compartilhamento de Seus Dados Pessoais</h2>
+              <p>Garantimos a privacidade dos seus dados, contudo, podemos compartilhar informações pessoais nas seguintes situações restritas:</p>
+              <ul class="policy-list">
+                <li><strong>Com Prestadores de Serviços:</strong> Compartilhamento com fornecedores de tecnologia e parceiros operacionais para monitorar e analisar o uso da nossa plataforma ou efetuar contatos.</li>
+                <li><strong>Em Transferências de Negócios:</strong> Durante fusões, venda de ativos da empresa, financiamento ou aquisição de toda ou parte dos nossos negócios por outra empresa.</li>
+                <li><strong>Com Afiliadas:</strong> Compartilhamento com nossa empresa controladora ou subsidiárias que operem sob a mesma Política de Privacidade.</li>
+                <li><strong>Com Parceiros Comerciais:</strong> Parcerias de negócios para oferecer produtos ou promoções integrados.</li>
+                <li><strong>Com outros usuários:</strong> Quando informações são compartilhadas voluntariamente em áreas públicas. Ao registrar-se através de Mídias Sociais de Terceiros, os seus contatos poderão visualizar seu perfil e nome.</li>
+              </ul>
+            </div>
+
+            <!-- ENGLISH VERSION -->
+            <div class="lang-en">
+              <h2>5. Sharing Your Personal Data</h2>
+              <p>We respect your privacy, but we may share your personal information in the following situations:</p>
+              <ul class="policy-list">
+                <li><strong>With Service Providers:</strong> We may share your personal information with service providers to monitor and analyze the use of our service, or to contact you.</li>
+                <li><strong>For Business Transfers:</strong> We may share or transfer your personal information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
+                <li><strong>With Affiliates:</strong> We may share your information with our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include our parent company and any other subsidiaries, joint venture partners, or other companies that we control or that are under common control with us.</li>
+                <li><strong>With Business Partners:</strong> We may share your information with our business partners to offer you certain products, services, or promotions.</li>
+                <li><strong>With Other Users:</strong> When you share personal information or otherwise interact in public areas, such info may be viewed by all users and publicly distributed. If you register through a Third-Party Social Media Service, your contacts may see your name, profile, pictures, and description of your activity.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- SECTION 6: RETENTION & TRANSFER -->
+          <section id="retention-transfer" class="policy-block">
+            <!-- PORTUGUESE VERSION -->
+            <div class="lang-pt">
+              <h2>6. Retenção e Transferência de Dados</h2>
+              
+              <h3>Retenção de Dados Pessoais</h3>
+              <p>A Empresa reterá seus Dados Pessoais apenas pelo período estritamente necessário para os fins indicados nesta Política de Privacidade. Reteremos e usaremos seus dados na medida necessária para cumprir nossas obrigações legais, auditorias regulatórias, resoluções de disputas judiciais e aplicação de termos comerciais.</p>
+              <p>Os Dados de Uso geralmente são mantidos por um período menor, exceto quando usados para fortalecer a segurança da infraestrutura, otimizar nossos sistemas, ou por obrigatoriedade legal de guarda.</p>
+
+              <h3>Transferência Internacional de Dados</h3>
+              <p>Suas informações são processadas nos escritórios operacionais da Empresa e em qualquer outro local de infraestrutura de nuvem e parceiros operacionais. Isso significa que as informações podem ser transferidas e mantidas em sistemas localizados fora do seu estado, província, país ou jurisdição fiscal onde as leis de privacidade podem diferir da sua.</p>
+              <p>O seu consentimento com esta Política de Privacidade, seguido pelo envio dos dados, representa sua concordância com essas transferências de dados. A Empresa adotará as medidas razoáveis e necessárias para garantir o tratamento seguro das suas informações em conformidade com as regras desta política.</p>
+            </div>
+
+            <!-- ENGLISH VERSION -->
+            <div class="lang-en">
+              <h2>6. Retention and Transfer of Your Personal Data</h2>
+              
+              <h3>Retention of Your Personal Data</h3>
+              <p>The Company will retain your personal data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your personal data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.</p>
+              <p>The Company will also retain usage data for internal analysis purposes. Usage data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of our service, or we are legally obligated to retain this data for longer periods.</p>
+
+              <h3>Transfer of Your Personal Data</h3>
+              <p>Your information, including personal data, is processed at the company's operating offices and in any other place where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of your state, province, country, or other governmental jurisdiction where the data protection laws may differ from those from your jurisdiction.</p>
+              <p>Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer. The Company will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy.</p>
+            </div>
+          </section>
+
+          <!-- SECTION 7: DISCLOSURE & SECURITY -->
+          <section id="disclosure-security" class="policy-block">
+            <!-- PORTUGUESE VERSION -->
+            <div class="lang-pt">
+              <h2>7. Divulgação e Segurança de Seus Dados</h2>
+              
+              <h3>Divulgação Legal de Dados</h3>
+              <p>Podemos divulgar seus Dados Pessoais na crença de boa-fé de que tal ação é necessária para:</p>
+              <ul class="policy-list">
+                <li>Cumprir uma obrigação regulatória ou judicial legal.</li>
+                <li>Proteger e defender os direitos ou propriedade legal da Empresa.</li>
+                <li>Prevenir ou investigar possíveis irregularidades associadas ao Serviço.</li>
+                <li>Garantir a segurança pessoal de usuários da plataforma e do público.</li>
+                <li>Mitigar riscos de responsabilidade jurídica civil ou penal.</li>
+              </ul>
+
+              <h3>Segurança dos Dados Pessoais</h3>
+              <p>A segurança de seus dados é muito importante, porém, nenhum método de transmissão pela Internet ou de armazenamento eletrônico digital é 100% seguro. Embora utilizemos medidas comercialmente aceitáveis e de nível institucional para proteger seus dados, não podemos dar garantia absoluta de inviolabilidade.</p>
+            </div>
+
+            <!-- ENGLISH VERSION -->
+            <div class="lang-en">
+              <h2>7. Disclosure and Security of Your Personal Data</h2>
+              
+              <h3>Disclosure of Your Personal Data</h3>
+              <p>We may disclose your personal data in the good faith belief that such action is necessary to:</p>
+              <ul class="policy-list">
+                <li>Comply with a legal obligation.</li>
+                <li>Protect and defend the rights or property of the Company.</li>
+                <li>Prevent or investigate possible wrongdoing in connection with the service.</li>
+                <li>Protect the personal safety of users of the service or the public.</li>
+                <li>Protect against legal liability.</li>
+              </ul>
+
+              <h3>Security of Your Personal Data</h3>
+              <p>The security of your personal data is important to us, but remember that no method of transmission over the internet, or method of electronic storage, is 100% secure. While we strive to use commercially acceptable means to protect your personal data, we cannot guarantee its absolute security.</p>
+            </div>
+          </section>
+
+          <!-- SECTION 8: REGULATORY & COMPLIANCE -->
+          <section id="compliance-regulations" class="policy-block">
+            <!-- PORTUGUESE VERSION -->
+            <div class="lang-pt">
+              <h2>8. Regulamentos Globais de Privacidade e Conformidade Financeira (GDPR & GLBA)</h2>
+              <p>Operamos em conformidade com as regras de proteção de dados (como LGPD no Brasil e GDPR na União Europeia) e os regulamentos de conformidade financeira dos EUA (GLBA).</p>
+              
+              <div class="compliance-banner">
+                <div class="compliance-banner-icon" style="color: var(--color-accent);">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+                <div class="compliance-banner-content">
+                  <h4>Gramm-Leach-Bliley Act (GLBA)</h4>
+                  <p>A Lei Gramm-Leach-Bliley Act (GLBA), também conhecida como Lei de Modernização Financeira de 1999, é uma lei federal dos Estados Unidos aplicada pela Federal Trade Commission (FTC) que exige que as instituições financeiras informem aos clientes como compartilham suas informações e as protegem em conformidade com um plano de segurança da informação por escrito.</p>
+                </div>
+              </div>
+              
+              <p style="margin-top: 1.5rem;">Como parte das exigências da GLBA, a Empresa:</p>
+              <ul class="policy-list">
+                <li>Informa claramente aos clientes sobre a coleta e finalidade do uso de Dados Pessoais (PII).</li>
+                <li>Oferece aos clientes a opção de recusa (opt-out) caso não concordem com o compartilhamento com parceiros externos.</li>
+                <li>Aplica proteções rigorosas de controle de acesso físico e eletrônico.</li>
+              </ul>
+
+              <h3>Privacidade de Crianças</h3>
+              <p>Nossos serviços não são direcionados a menores de 13 anos e não coletamos intencionalmente qualquer informação identificável de menores. Se for constatado que tais dados foram enviados por erro, procederemos ao descarte imediato dos registros em nossos servidores.</p>
+            </div>
+
+            <!-- ENGLISH VERSION -->
+            <div class="lang-en">
+              <h2>8. Data Protection Regulations & Financial Compliance (GDPR, LGPD & GLBA)</h2>
+              <p>We operate in alignment with privacy and data protection frameworks (such as LGPD in Brazil, GDPR in the EU) and financial safety rules in the U.S. (GLBA).</p>
+              
+              <div class="compliance-banner">
+                <div class="compliance-banner-icon" style="color: var(--color-accent);">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+                <div class="compliance-banner-content">
+                  <h4>Gramm-Leach-Bliley Act (GLBA)</h4>
+                  <p>The Gramm-Leach-Bliley Act (GLBA), also known as the Financial Modernization Act of 1999, is a U.S. federal law enforced by the Federal Trade Commission (FTC) that requires financial institutions to explain how they share and protect their customers' private information.</p>
+                </div>
+              </div>
+              
+              <p style="margin-top: 1.5rem;">To maintain GLBA compliance, the Company:</p>
+              <ul class="policy-list">
+                <li>Communicates clearly how client PII is collected, used, and shared.</li>
+                <li>Provides clients with their right to opt-out if they prefer that their information not be shared with third parties.</li>
+                <li>Applies strict electronic and physical protection policies to clients' private data in accordance with our written information security plan.</li>
+              </ul>
+
+              <h3>Children's Privacy</h3>
+              <p>Our service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If we discover we have collected child data, we will delete it immediately.</p>
+            </div>
+          </section>
+
+          <!-- SECTION 9: INTERNAL DATA PROTECTION POLICIES -->
+          <section id="internal-policies" class="policy-block">
+            <!-- PORTUGUESE VERSION -->
+            <div class="lang-pt">
+              <h2>9. Políticas Internas de Proteção de Dados (PII)</h2>
+              <p>Para garantir a segurança, integridade e confidencialidade de todas as Informações de Identificação Pessoal (PII) sob nossa tutela, exigimos que todos os funcionários e terceirizados da Empresa cumpram rigorosamente com as seguintes políticas de segurança internas:</p>
+              
+              <div class="internal-policies-grid">
+                
+                <!-- Card 1: Clean Desk -->
+                <div class="internal-policy-card">
+                  <div class="card-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="21" x2="9" y2="9"></line><line x1="3" y1="9" x2="21" y2="9"></line></svg>
+                  </div>
+                  <h4>Mesa Limpa (Clean Desk)</h4>
+                  <ul class="card-bullet-list">
+                    <li>Ao fim do dia, todos os papéis e documentos físicos com PII devem ser armazenados em gavetas ou armários trancados.</li>
+                    <li>Nenhuma PII deve ser deixada exposta em mesas.</li>
+                    <li>As telas dos computadores devem ser bloqueadas automaticamente ou manualmente quando a estação estiver desocupada.</li>
+                    <li>O descarte de documentos físicos com dados deve ser feito apenas em fragmentadora de corte cruzado.</li>
+                  </ul>
+                </div>
+
+                <!-- Card 2: Email Use -->
+                <div class="internal-policy-card">
+                  <div class="card-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  </div>
+                  <h4>Uso de E-mail Corporativo</h4>
+                  <ul class="card-bullet-list">
+                    <li>Utilização restrita apenas de contas de e-mail institucionais da Empresa para lidar com informações de clientes.</li>
+                    <li>É obrigatório o uso de criptografia ao enviar PII de clientes por e-mail corporativo.</li>
+                    <li>Treinamentos obrigatórios recorrentes contra ataques de phishing e engenharia social.</li>
+                  </ul>
+                </div>
+
+                <!-- Card 3: Remote Network -->
+                <div class="internal-policy-card">
+                  <div class="card-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                  </div>
+                  <h4>Políticas de Trabalho Remoto</h4>
+                  <ul class="card-bullet-list">
+                    <li>Obrigatório o uso de VPN segura e autenticada para toda conexão aos sistemas corporativos da Empresa.</li>
+                    <li>Os computadores domésticos ou particulares devem passar por auditoria e ter antivírus e firewalls ativos.</li>
+                    <li>O trabalho remoto deve ser efetuado em locais e ambientes reservados para evitar vazamento visual de informações.</li>
+                  </ul>
+                </div>
+
+                <!-- Card 4: Passwords -->
+                <div class="internal-policy-card">
+                  <div class="card-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  </div>
+                  <h4>Gestão de Senhas e MFA</h4>
+                  <ul class="card-bullet-list">
+                    <li>Senhas devem ter comprimento mínimo de 12 caracteres, com letras maiúsculas/minúsculas, números e símbolos.</li>
+                    <li>Troca de credenciais a cada 90 dias, sendo proibida a reutilização de senhas anteriores.</li>
+                    <li>Autenticação de Múltiplos Fatores (MFA) obrigatória para o acesso a todos os sistemas de dados corporativos.</li>
+                  </ul>
+                </div>
+
+                <!-- Card 5: Records Management -->
+                <div class="internal-policy-card span-2">
+                  <div class="card-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  </div>
+                  <h4>Política de Gestão e Descarte de Registros</h4>
+                  <ul class="card-bullet-list">
+                    <li><strong>Retenção de PII:</strong> Os registros com dados pessoais devem ser armazenados pelo menor tempo exigido para fins regulatórios e fiscais.</li>
+                    <li><strong>Armazenamento Seguro:</strong> Arquivos físicos devem ser mantidos em gavetas e salas com chave; dados digitais devem contar com permissões de acesso baseadas em função (RBAC).</li>
+                    <li><strong>Eliminação Segura:</strong> Ao término do ciclo, papéis devem ser triturados por completo e discos digitais limpos com ferramentas de formatação segura e sanitização certificada.</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- ENGLISH VERSION -->
+            <div class="lang-en">
+              <h2>9. Internal Data Protection Policies (PII)</h2>
+              <p>To ensure the security, integrity, and confidentiality of all Personally Identifiable Information (PII) under our care, all employees and contractors must strictly adhere to the following internal security standards:</p>
+              
+              <div class="internal-policies-grid">
+                
+                <!-- Card 1: Clean Desk -->
+                <div class="internal-policy-card">
+                  <div class="card-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="21" x2="9" y2="9"></line><line x1="3" y1="9" x2="21" y2="9"></line></svg>
+                  </div>
+                  <h4>Clean Desk Policy</h4>
+                  <ul class="card-bullet-list">
+                    <li>At the end of each workday, all documents containing PII must be stored in locked drawers or cabinets.</li>
+                    <li>No PII should be left visible on desks.</li>
+                    <li>Computer screens must be locked when unattended to prevent unauthorized access.</li>
+                    <li>All unneeded documents containing PII must be shredded using a cross-cut shredder.</li>
+                  </ul>
+                </div>
+
+                <!-- Card 2: Email Use -->
+                <div class="internal-policy-card">
+                  <div class="card-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  </div>
+                  <h4>Email Use Policy</h4>
+                  <ul class="card-bullet-list">
+                    <li>Only company-issued email accounts should be used for sending and receiving PII.</li>
+                    <li>PII sent via email must be encrypted. Tools and protocols for email encryption must be used as instructed by IT.</li>
+                    <li>Employees must complete regular training on identifying and avoiding phishing attempts.</li>
+                  </ul>
+                </div>
+
+                <!-- Card 3: Remote Network -->
+                <div class="internal-policy-card">
+                  <div class="card-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                  </div>
+                  <h4>Remote Networking Policy</h4>
+                  <ul class="card-bullet-list">
+                    <li>A secure Virtual Private Network (VPN) must be used for all remote connections to company systems.</li>
+                    <li>Personal devices used for remote work must have up-to-date antivirus software and comply with policies.</li>
+                    <li>Remote work should be conducted in private, secure environments to prevent visual exposure of PII.</li>
+                  </ul>
+                </div>
+
+                <!-- Card 4: Passwords -->
+                <div class="internal-policy-card">
+                  <div class="card-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  </div>
+                  <h4>Password Policy & MFA</h4>
+                  <ul class="card-bullet-list">
+                    <li>Passwords must be a minimum of 12 characters and include a mix of uppercase, lowercase, numbers, and symbols.</li>
+                    <li>Passwords must be changed every 90 days. Passwords should not be reused within a 12-month period.</li>
+                    <li>Multi-Factor Authentication (MFA) must be enabled for access to systems containing PII.</li>
+                  </ul>
+                </div>
+
+                <!-- Card 5: Records Management -->
+                <div class="internal-policy-card span-2">
+                  <div class="card-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  </div>
+                  <h4>Records Management Policy</h4>
+                  <ul class="card-bullet-list">
+                    <li><strong>Retention:</strong> Records containing PII must be retained only as long as necessary to meet legal, regulatory, or operational requirements.</li>
+                    <li><strong>Secure Storage:</strong> Physical records containing PII must be stored in locked, secure locations. Electronic records must be stored in secure, access-controlled systems.</li>
+                    <li><strong>Disposal:</strong> PII records that are no longer needed must be disposed of securely, using cross-cut shredding for physical documents and secure deletion methods for electronic records.</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 10: CONTACT -->
+          <section id="contact" class="policy-block">
+            <!-- PORTUGUESE VERSION -->
+            <div class="lang-pt">
+              <h2>10. Informações de Contato</h2>
+              <p>Caso tenha qualquer dúvida ou preocupação sobre os termos desta Política de Privacidade, as práticas adotadas em nosso ecossistema de infraestrutura, ou caso deseje exercer seus direitos de revogação de consentimento de uso de dados pessoais, por favor entre em contato com nossa equipe jurídica:</p>
+              
+              <div class="compliance-banner" style="background: rgba(97, 177, 47, 0.03); border-color: var(--color-border);">
+                <div class="compliance-banner-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="compliance-banner-content">
+                  <h4>Canais Oficiais de Contato Legal</h4>
+                  <p style="margin-bottom: 0.5rem !important;"><strong>E-mail:</strong> <a href="mailto:info@bloxtrade.global" style="color: var(--color-accent); font-weight: 500;">info@bloxtrade.global</a></p>
+                  <p><strong>Website:</strong> <a href="https://bloxtrade.global" target="_blank" style="color: var(--color-accent); font-weight: 500;">bloxtrade.global</a></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ENGLISH VERSION -->
+            <div class="lang-en">
+              <h2>10. Contact Information</h2>
+              <p>If you have any questions or concerns about our privacy practices, wish to understand our operational data flows, or wish to revoke your consent for data processing, please contact us at:</p>
+              
+              <div class="compliance-banner" style="background: rgba(97, 177, 47, 0.03); border-color: var(--color-border);">
+                <div class="compliance-banner-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="compliance-banner-content">
+                  <h4>Legal Contact Channels</h4>
+                  <p style="margin-bottom: 0.5rem !important;"><strong>Email:</strong> <a href="mailto:info@bloxtrade.global" style="color: var(--color-accent); font-weight: 500;">info@bloxtrade.global</a></p>
+                  <p><strong>Website:</strong> <a href="https://bloxtrade.global" target="_blank" style="color: var(--color-accent); font-weight: 500;">bloxtrade.global</a></p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </article>
       </div>
+
     </div>
   </main>
 
