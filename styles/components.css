@@ -1070,3 +1070,36 @@
 .form-input::placeholder, .form-textarea::placeholder {
   color: rgba(255, 255, 255, 0.3);
 }
+
+/* Custom Footer Layout Override (Image 2 style) */
+@media (min-width: 1024px) {
+  .footer > .container {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    grid-template-areas:
+      "brand grid"
+      "legal grid"
+      "bottom grid";
+    gap: 0 6rem;
+    align-items: start;
+  }
+  .footer-brand {
+    grid-area: brand;
+    margin-bottom: 2rem;
+  }
+  .footer-legal {
+    grid-area: legal;
+    margin-bottom: 0 !important;
+    padding-bottom: 2rem !important;
+  }
+  .footer-bottom {
+    grid-area: bottom;
+    margin-top: 0 !important;
+  }
+  .footer-grid {
+    grid-area: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem;
+    margin-bottom: 0 !important;
+  }
+}
