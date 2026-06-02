@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BLOXtrade Careers - Join our team and help build the future of global payments infrastructure.">
+  <title data-i18n="careers_page_title">Trabalhe Conosco | BLOXtrade</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="./assets/fonts/Morganite-Bold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/fonts/Morganite-Black.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="./styles/main.css?v=2">
+  <style>
+    /* Force header to always have dark background on Careers page (white bg page) */
+    .header {
+      background: rgba(11, 17, 10, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    body {
+      background-color: var(--color-bg-primary);
+      color: var(--color-text-primary);
+    }
+    
+    /* Make typography readable on white bg */
+    h1.h2, h2.careers-card-title {
+      color: var(--color-text-primary) !important;
+    }
+    
+    .body-large {
+      color: var(--color-text-secondary) !important;
+    }
+    
+    /* Light theme glassmorphism cards */
+    .careers-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+      transition: all 0.3s ease;
+    }
+    .careers-card:hover {
+      border-color: var(--color-accent);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+    }
+    .careers-card-title {
+      color: var(--color-text-primary);
+      border-left-color: var(--color-accent);
+    }
+    
+    /* Form inputs light theme overrides */
+    .form-label {
+      color: var(--color-text-secondary);
+    }
+    
+    .form-input, .form-textarea, .form-select {
+      background-color: var(--color-bg-secondary);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-primary);
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      background-color: #ffffff;
+      border-color: var(--color-accent);
+      color: var(--color-text-primary);
+      box-shadow: 0 0 0 4px rgba(129, 205, 78, 0.1);
+    }
+    .form-input::placeholder, .form-textarea::placeholder {
+      color: rgba(27, 36, 23, 0.4);
+    }
+    
+    /* Dropdown options light theme background */
+    .form-select option {
+      background-color: #ffffff;
+      color: var(--color-text-primary);
+    }
+    .form-select {
+      width: 100%;
+      padding: 1rem;
+      padding-right: 2.5rem;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-repeat: no-repeat;
+      background-position: calc(100% - 1rem) center;
+      background-size: 1.25rem;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%231B2417' stroke-opacity='0.5' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    }
+    
+    
+    /* Dropzone light theme */
+    .dropzone {
+      border: 2px dashed var(--color-border);
+      background: var(--color-bg-secondary);
+    }
+    .dropzone:hover, .dropzone.dragover {
+      border-color: var(--color-accent);
+      background: rgba(129, 205, 78, 0.05);
+    }
+    .dropzone-icon {
+      color: rgba(27, 36, 23, 0.4);
+    }
+    .dropzone-text {
+      color: var(--color-text-secondary);
+    }
+    .dropzone-file-info {
+      background: rgba(129, 205, 78, 0.1);
+      border: 1px solid rgba(129, 205, 78, 0.2);
+      color: var(--color-text-primary);
+    }
+    
+    .careers-lgpd {
+      color: var(--color-text-muted);
+    }
+    
+    /* Success Modal Styling */
+    .success-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(11, 17, 10, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .success-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+    }
+    .success-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      padding: 3rem;
+      border-radius: var(--radius-md);
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      transform: scale(0.9);
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .success-overlay.active .success-card {
+      transform: scale(1);
+    }
+    .success-title {
+      color: var(--color-text-primary);
+      margin: 0;
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+    .success-text {
+      color: var(--color-text-secondary);
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .success-checkmark {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(129, 205, 78, 0.1);
+      color: var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .success-checkmark svg {
+      width: 32px;
+      height: 32px;
+    }
+    @keyframes checkmark-scale {
+      0% { transform: scale(0); }
+      100% { transform: scale(1); }
+    }
+    .success-overlay.active .success-checkmark {
+      animation: checkmark-scale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both 0.2s;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header scrolled">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="./assets/logos/Logotipo-BloxTrade/SVG/LOGO-BLOXTRADE-VS1-BG-VERDE-ESCURO.svg" alt="BLOXtrade Logo" width="180" height="36" fetchpriority="high" decoding="async">
+      </a>
+      
+      <nav class="nav-links">
+        <a href="index.html#infrastructure" class="nav-link" data-i18n="nav_infrastructure">Infraestrutura</a>
+        <a href="index.html#company" class="nav-link" data-i18n="nav_company">Empresa</a>
+        <a href="index.html#solutions" class="nav-link" data-i18n="nav_solutions">Soluções</a>
+        <a href="news.html" class="nav-link" data-i18n="nav_insights">Notícias</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switcher">
+          <span class="lang-btn" data-lang-toggle="pt">PT</span>
+          <span class="lang-sep">/</span>
+          <span class="lang-btn" data-lang-toggle="en">EN</span>
+          <span class="lang-sep">/</span>
+          <span class="lang-btn" data-lang-toggle="es">ES</span>
+        </div>
+        <a href="https://kyc.bloxtrade.com.br/login" class="nav-link" data-i18n="btn_platform_login">Entrar na plataforma</a>
+      </div>
+      
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main style="position: relative; z-index: 2; padding-top: 160px; padding-bottom: 120px;">
+    <div class="container" style="max-width: 760px; margin: 0 auto;">
+      
+      <!-- Hero Intro -->
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <h1 class="h2 reveal-up" style="margin-bottom: 1.5rem;" data-i18n="careers_page_title">Trabalhe Conosco</h1>
+        <p class="body-large reveal-up delay-100" style="color: var(--color-text-inverse-muted); max-width: 620px; margin: 0 auto;" data-i18n="careers_page_subtitle">
+          Faça parte do nosso time: estamos sempre em busca de pessoas comprometidas e apaixonadas pelo que fazem.
+        </p>
+      </div>
+
+      <!-- Application Form -->
+      <form id="careers-form" class="reveal-up delay-200">
+        
+        <!-- SECTION 1: Personal Info -->
+        <div class="careers-card">
+          <h2 class="careers-card-title" data-i18n="careers_sec_personal">Dados Pessoais</h2>
+          
+          <div class="form-group">
+            <label for="name" class="form-label" data-i18n="careers_label_name">Nome Completo</label>
+            <input type="text" id="name" name="name" class="form-input" data-i18n="careers_placeholder_name" placeholder="Digite seu nome completo" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label" data-i18n="careers_label_email">E-mail</label>
+            <input type="email" id="email" name="email" class="form-input" data-i18n="careers_placeholder_email" placeholder="seu@email.com" required>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div class="form-group">
+              <label for="phone" class="form-label" data-i18n="careers_label_phone">Telefone / WhatsApp</label>
+              <input type="tel" id="phone" name="phone" class="form-input" data-i18n="careers_placeholder_phone" placeholder="(00) 99999-9999" required>
+            </div>
+            <div class="form-group">
+              <label for="city" class="form-label" data-i18n="careers_label_city">Cidade e Estado</label>
+              <input type="text" id="city" name="city" class="form-input" data-i18n="careers_placeholder_city" placeholder="Ex: São Paulo, SP" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: About You -->
+        <div class="careers-card">
+          <h2 class="careers-card-title" data-i18n="careers_sec_about">Sobre Você</h2>
+          
+          <div class="form-group">
+            <label for="area" class="form-label" data-i18n="careers_label_area">Área de interesse</label>
+            <select id="area" name="area" class="form-select" required>
+              <option value="" disabled selected data-i18n="careers_option_area_default">Selecione uma área...</option>
+              <option value="Marketing" data-i18n="careers_option_area_marketing">Marketing</option>
+              <option value="Comercial" data-i18n="careers_option_area_comercial">Comercial / Vendas</option>
+              <option value="Design" data-i18n="careers_option_area_design">Design</option>
+              <option value="Operações" data-i18n="careers_option_area_operacoes">Operações</option>
+              <option value="TI" data-i18n="careers_option_area_ti">Tecnologia / TI</option>
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div class="form-group">
+              <label for="level" class="form-label" data-i18n="careers_label_level">Nível</label>
+              <select id="level" name="level" class="form-select" required>
+                <option value="" disabled selected data-i18n="careers_option_level_default">Selecione seu nível...</option>
+                <option value="Estágio" data-i18n="careers_option_level_estagio">Estágio</option>
+                <option value="Júnior" data-i18n="careers_option_level_junior">Júnior</option>
+                <option value="Pleno" data-i18n="careers_option_level_pleno">Pleno</option>
+                <option value="Sênior" data-i18n="careers_option_level_senior">Sênior</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="source" class="form-label" data-i18n="careers_label_source">Como ficou sabendo da BLOXtrade?</label>
+              <select id="source" name="source" class="form-select" required>
+                <option value="" disabled selected data-i18n="careers_option_source_default">Selecione uma opção...</option>
+                <option value="Instagram" data-i18n="careers_option_source_instagram">Instagram</option>
+                <option value="Indicação" data-i18n="careers_option_source_indicacao">Indicação</option>
+                <option value="LinkedIn" data-i18n="careers_option_source_linkedin">LinkedIn</option>
+                <option value="Outro" data-i18n="careers_option_source_outro">Outro</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: Resume & Links -->
+        <div class="careers-card">
+          <h2 class="careers-card-title" data-i18n="careers_sec_portfolio">Currículo e Portfólio</h2>
+          
+          <div class="form-group">
+            <label class="form-label" data-i18n="careers_label_resume">Upload do currículo (PDF, máx. 5MB)</label>
+            <div id="dropzone" class="dropzone">
+              <svg class="dropzone-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+              <span id="dropzone-text" class="dropzone-text" data-i18n="careers_dropzone_text">Arraste e solte o currículo em PDF aqui ou clique para selecionar</span>
+              <input type="file" id="resume" name="resume" accept="application/pdf" style="display: none;" required>
+            </div>
+            <div id="file-error" style="color: #ff4d4d; font-size: 0.8125rem; margin-top: 0.5rem; display: none;"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="linkedin" class="form-label" data-i18n="careers_label_linkedin">Link do LinkedIn (opcional)</label>
+            <input type="url" id="linkedin" name="linkedin" class="form-input" data-i18n="careers_placeholder_linkedin" placeholder="https://linkedin.com/in/seu-perfil">
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="portfolio" class="form-label" data-i18n="careers_label_portfolio">Link do portfólio (opcional)</label>
+            <input type="url" id="portfolio" name="portfolio" class="form-input" data-i18n="careers_placeholder_portfolio" placeholder="https://seu-portfolio.com">
+          </div>
+        </div>
+
+        <!-- Submit actions -->
+        <div style="margin-top: 3rem;">
+          <button type="submit" id="submit-btn" class="btn btn-accent" style="width: 100%; justify-content: center; height: 56px;">
+            <span id="submit-btn-text" data-i18n="careers_submit_btn">Enviar candidatura</span>
+          </button>
+          
+          <p class="careers-lgpd" data-i18n="careers_lgpd_note">
+            Seus dados serão utilizados exclusivamente para fins de recrutamento e seleção, em conformidade com a LGPD.
+          </p>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+        <footer class="footer">
+    <div class="container">
+      <!-- 1. Brand & Socials -->
+      <div class="footer-brand" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2.5rem;">
+        <a href="index.html" class="logo" style="margin-bottom: 0;">
+          <img src="./assets/logos/Logotipo-BloxTrade/SVG/LOGO-BLOXTRADE-VS1-BG-VERDE-ESCURO.svg" alt="BLOXtrade Logo" width="180" height="36" loading="lazy" decoding="async">
+        </a>
+        <div class="social-links" style="margin-top: 0;">
+          <a href="https://www.linkedin.com/company/bloxtradeofficial/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://x.com/_BLOXtrade" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/bloxtrade.global/" aria-label="Instagram" target="_blank" rel="noopener noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Disclaimer Text -->
+      <div class="footer-legal" style="border-top: none; padding-top: 0; padding-bottom: 3rem; margin-bottom: 0;">
+        <p data-i18n="footer_legal_note" data-i18n-html>A BLOXtrade Technology Inc. é registrada na FinCEN como MSB (Número de Registro: 31000329169941) no estado de Montana.<br><br>A BLOXtrade não é um banco. Os serviços de pagamento podem ser fornecidos por instituições financeiras licenciadas. As taxas variam com base no método de pagamento e destino. A velocidade de transferência pode variar com base nos tempos de processamento do banco receptor e nas condições da rede de pagamentos. A disponibilidade do serviço e os limites de transação podem variar de acordo com a região e a instituição parceira.</p>
+      </div>
+
+      <!-- 3. Copyright & Legal Links -->
+      <div class="footer-bottom">
+        <span class="footer-copyright" data-i18n="footer_copyright">©2026. ALL RIGHTS RESERVED. BLOXTRADE TECHNOLOGY INC.</span>
+        <div class="footer-bottom-links">
+          <a href="terms.html" data-i18n="footer_col4_2">TERMS OF USE</a>
+          <a href="privacy-policy.html" data-i18n="footer_col4_1">PRIVACY POLICY</a>
+        </div>
+      </div>
+
+      <!-- 4. Navigation Grid -->
+      <div class="footer-grid">
+        <!-- Coluna 1 -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <a href="index.html#company" class="footer-col-title" style="display:block; text-decoration:none; margin-bottom: 0;" data-i18n="footer_col1_title">Company</a>
+          <a href="index.html#solutions" class="footer-col-title" style="display:block; text-decoration:none; margin-bottom: 0;" data-i18n="footer_col2_title">Solutions</a>
+          <a href="news.html" class="footer-col-title" style="display:block; text-decoration:none; margin-bottom: 0;" data-i18n="footer_col3_title">Content</a>
+          <div class="footer-links">
+            <a href="news.html" data-i18n="footer_col3_1">News</a>
+          </div>
+        </div>
+
+        <!-- Coluna 2 -->
+        <div>
+          <div class="footer-links" style="padding-top: 0.2rem; display: flex; flex-direction: column; gap: 1.5rem;">
+            <a href="index.html#company" data-i18n="footer_col1_1">About</a>
+            <a href="careers.html" data-i18n="footer_col1_2">Careers</a>
+            <a href="contact.html" data-i18n="footer_col1_3">Contact</a>
+            <a href="compliance.html" data-i18n="footer_col4_3">Compliance</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fullscreen Success State -->
+  <div id="success-overlay" class="success-overlay">
+    <div class="success-card">
+      <div class="success-checkmark">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h2 class="success-title" data-i18n="careers_success_title">Candidatura Enviada!</h2>
+      <p class="success-text" data-i18n="careers_success_text">Agradecemos o seu interesse em fazer parte do nosso time. Analisaremos seu perfil com atenção e entraremos em contato se houver sinergia com nossas vagas.</p>
+      <button type="button" id="success-close" class="btn btn-accent" style="width: 100%; justify-content: center;" data-i18n="careers_success_close">Fechar</button>
+    </div>
+  </div>
+
+  <script src="./scripts/lenis.min.js" defer></script>
+  <script src="./scripts/i18n.js" defer></script>
+  <script src="./scripts/main.js" defer></script>
+  <script type="module" src="./scripts/careers.js" defer></script>
+</body>
+</html>
