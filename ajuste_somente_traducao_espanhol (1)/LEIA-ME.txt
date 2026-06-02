@@ -1,0 +1,9 @@
+Correcao: idioma espanhol
+
+Este pacote altera somente o arquivo:
+
+scripts/i18n.js
+
+O ajuste adiciona o idioma espanhol ao sistema de traducoes e tambem faz o botao "ES" aparecer automaticamente nos seletores de idioma que ainda tiverem apenas "PT / EN".
+
+Nao substitua arquivos HTML, CSS, imagens ou layout. Para aplicar, envie apenas a pasta "scripts" deste ZIP para a raiz do site, substituindo o arquivo "scripts/i18n.js" existente.
