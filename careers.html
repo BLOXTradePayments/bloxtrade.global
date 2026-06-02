@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
@@ -78,8 +78,24 @@
       color: var(--color-text-primary);
     }
     .form-select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='rgba(27, 36, 23, 0.5)' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+      width: 100%;
+      padding: 1rem;
+      padding-right: 2.5rem;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-repeat: no-repeat;
+      background-position: calc(100% - 1rem) center;
+      background-size: 1.25rem;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%231B2417' stroke-opacity='0.5' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
     }
+    
     
     /* Dropzone light theme */
     .dropzone {
@@ -106,17 +122,81 @@
       color: var(--color-text-muted);
     }
     
-    /* Success card light theme */
+    /* Success Modal Styling */
+    .success-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(11, 17, 10, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .success-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+    }
     .success-card {
       background: #ffffff;
       border: 1px solid var(--color-border);
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      padding: 3rem;
+      border-radius: var(--radius-md);
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      transform: scale(0.9);
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .success-overlay.active .success-card {
+      transform: scale(1);
     }
     .success-title {
       color: var(--color-text-primary);
+      margin: 0;
+      font-size: 1.75rem;
+      font-weight: 700;
     }
     .success-text {
       color: var(--color-text-secondary);
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .success-checkmark {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(129, 205, 78, 0.1);
+      color: var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .success-checkmark svg {
+      width: 32px;
+      height: 32px;
+    }
+    @keyframes checkmark-scale {
+      0% { transform: scale(0); }
+      100% { transform: scale(1); }
+    }
+    .success-overlay.active .success-checkmark {
+      animation: checkmark-scale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both 0.2s;
     }
   </style>
 </head>
@@ -141,6 +221,8 @@
           <span class="lang-btn" data-lang-toggle="pt">PT</span>
           <span class="lang-sep">/</span>
           <span class="lang-btn" data-lang-toggle="en">EN</span>
+          <span class="lang-sep">/</span>
+          <span class="lang-btn" data-lang-toggle="es">ES</span>
         </div>
         <a href="https://kyc.bloxtrade.com.br/login" class="nav-link" data-i18n="btn_platform_login">Entrar na plataforma</a>
       </div>
@@ -298,7 +380,7 @@
 
       <!-- 2. Disclaimer Text -->
       <div class="footer-legal" style="border-top: none; padding-top: 0; padding-bottom: 3rem; margin-bottom: 0;">
-        <p data-i18n="footer_legal_note" data-i18n-html>A BLOXtrade Technology Inc. é registrada no Financial Transactions and Reports Analysis Centre of Canada (FINTRAC) e registrada na FinCEN como MSB no estado de Montana.<br><br>A BLOXtrade não é um banco. Os serviços de pagamento podem ser fornecidos por instituições financeiras licenciadas. As taxas variam com base no método de pagamento e destino. A velocidade de transferência pode variar com base nos tempos de processamento do banco receptor e nas condições da rede de pagamentos. A disponibilidade do serviço e os limites de transação podem variar de acordo com a região e a instituição parceira.</p>
+        <p data-i18n="footer_legal_note" data-i18n-html>A BLOXtrade Technology Inc. é registrada na FinCEN como MSB (Número de Registro: 31000329169941) no estado de Montana.<br><br>A BLOXtrade não é um banco. Os serviços de pagamento podem ser fornecidos por instituições financeiras licenciadas. As taxas variam com base no método de pagamento e destino. A velocidade de transferência pode variar com base nos tempos de processamento do banco receptor e nas condições da rede de pagamentos. A disponibilidade do serviço e os limites de transação podem variar de acordo com a região e a instituição parceira.</p>
       </div>
 
       <!-- 3. Copyright & Legal Links -->

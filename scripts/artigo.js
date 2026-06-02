@@ -22,9 +22,9 @@ function renderArticle(article) {
     console.warn("localStorage is not available, defaulting to 'pt'", e);
   }
 
-  // Select title and content based on language, fallback to pt if en doesn't exist
-  const title = article.title[currentLang] || article.title['pt'] || '';
-  const content = article.content[currentLang] || article.content['pt'] || '';
+  // Select title and content based on language, fallback to pt then en then es if they don't exist
+  const title = article.title[currentLang] || article.title['pt'] || article.title['en'] || article.title['es'] || '';
+  const content = article.content[currentLang] || article.content['pt'] || article.content['en'] || article.content['es'] || '';
 
   if (titleEl) titleEl.innerText = title;
   
@@ -42,10 +42,18 @@ function renderArticle(article) {
   
   if (themeEl) themeEl.innerText = article.category || 'News';
   if (authorEl) {
-    const isPt = currentLang === 'pt';
+    let authorPrefix = 'By';
+    let authorDefault = 'BLOXtrade Team';
+    if (currentLang === 'pt') {
+      authorPrefix = 'Por';
+      authorDefault = 'Equipe BLOXtrade';
+    } else if (currentLang === 'es') {
+      authorPrefix = 'Por';
+      authorDefault = 'Equipo BLOXtrade';
+    }
     authorEl.innerText = article.author 
-      ? (isPt ? `Por ${article.author}` : `By ${article.author}`) 
-      : (isPt ? 'Por Equipe BLOXtrade' : 'By BLOXtrade Team');
+      ? `${authorPrefix} ${article.author}` 
+      : authorDefault;
   }
   if (coverImgEl) {
     coverImgEl.src = article.image_url || 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop';
@@ -54,12 +62,15 @@ function renderArticle(article) {
 
   if (dateEl && article.created_at) {
     const date = new Date(article.created_at);
-    dateEl.innerText = date.toLocaleDateString(currentLang === 'pt' ? 'pt-BR' : 'en-US', {
+    dateEl.innerText = date.toLocaleDateString(currentLang === 'pt' ? 'pt-BR' : (currentLang === 'es' ? 'es-ES' : 'en-US'), {
       day: '2-digit',
       month: 'short',
       year: 'numeric'
     });
   }
+
+  // Atualiza os links de compartilhamento com o título e URL atualizados do artigo
+  setupSharing();
 }
 
 async function loadArticle() {
@@ -70,6 +81,10 @@ async function loadArticle() {
   }
 
   try {
+    if (!supabase) {
+      throw new Error("Cliente Supabase não inicializado.");
+    }
+
     const { data: article, error } = await supabase
       .from('articles')
       .select('*')
@@ -103,5 +118,33 @@ document.querySelectorAll('[data-lang-toggle]').forEach(btn => {
   });
 });
 
+// Setup sharing functionality
+function setupSharing() {
+  const linkedinBtn = document.querySelector('.share-btn[aria-label="LinkedIn"]');
+  const twitterBtn = document.querySelector('.share-btn[aria-label="X/Twitter"]');
+  
+  const currentUrl = encodeURIComponent(window.location.href);
+  const currentTitle = encodeURIComponent(titleEl ? titleEl.innerText : document.title);
+  
+  if (linkedinBtn) {
+    linkedinBtn.style.cursor = 'pointer';
+    linkedinBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
+  }
+  
+  if (twitterBtn) {
+    twitterBtn.style.cursor = 'pointer';
+    twitterBtn.href = `https://twitter.com/intent/tweet?url=${currentUrl}&text=${currentTitle}`;
+  }
+}
+
 // Initial load
-document.addEventListener('DOMContentLoaded', loadArticle);
+function init() {
+  loadArticle();
+  setupSharing();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}

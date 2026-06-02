@@ -72,6 +72,48 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
+
+    // Intercept clicks on anchor links to scroll slowly and smoothly
+    document.querySelectorAll('a').forEach(anchor => {
+      const href = anchor.getAttribute('href');
+      if (!href) return;
+
+      const hasHash = href.includes('#');
+      if (hasHash) {
+        anchor.addEventListener('click', function (e) {
+          const currentPath = window.location.pathname;
+          // Normalize paths for comparison
+          const isHomepage = currentPath === '/' || currentPath.endsWith('index.html') || currentPath.endsWith('/') || currentPath === '';
+          const targetId = href.split('#')[1];
+          const targetEl = document.getElementById(targetId);
+
+          if (targetEl) {
+            const isLocal = href.startsWith('#') || (isHomepage && (href.startsWith('index.html#') || href.startsWith('./index.html#')));
+            if (isLocal) {
+              e.preventDefault();
+              lenis.scrollTo(targetEl, {
+                duration: 2.2, // Slower duration for footer/header scroll
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) // Smooth easing
+              });
+              history.pushState(null, null, `#${targetId}`);
+            }
+          }
+        });
+      }
+    });
+
+    // Scroll slowly to initial hash on page load if present
+    if (window.location.hash) {
+      const targetEl = document.getElementById(window.location.hash.substring(1));
+      if (targetEl) {
+        setTimeout(() => {
+          lenis.scrollTo(targetEl, {
+            duration: 2.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+          });
+        }, 400);
+      }
+    }
   }
 
   if (document.readyState === "complete") {

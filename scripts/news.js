@@ -21,9 +21,9 @@ function renderArticles(articles) {
   }
 
   articles.forEach((article) => {
-    // Select title and content based on language, fallback to pt if en doesn't exist
-    const title = article.title[currentLang] || article.title['pt'] || '';
-    const content = article.content[currentLang] || article.content['pt'] || '';
+    // Select title and content based on language, fallback to pt then en then es if they don't exist
+    const title = article.title[currentLang] || article.title['pt'] || article.title['en'] || article.title['es'] || '';
+    const content = article.content[currentLang] || article.content['pt'] || article.content['en'] || article.content['es'] || '';
     
     // Create a short excerpt (approx 100 characters)
     const excerpt = content.length > 100 ? content.substring(0, 100) + '...' : content;
@@ -32,7 +32,7 @@ function renderArticles(articles) {
     let dateString = '';
     if (article.created_at) {
       const date = new Date(article.created_at);
-      dateString = date.toLocaleDateString(currentLang === 'pt' ? 'pt-BR' : 'en-US', {
+      dateString = date.toLocaleDateString(currentLang === 'pt' ? 'pt-BR' : (currentLang === 'es' ? 'es-ES' : 'en-US'), {
         day: '2-digit',
         month: 'short',
         year: 'numeric'
@@ -53,7 +53,7 @@ function renderArticles(articles) {
         <div class="news-date">${dateString}</div>
         <h3 class="news-title">${title}</h3>
         <p class="news-excerpt">${excerpt}</p>
-        <div class="news-read-more">${currentLang === 'pt' ? 'Ler mais &rarr;' : 'Read more &rarr;'}</div>
+        <div class="news-read-more">${currentLang === 'pt' ? 'Ler mais &rarr;' : (currentLang === 'es' ? 'Leer más &rarr;' : 'Read more &rarr;')}</div>
       </div>
     `;
     
@@ -65,6 +65,10 @@ async function loadNews() {
   if (!newsGrid) return;
 
   try {
+    if (!supabase) {
+      throw new Error("Cliente Supabase não inicializado.");
+    }
+
     const { data: articles, error } = await supabase
       .from('articles')
       .select('*')
@@ -94,7 +98,11 @@ document.querySelectorAll('[data-lang-toggle]').forEach(btn => {
 });
 
 // Load news when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    loadNews();
+  });
+} else {
   loadNews();
-});
+}
 
