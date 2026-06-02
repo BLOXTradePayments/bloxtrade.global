@@ -1414,3 +1414,10 @@ html.lenis, html.lenis body {
   }
 }
 
+/* Scroll offset for anchored sections to prevent headers from cutting off titles */
+#infrastructure,
+#company,
+#solutions {
+  scroll-margin-top: 100px;
+}
+

@@ -21,9 +21,9 @@ function renderArticles(articles) {
   }
 
   articles.forEach((article) => {
-    // Select title and content based on language, fallback to pt if en doesn't exist
-    const title = article.title[currentLang] || article.title['pt'] || '';
-    const content = article.content[currentLang] || article.content['pt'] || '';
+    // Select title and content based on language, fallback to pt then en if they don't exist
+    const title = article.title[currentLang] || article.title['pt'] || article.title['en'] || '';
+    const content = article.content[currentLang] || article.content['pt'] || article.content['en'] || '';
     
     // Create a short excerpt (approx 100 characters)
     const excerpt = content.length > 100 ? content.substring(0, 100) + '...' : content;
@@ -65,6 +65,10 @@ async function loadNews() {
   if (!newsGrid) return;
 
   try {
+    if (!supabase) {
+      throw new Error("Cliente Supabase não inicializado.");
+    }
+
     const { data: articles, error } = await supabase
       .from('articles')
       .select('*')
@@ -94,7 +98,11 @@ document.querySelectorAll('[data-lang-toggle]').forEach(btn => {
 });
 
 // Load news when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    loadNews();
+  });
+} else {
   loadNews();
-});
+}
 

@@ -22,9 +22,9 @@ function renderArticle(article) {
     console.warn("localStorage is not available, defaulting to 'pt'", e);
   }
 
-  // Select title and content based on language, fallback to pt if en doesn't exist
-  const title = article.title[currentLang] || article.title['pt'] || '';
-  const content = article.content[currentLang] || article.content['pt'] || '';
+  // Select title and content based on language, fallback to pt then en if they don't exist
+  const title = article.title[currentLang] || article.title['pt'] || article.title['en'] || '';
+  const content = article.content[currentLang] || article.content['pt'] || article.content['en'] || '';
 
   if (titleEl) titleEl.innerText = title;
   
@@ -60,6 +60,9 @@ function renderArticle(article) {
       year: 'numeric'
     });
   }
+
+  // Atualiza os links de compartilhamento com o título e URL atualizados do artigo
+  setupSharing();
 }
 
 async function loadArticle() {
@@ -70,6 +73,10 @@ async function loadArticle() {
   }
 
   try {
+    if (!supabase) {
+      throw new Error("Cliente Supabase não inicializado.");
+    }
+
     const { data: article, error } = await supabase
       .from('articles')
       .select('*')
@@ -103,5 +110,33 @@ document.querySelectorAll('[data-lang-toggle]').forEach(btn => {
   });
 });
 
+// Setup sharing functionality
+function setupSharing() {
+  const linkedinBtn = document.querySelector('.share-btn[aria-label="LinkedIn"]');
+  const twitterBtn = document.querySelector('.share-btn[aria-label="X/Twitter"]');
+  
+  const currentUrl = encodeURIComponent(window.location.href);
+  const currentTitle = encodeURIComponent(titleEl ? titleEl.innerText : document.title);
+  
+  if (linkedinBtn) {
+    linkedinBtn.style.cursor = 'pointer';
+    linkedinBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
+  }
+  
+  if (twitterBtn) {
+    twitterBtn.style.cursor = 'pointer';
+    twitterBtn.href = `https://twitter.com/intent/tweet?url=${currentUrl}&text=${currentTitle}`;
+  }
+}
+
 // Initial load
-document.addEventListener('DOMContentLoaded', loadArticle);
+function init() {
+  loadArticle();
+  setupSharing();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
