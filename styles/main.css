@@ -1431,8 +1431,7 @@ html.lenis, html.lenis body {
   background-color: #25D366;
   color: #FFF;
   border-radius: 50%;
-  display: none !important; /* Temporarily hidden until number is provided. Remove this and use flex to show. */
-  /* display: flex; */
+  display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
