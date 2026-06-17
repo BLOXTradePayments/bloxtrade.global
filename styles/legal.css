@@ -325,3 +325,18 @@ html[lang="en"] .lang-pt {
     gap: 1rem;
   }
 }
+
+
+/* Additional language hiding styles for Spanish */
+html[lang="pt"] .lang-es {
+  display: none !important;
+}
+html[lang="en"] .lang-es {
+  display: none !important;
+}
+html[lang="es"] .lang-en {
+  display: none !important;
+}
+html[lang="es"] .lang-pt {
+  display: none !important;
+}
