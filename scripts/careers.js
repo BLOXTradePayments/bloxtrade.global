@@ -197,6 +197,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // 3. Show success popup
+      successOverlay.style.display = "flex";
+      void successOverlay.offsetWidth; // Force reflow
       successOverlay.classList.add("active");
       form.reset();
       resetFile();
@@ -214,6 +216,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Success Modal actions ---
   successClose.addEventListener("click", () => {
     successOverlay.classList.remove("active");
+    setTimeout(() => {
+      successOverlay.style.display = "none";
+    }, 400);
   });
 
   // Synchronize dropzone text when language switcher is clicked
