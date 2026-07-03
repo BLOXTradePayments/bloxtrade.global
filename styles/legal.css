@@ -289,6 +289,13 @@
   font-size: 0.9375rem;
 }
 
+/* Language display rules */
+html[lang="pt"] .lang-pt,
+html[lang="en"] .lang-en,
+html[lang="es"] .lang-es {
+  display: block !important;
+}
+
 /* Language hiding styles */
 html[lang="pt"] .lang-en,
 html[lang="pt"] .lang-es {
