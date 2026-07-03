@@ -377,7 +377,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "careers_success_title": "Application Submitted!",
       "careers_success_text": "Thank you for your interest in joining our team. We will review your profile carefully and contact you if there is synergy with our open positions.",
       "careers_success_close": "Close"
-    },\n    es: {
+    },
+    es: {
       "nav_solutions": "Solutions",
       "nav_infrastructure": "Infrastructure",
       "nav_compliance": "Compliance",
