@@ -1,4 +1,4 @@
-﻿document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const defaultLang = "en";
   let currentLang = defaultLang;
   try {
@@ -15,7 +15,7 @@
       "nav_insights": "Contenidos",
       "nav_company": "Empresa",
       "nav_contact": "Contacto",
-      "btn_platform_login": "Entrar a la plataforma",
+      "btn_platform_login": "LOGIN",
       "btn_book_demo": "Agendar demo",
       "weareglobal_title": "SOMOS GLOBALES",
       "weareglobal_text": "Con sede en Delaware, BLOXtrade utiliza activos digitales como herramientas prÃ¡cticas de tesorerÃ­a, garantizando que el valor se mueva a travÃ©s de las fronteras de forma rÃ¡pida, transparente y eficiente.",
@@ -199,7 +199,7 @@
       "nav_insights": "ConteÃºdos",
       "nav_company": "Empresa",
       "nav_contact": "Contato",
-      "btn_platform_login": "Entrar na plataforma",
+      "btn_platform_login": "LOGIN",
       "btn_book_demo": "Agendar demo",
       "weareglobal_title": "SOMOS GLOBAIS",
       "weareglobal_text": "Sediada em Delaware, a BLOXtrade utiliza ativos digitais como ferramentas prÃ¡ticas de tesouraria, garantindo que o valor se mova atravÃ©s das fronteiras de forma rÃ¡pida, transparente e eficiente.",
@@ -384,7 +384,7 @@
       "nav_insights": "News",
       "nav_company": "Company",
       "nav_contact": "Contact",
-      "btn_platform_login": "Platform login",
+      "btn_platform_login": "LOGIN",
       "btn_book_demo": "Book a demo",
       "hero_eyebrow": "Global payments infrastructure",
       "hero_headline": "Global<br>transactions<br><span style=\"color: #81CD4E; font-weight: 700;\">in minutes!</span>",
