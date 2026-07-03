@@ -290,11 +290,18 @@
 }
 
 /* Language hiding styles */
-html[lang="pt"] .lang-en {
+html[lang="pt"] .lang-en,
+html[lang="pt"] .lang-es {
   display: none !important;
 }
 
-html[lang="en"] .lang-pt {
+html[lang="en"] .lang-pt,
+html[lang="en"] .lang-es {
+  display: none !important;
+}
+
+html[lang="es"] .lang-pt,
+html[lang="es"] .lang-en {
   display: none !important;
 }
 
