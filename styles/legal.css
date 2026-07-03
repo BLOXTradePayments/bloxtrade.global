@@ -290,11 +290,18 @@
 }
 
 /* Language hiding styles */
-html[lang="pt"] .lang-en {
+html[lang="pt"] .lang-en,
+html[lang="pt"] .lang-es {
   display: none !important;
 }
 
-html[lang="en"] .lang-pt {
+html[lang="en"] .lang-pt,
+html[lang="en"] .lang-es {
+  display: none !important;
+}
+
+html[lang="es"] .lang-pt,
+html[lang="es"] .lang-en {
   display: none !important;
 }
 
@@ -326,17 +333,11 @@ html[lang="en"] .lang-pt {
   }
 }
 
-
-/* Additional language hiding styles for Spanish */
-html[lang="pt"] .lang-es {
-  display: none !important;
-}
-html[lang="en"] .lang-es {
-  display: none !important;
-}
-html[lang="es"] .lang-en {
-  display: none !important;
-}
-html[lang="es"] .lang-pt {
-  display: none !important;
+/* Force header to always have dark background and blur on legal pages */
+.header.header-legal {
+  background: rgba(11, 17, 10, 0.9) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  padding: 1rem 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
