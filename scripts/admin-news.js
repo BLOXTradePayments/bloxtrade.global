@@ -36,10 +36,12 @@ if (btnPublish) {
   btnPublish.addEventListener('click', async () => {
     const titlePt = document.getElementById('title-pt').value.trim();
     const titleEn = document.getElementById('title-en').value.trim();
+    const titleEs = document.getElementById('title-es').value.trim();
     const category = document.getElementById('category').value;
     const author = document.getElementById('author').value.trim();
     const contentPt = document.getElementById('content-pt').value.trim();
     const contentEn = document.getElementById('content-en').value.trim();
+    const contentEs = document.getElementById('content-es').value.trim();
 
     // Basic Validation
     if (!titlePt || !category || category === "Selecione uma categoria..." || !contentPt) {
@@ -76,13 +78,15 @@ if (btnPublish) {
           {
             title: {
               pt: titlePt,
-              en: titleEn
+              en: titleEn,
+              es: titleEs
             },
             category: category,
             author: author,
             content: {
               pt: contentPt,
-              en: contentEn
+              en: contentEn,
+              es: contentEs
             },
             image_url: publicUrl
           }
@@ -97,9 +101,11 @@ if (btnPublish) {
       // Reset form
       document.getElementById('title-pt').value = '';
       document.getElementById('title-en').value = '';
+      document.getElementById('title-es').value = '';
       document.getElementById('category').selectedIndex = 0;
       document.getElementById('content-pt').value = '';
       document.getElementById('content-en').value = '';
+      document.getElementById('content-es').value = '';
       imagePreview.style.display = 'none';
       imagePlaceholder.style.display = 'block';
       imagePreview.src = '';

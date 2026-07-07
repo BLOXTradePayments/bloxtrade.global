@@ -12,7 +12,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contact BLOXtrade specialists for global payments infrastructure.">
   <title>Contato | BLOXtrade</title>
-  
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="./assets/fonts/Morganite-Bold.ttf" as="font" type="font/ttf" crossorigin>
@@ -62,7 +64,7 @@
       <h1 class="h2 reveal-up" style="margin-bottom: 1rem;" data-i18n="contact_title">Contato</h1>
       <p class="body-large reveal-up delay-100" style="color: var(--color-text-inverse-muted); margin-bottom: 3rem;" data-i18n="contact_subtitle">Fale com nossos especialistas em pagamentos globais.</p>
 
-      <form id="contact-form" action="https://formsubmit.co/relacionamento@bloxtrade.com.br" method="POST" class="reveal-up delay-200">
+      <form id="contact-form" action="https://formsubmit.co/relacionamento@bloxtrade.global" method="POST" class="reveal-up delay-200">
         <div class="form-group">
           <label for="name" class="form-label" data-i18n="contact_name_label">Nome completo</label>
           <input type="text" id="name" name="name" class="form-input" data-i18n="contact_name_placeholder" data-i18n-attr="placeholder" placeholder="Como podemos te chamar?" required>
@@ -172,7 +174,7 @@
           formData.append("_captcha", "false");
           formData.append("_subject", `Novo Contato do Site: ${document.getElementById("name").value}`);
           
-          const response = await fetch("https://formsubmit.co/ajax/relacionamento@bloxtrade.com.br", {
+          const response = await fetch("https://formsubmit.co/ajax/relacionamento@bloxtrade.global", {
             method: "POST",
             body: formData
           });

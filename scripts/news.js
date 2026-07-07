@@ -21,9 +21,9 @@ function renderArticles(articles) {
   }
 
   articles.forEach((article) => {
-    // Select title and content based on language, fallback to pt then en then es if they don't exist
-    const title = article.title[currentLang] || article.title['pt'] || article.title['en'] || article.title['es'] || '';
-    const content = article.content[currentLang] || article.content['pt'] || article.content['en'] || article.content['es'] || '';
+    // Select title and content based on language, falling back to en then pt then es only if the current language is missing
+    const title = article.title[currentLang] || article.title['en'] || article.title['pt'] || article.title['es'] || '';
+    const content = article.content[currentLang] || article.content['en'] || article.content['pt'] || article.content['es'] || '';
     
     // Create a short excerpt (approx 100 characters)
     const excerpt = content.length > 100 ? content.substring(0, 100) + '...' : content;

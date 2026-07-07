@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Painel | BLOXtrade Admin</title>
-  
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="./assets/fonts/Morganite-Bold.ttf" as="font" type="font/ttf" crossorigin>
@@ -254,7 +256,7 @@
         </div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
         <div class="form-group" style="margin-bottom: 0;">
           <label class="form-label">Título (Português) <span style="background:var(--color-bg-dark);color:white;padding:2px 6px;border-radius:4px;font-size:10px;margin-left:4px;">PT</span></label>
           <input type="text" id="title-pt" class="form-input" placeholder="Ex: O impacto das Stablecoins nas Tesourarias Globais">
@@ -262,6 +264,10 @@
         <div class="form-group" style="margin-bottom: 0;">
           <label class="form-label">Título (Inglês) <span style="background:#e0e0e0;color:var(--color-bg-dark);padding:2px 6px;border-radius:4px;font-size:10px;margin-left:4px;">EN</span></label>
           <input type="text" id="title-en" class="form-input" placeholder="Ex: The impact of Stablecoins on Global Treasuries">
+        </div>
+        <div class="form-group" style="margin-bottom: 0;">
+          <label class="form-label">Título (Espanhol) <span style="background:#e0e0e0;color:var(--color-bg-dark);padding:2px 6px;border-radius:4px;font-size:10px;margin-left:4px;">ES</span></label>
+          <input type="text" id="title-es" class="form-input" placeholder="Ej: El impacto de las Stablecoins en las Tesorerías Globales">
         </div>
       </div>
 
@@ -310,6 +316,20 @@
           <span style="cursor:pointer;">🔗</span>
         </div>
         <textarea id="content-en" class="form-textarea" style="border-radius: 0 0 var(--radius-sm) var(--radius-sm);" placeholder="Write your article in english here..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Conteúdo do Artigo (Espanhol) <span style="background:#e0e0e0;color:var(--color-bg-dark);padding:2px 6px;border-radius:4px;font-size:10px;margin-left:4px;">ES</span></label>
+        <!-- Mock toolbar for visual purposes -->
+        <div style="background: #f0f0f0; padding: 0.5rem 1rem; border: 1px solid #e0e0e0; border-bottom: none; border-radius: var(--radius-sm) var(--radius-sm) 0 0; display: flex; gap: 1rem;">
+          <span style="font-weight: bold; cursor:pointer;">B</span>
+          <span style="font-style: italic; cursor:pointer;">I</span>
+          <span style="text-decoration: underline; cursor:pointer;">U</span>
+          <span style="cursor:pointer;">H2</span>
+          <span style="cursor:pointer;">H3</span>
+          <span style="cursor:pointer;">🔗</span>
+        </div>
+        <textarea id="content-es" class="form-textarea" style="border-radius: 0 0 var(--radius-sm) var(--radius-sm);" placeholder="Escribe tu artículo en español aquí..."></textarea>
       </div>
 
       <div class="actions-bar">

@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
       formData.append("_subject", `Nova Candidatura: ${name} (${area} - ${level})`);
 
       // 2. Submit to FormSubmit via AJAX
-      const response = await fetch("https://formsubmit.co/ajax/relacionamento@bloxtrade.com.br", {
+      const response = await fetch("https://formsubmit.co/ajax/relacionamento@bloxtrade.global", {
         method: "POST",
         body: formData
       });
