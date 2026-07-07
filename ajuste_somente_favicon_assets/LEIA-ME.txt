@@ -1,0 +1,16 @@
+Correcao: somente favicon
+
+Este pacote altera somente os arquivos de favicon na raiz do site:
+
+favicon.ico
+favicon.svg
+
+O favicon.svg foi copiado do arquivo oficial ja existente em:
+
+assets/logos/Logotipo-BloxTrade/SVG/ICON-BLOXTRADE-BG-VERDE-ESCURO.svg
+
+Para aplicar, envie favicon.ico e favicon.svg para a raiz do site no GitHub do cliente.
+
+Importante: nao envie este ZIP como uma pasta separada. Os arquivos precisam ficar diretamente na raiz do repositorio, no mesmo nivel de index.html.
+
+Depois do deploy, teste em aba anonima ou limpe o cache, pois favicon costuma ficar salvo no navegador.
