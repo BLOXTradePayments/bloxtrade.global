@@ -8,6 +8,7 @@ let supabaseClient = null;
 if (supabaseUrl && supabaseUrl !== 'YOUR_SUPABASE_URL' && supabaseUrl.startsWith('http')) {
   try {
     supabaseClient = createClient(supabaseUrl, supabaseKey);
+    window.supabase = supabaseClient;
   } catch (error) {
     console.error('Erro ao inicializar o cliente Supabase:', error);
   }
