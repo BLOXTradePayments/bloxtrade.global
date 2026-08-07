@@ -134,7 +134,7 @@ async function loadNews() {
     }
 
     try {
-      renderArticles(articles.slice(3));
+      renderArticles(articles);
     } catch (e) {
       console.error('renderArticles crashed after fetch:', e);
       // Fallback: attempt a minimal render to ensure user sees something
