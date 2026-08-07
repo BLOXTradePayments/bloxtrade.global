@@ -4,13 +4,14 @@ const newsGrid = document.getElementById('news-grid-container');
 let cachedArticles = null;
 
 function renderArticles(articles) {
-  if (!newsGrid) return;
-  newsGrid.innerHTML = ''; // Clear existing content
+  try {
+    if (!newsGrid) return;
+    newsGrid.innerHTML = ''; // Clear existing content
 
-  if (!articles || articles.length === 0) {
-    newsGrid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: var(--color-text-secondary); padding: 4rem;">Nenhum artigo publicado ainda.</p>';
-    return;
-  }
+    if (!articles || articles.length === 0) {
+      newsGrid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: var(--color-text-secondary); padding: 4rem;">Nenhum artigo publicado ainda.</p>';
+      return;
+    }
 
   // Determine current language from localStorage or default to 'pt'
   let currentLang = 'pt';
@@ -59,12 +60,19 @@ function renderArticles(articles) {
     
     newsGrid.appendChild(card);
   });
+  } catch (e) {
+    console.error('renderArticles error:', e);
+    if (newsGrid) {
+      newsGrid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: red; padding: 4rem;">Erro ao renderizar publicações.</p>';
+    }
+  }
 }
 
 async function loadNews() {
   if (!newsGrid) return;
 
   try {
+    console.debug('loadNews: fetching articles from Supabase');
     if (!supabase) {
       throw new Error("Cliente Supabase não inicializado.");
     }
@@ -77,7 +85,15 @@ async function loadNews() {
     if (error) throw error;
 
     cachedArticles = articles;
-    renderArticles(articles);
+    try {
+      renderArticles(articles);
+    } catch (e) {
+      console.error('renderArticles crashed after fetch:', e);
+      // Fallback: attempt a minimal render to ensure user sees something
+      if (newsGrid) {
+        newsGrid.innerHTML = articles && articles.length ? '<p style="grid-column: 1 / -1; text-align: center; color: var(--color-text-secondary); padding: 4rem;">Publicações carregadas (falha no render detalhado).</p>' : '<p style="grid-column: 1 / -1; text-align: center; color: var(--color-text-secondary); padding: 4rem;">Nenhum artigo publicado ainda.</p>';
+      }
+    }
 
   } catch (error) {
     console.error("Error fetching articles:", error);
