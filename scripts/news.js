@@ -58,6 +58,12 @@ function renderArticles(articles) {
       </div>
     `;
     
+    // Ensure visibility even if the global reveal script fails
+    try {
+      card.classList.add('in-view');
+    } catch (e) {
+      /* ignore */
+    }
     newsGrid.appendChild(card);
   });
   } catch (e) {
