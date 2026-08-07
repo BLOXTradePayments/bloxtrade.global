@@ -75,13 +75,17 @@ function renderArticles(articles) {
 }
 
 function setFeaturedArticle(article) {
-  if (!article) return;
+  setFeaturedCard(article, 1);
+}
+
+function setFeaturedCard(article, slot) {
+  if (!article || !slot) return;
   try {
-    const link = document.getElementById('featured-link');
-    const img = document.getElementById('featured-img');
-    const dateEl = document.getElementById('featured-date');
-    const titleEl = document.getElementById('featured-title');
-    const readEl = document.getElementById('featured-read');
+    const link = document.getElementById(`featured-link-${slot}`) || document.getElementById('featured-link');
+    const img = document.getElementById(`featured-img-${slot}`) || document.getElementById('featured-img');
+    const dateEl = document.getElementById(`featured-date-${slot}`) || document.getElementById('featured-date');
+    const titleEl = document.getElementById(`featured-title-${slot}`) || document.getElementById('featured-title');
+    const readEl = document.getElementById(`featured-read-${slot}`) || document.getElementById('featured-read');
 
     if (link) link.href = `artigo.html?id=${article.id}`;
     if (img) img.src = article.image_url || img.src;
@@ -97,7 +101,7 @@ function setFeaturedArticle(article) {
     // ensure visible
     try { link && link.classList.add('in-view'); } catch(e){}
   } catch (e) {
-    console.warn('Error setting featured article:', e);
+    console.warn(`Error setting featured card ${slot}:`, e);
   }
 }
 
@@ -118,17 +122,19 @@ async function loadNews() {
     if (error) throw error;
 
     cachedArticles = articles;
-    // Populate featured area with the newest article if available
+    // Populate featured area with the three newest articles if available
     try {
       if (articles && articles.length > 0) {
         setFeaturedArticle(articles[0]);
+        setFeaturedCard(articles[1], 2);
+        setFeaturedCard(articles[2], 3);
       }
     } catch (e) {
       console.warn('setFeaturedArticle failed:', e);
     }
 
     try {
-      renderArticles(articles);
+      renderArticles(articles.slice(3));
     } catch (e) {
       console.error('renderArticles crashed after fetch:', e);
       // Fallback: attempt a minimal render to ensure user sees something
