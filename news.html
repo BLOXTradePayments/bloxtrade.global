@@ -315,16 +315,16 @@
     <section class="section container" style="padding-top: 4rem; padding-bottom: 2rem;">
       <div class="featured-news-grid">
         
-        <!-- Main Featured -->
-        <a href="artigo.html" class="news-card featured-card-main reveal-scale">
-          <div class="news-badge" data-i18n="news_badge_featured">Destaque</div>
+        <!-- Main Featured (populado dinamicamente pelo scripts/news.js) -->
+        <a id="featured-link" href="artigo.html" class="news-card featured-card-main reveal-scale">
+          <div id="featured-badge" class="news-badge" data-i18n="news_badge_featured">Destaque</div>
           <div class="news-img-wrapper" style="height: 400px;">
-            <img src="./assets/images/blog/blog-01.webp" width="800" height="528" alt="Pagamentos internacionais com stablecoins" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop'">
+            <img id="featured-img" src="./assets/images/blog/blog-01.webp" width="800" height="528" alt="Featured image" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop'">
           </div>
           <div class="news-content" style="background: linear-gradient(180deg, rgba(27,36,23,0) 0%, rgba(27,36,23,0.9) 100%); position: absolute; bottom: 0; width: 100%; color: white; padding: 3rem 2rem 2rem;">
-            <div class="news-date" style="color: #ccc;" data-i18n="featured_date_1">24 Mai 2026 • 5 min de leitura</div>
-            <h2 class="news-title" style="color: white; font-size: 3rem;" data-i18n="featured_title_1">O impacto das Stablecoins nas Tesourarias Globais em 2026</h2>
-            <div class="news-read-more" style="color: var(--color-accent);" data-i18n="news_read_full">Ler Artigo Completo &rarr;</div>
+            <div id="featured-date" class="news-date" style="color: #ccc;">24 Mai 2026 • 5 min de leitura</div>
+            <h2 id="featured-title" class="news-title" style="color: white; font-size: 3rem;">O impacto das Stablecoins nas Tesourarias Globais em 2026</h2>
+            <div id="featured-read" class="news-read-more" style="color: var(--color-accent);">Ler Artigo Completo &rarr;</div>
           </div>
         </a>
 

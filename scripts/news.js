@@ -74,6 +74,33 @@ function renderArticles(articles) {
   }
 }
 
+function setFeaturedArticle(article) {
+  if (!article) return;
+  try {
+    const link = document.getElementById('featured-link');
+    const img = document.getElementById('featured-img');
+    const dateEl = document.getElementById('featured-date');
+    const titleEl = document.getElementById('featured-title');
+    const readEl = document.getElementById('featured-read');
+
+    if (link) link.href = `artigo.html?id=${article.id}`;
+    if (img) img.src = article.image_url || img.src;
+    if (dateEl && article.created_at) {
+      const d = new Date(article.created_at);
+      dateEl.textContent = d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+    }
+    if (titleEl) {
+      const title = article.title && (article.title.pt || article.title.en || article.title.es) || '';
+      titleEl.textContent = title;
+    }
+    if (readEl) readEl.textContent = 'Ler Artigo Completo →';
+    // ensure visible
+    try { link && link.classList.add('in-view'); } catch(e){}
+  } catch (e) {
+    console.warn('Error setting featured article:', e);
+  }
+}
+
 async function loadNews() {
   if (!newsGrid) return;
 
@@ -91,6 +118,15 @@ async function loadNews() {
     if (error) throw error;
 
     cachedArticles = articles;
+    // Populate featured area with the newest article if available
+    try {
+      if (articles && articles.length > 0) {
+        setFeaturedArticle(articles[0]);
+      }
+    } catch (e) {
+      console.warn('setFeaturedArticle failed:', e);
+    }
+
     try {
       renderArticles(articles);
     } catch (e) {
