@@ -114,16 +114,18 @@
   <style>
     /* Premium hover effects for News Cards */
     .news-card {
-      padding: 0; 
-      overflow: hidden; 
-      display: flex; 
+      padding: 0;
+      overflow: hidden;
+      display: flex;
       flex-direction: column;
       position: relative;
       background: var(--color-bg-primary);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid rgba(27, 36, 23, 0.06);
+      border-radius: calc(var(--radius-md) + 4px);
+      transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s var(--ease-out-expo);
       cursor: pointer;
+      min-height: 100%;
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.08);
     }
     
     .news-card::before {
@@ -232,13 +234,42 @@
     /* Featured News Grid */
     .featured-news-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 1.9fr 1fr;
       gap: 2rem;
       margin-bottom: 4rem;
+      align-items: stretch;
+      padding: 1rem 0 2rem;
     }
 
     .featured-card-main {
       grid-column: 1 / 2;
+      min-height: 620px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-card-main .news-img-wrapper {
+      min-height: 420px;
+      height: 100%;
+    }
+
+    .featured-card-main .news-content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 3rem 2rem 2rem;
+      background: linear-gradient(180deg, rgba(27, 36, 23, 0) 0%, rgba(27, 36, 23, 0.9) 65%, rgba(27, 36, 23, 1) 100%);
+    }
+
+    .featured-card-main .news-read-more {
+      color: var(--color-accent);
+    }
+
+    .featured-card-main .news-title {
+      font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+      line-height: 1.05;
+      margin-bottom: 1rem;
     }
     
     .featured-card-side {
@@ -247,12 +278,52 @@
       gap: 2rem;
     }
 
+    .featured-card-side .news-card {
+      min-height: 280px;
+    }
+
+    .featured-card-side .news-img-wrapper {
+      min-height: 220px;
+    }
+
+    .featured-card-side .news-title {
+      font-size: 1.35rem;
+      line-height: 1.2;
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1200px) {
+      .insights-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 992px) {
       .featured-news-grid {
         grid-template-columns: 1fr;
       }
       .featured-card-main {
         grid-column: 1 / -1;
+        min-height: auto;
+      }
+      .featured-card-side {
+        grid-template-rows: auto;
+      }
+      .featured-card-side .news-card {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .insights-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -328,30 +399,31 @@
           </div>
         </a>
 
-        <!-- Side Featured 2 -->
-        <a id="featured-link-2" href="artigo.html" class="news-card reveal-scale delay-100">
-          <div class="news-badge" id="featured-badge-2">Destaque</div>
-          <div class="news-img-wrapper" style="height: 180px;">
-            <img id="featured-img-2" src="./assets/images/blog/blog-02.webp" width="800" height="533" alt="Featured image" onerror="this.src='https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=800&auto=format&fit=crop'">
-          </div>
-          <div class="news-content" style="padding: 1.5rem;">
-            <div id="featured-date-2" class="news-date">18 Mai 2026</div>
-            <h3 id="featured-title-2" class="news-title" style="font-size: 1.5rem;">Como funcionam os pagamentos internacionais para o Brasil</h3>
-          </div>
-        </a>
+        <div class="featured-card-side">
+          <!-- Side Featured 2 -->
+          <a id="featured-link-2" href="artigo.html" class="news-card reveal-scale delay-100">
+            <div class="news-badge" id="featured-badge-2">Destaque</div>
+            <div class="news-img-wrapper" style="height: 180px;">
+              <img id="featured-img-2" src="./assets/images/blog/blog-02.webp" width="800" height="533" alt="Featured image" onerror="this.src='https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=800&auto=format&fit=crop'">
+            </div>
+            <div class="news-content" style="padding: 1.5rem;">
+              <div id="featured-date-2" class="news-date">18 Mai 2026</div>
+              <h3 id="featured-title-2" class="news-title" style="font-size: 1.5rem;">Como funcionam os pagamentos internacionais para o Brasil</h3>
+            </div>
+          </a>
 
-        <!-- Side Featured 3 -->
-        <a id="featured-link-3" href="artigo.html" class="news-card reveal-scale delay-200">
-          <div class="news-badge" id="featured-badge-3">Destaque</div>
-          <div class="news-img-wrapper" style="height: 180px;">
-            <img id="featured-img-3" src="./assets/images/blog/blog-03.webp" width="800" height="533" style="object-position: center top;" alt="Featured image" onerror="this.src='https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?q=80&w=800&auto=format&fit=crop'">
-          </div>
-          <div class="news-content" style="padding: 1.5rem;">
-            <div id="featured-date-3" class="news-date">10 Mai 2026</div>
-            <h3 id="featured-title-3" class="news-title" style="font-size: 1.5rem;">Rotas de liquidação e eficiência para fornecedores na Ásia</h3>
-          </div>
-        </a>
-      </div>
+          <!-- Side Featured 3 -->
+          <a id="featured-link-3" href="artigo.html" class="news-card reveal-scale delay-200">
+            <div class="news-badge" id="featured-badge-3">Destaque</div>
+            <div class="news-img-wrapper" style="height: 180px;">
+              <img id="featured-img-3" src="./assets/images/blog/blog-03.webp" width="800" height="533" style="object-position: center top;" alt="Featured image" onerror="this.src='https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?q=80&w=800&auto=format&fit=crop'">
+            </div>
+            <div class="news-content" style="padding: 1.5rem;">
+              <div id="featured-date-3" class="news-date">10 Mai 2026</div>
+              <h3 id="featured-title-3" class="news-title" style="font-size: 1.5rem;">Rotas de liquidação e eficiência para fornecedores na Ásia</h3>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
