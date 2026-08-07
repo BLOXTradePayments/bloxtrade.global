@@ -7,6 +7,22 @@ const imagePreview = document.getElementById('cover-image-preview');
 const imagePlaceholder = document.getElementById('image-upload-placeholder');
 let selectedFile = null;
 
+async function ensureAuthenticatedAdmin() {
+  const { data: { session }, error } = await supabase.auth.getSession();
+  if (error) {
+    console.error('Erro ao verificar sessão do Supabase:', error);
+    alert('Erro de autenticação. Por favor, faça login novamente.');
+    window.location.href = 'admin-login.html';
+    return false;
+  }
+  if (!session) {
+    alert('Sessão expirada. Faça login novamente.');
+    window.location.href = 'admin-login.html';
+    return false;
+  }
+  return true;
+}
+
 if (imageUploadBox) {
   imageUploadBox.addEventListener('click', () => {
     imageInput.click();
@@ -55,6 +71,9 @@ if (btnPublish) {
     }
 
     try {
+      const isAuthenticated = await ensureAuthenticatedAdmin();
+      if (!isAuthenticated) return;
+
       btnPublish.innerText = 'Publicando...';
       btnPublish.disabled = true;
 
