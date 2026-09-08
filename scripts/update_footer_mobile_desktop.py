@@ -84,7 +84,7 @@ replacement = """  <footer class="footer">
 564:       
 565:       <div class="footer-bottom">
 566:         <div class="footer-copyright">
-567:           <span data-i18n="footer_copyright">©2026. ALL RIGHTS RESERVED. BLOXTRADE TECHNOLOGY INC.</span>
+567:           <span data-i18n="footer_copyright">©️2026 ALL RIGHTS RESERVED BLOXTRADE LLC</span>
 568:         </div>
 569:         <div class="footer-legal-links">
 570:           <a href="terms.html" data-i18n="footer_col4_2">Termos de uso</a>

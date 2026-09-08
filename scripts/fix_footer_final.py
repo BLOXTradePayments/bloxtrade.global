@@ -105,7 +105,7 @@ new_footer = '''  <footer class="footer">
       </div>
 
       <div class="footer-bottom">
-        <span class="footer-copyright" data-i18n="footer_copyright">\u00a92026. ALL RIGHTS RESERVED. BLOXTRADE TECHNOLOGY INC.</span>
+        <span class="footer-copyright" data-i18n="footer_copyright">©️2026 ALL RIGHTS RESERVED BLOXTRADE LLC</span>
         <div class="footer-bottom-links">
           <a href="terms.html" data-i18n="footer_col4_2">TERMS OF USE</a>
           <a href="privacy-policy.html" data-i18n="footer_col4_1">PRIVACY POLICY</a>

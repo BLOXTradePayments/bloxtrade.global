@@ -61,7 +61,7 @@ replacement = """  <footer class="footer">
       
       <div class="footer-bottom">
         <div class="footer-copyright">
-          <span data-i18n="footer_copyright">©2026. ALL RIGHTS RESERVED. BLOXTRADE TECHNOLOGY INC.</span>
+          <span data-i18n="footer_copyright">©️2026 ALL RIGHTS RESERVED BLOXTRADE LLC</span>
         </div>
         <div class="footer-legal-links">
           <a href="terms.html" data-i18n="footer_col4_2">Termos de uso</a>
