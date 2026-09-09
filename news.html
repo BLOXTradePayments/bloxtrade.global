@@ -266,10 +266,15 @@
       color: var(--color-accent);
     }
 
+    .featured-card-main .news-date {
+      color: #ccc;
+    }
+
     .featured-card-main .news-title {
       font-size: clamp(2.5rem, 3.5vw, 3.5rem);
       line-height: 1.05;
       margin-bottom: 1rem;
+      color: white;
     }
     
     .featured-card-side {
@@ -312,6 +317,26 @@
       .featured-card-main {
         grid-column: 1 / -1;
         min-height: auto;
+      }
+      .featured-card-main .news-img-wrapper,
+      .featured-card-side .news-img-wrapper {
+        height: 260px;
+        min-height: auto;
+      }
+      .featured-card-main .news-content {
+        position: relative;
+        background: var(--color-bg-primary);
+        padding: 2rem;
+      }
+      .featured-card-main .news-title {
+        font-size: 2.2rem;
+        color: var(--color-text-primary);
+      }
+      .featured-card-main .news-date {
+        color: var(--color-text-muted);
+      }
+      .featured-card-main .news-read-more {
+        color: var(--color-accent-hover);
       }
       .featured-card-side {
         grid-template-rows: auto;
@@ -389,13 +414,13 @@
         <!-- Main Featured (populado dinamicamente pelo scripts/news.js) -->
         <a id="featured-link" href="artigo.html" class="news-card featured-card-main reveal-scale">
           <div id="featured-badge" class="news-badge" data-i18n="news_badge_featured">Destaque</div>
-          <div class="news-img-wrapper" style="height: 400px;">
+          <div class="news-img-wrapper">
             <img id="featured-img" src="./assets/images/blog/blog-01.webp" width="800" height="528" alt="Featured image" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop'">
           </div>
-          <div class="news-content" style="background: linear-gradient(180deg, rgba(27,36,23,0) 0%, rgba(27,36,23,0.9) 100%); position: absolute; bottom: 0; width: 100%; color: white; padding: 3rem 2rem 2rem;">
-            <div id="featured-date" class="news-date" style="color: #ccc;">24 Mai 2026 • 5 min de leitura</div>
-            <h2 id="featured-title" class="news-title" style="color: white; font-size: 3rem;">O impacto das Stablecoins nas Tesourarias Globais em 2026</h2>
-            <div id="featured-read" class="news-read-more" style="color: var(--color-accent);">Ler Artigo Completo &rarr;</div>
+          <div class="news-content">
+            <div id="featured-date" class="news-date">24 Mai 2026 • 5 min de leitura</div>
+            <h2 id="featured-title" class="news-title">O impacto das Stablecoins nas Tesourarias Globais em 2026</h2>
+            <div id="featured-read" class="news-read-more">Ler Artigo Completo &rarr;</div>
           </div>
         </a>
 
@@ -403,24 +428,24 @@
           <!-- Side Featured 2 -->
           <a id="featured-link-2" href="artigo.html" class="news-card reveal-scale delay-100">
             <div class="news-badge" id="featured-badge-2">Destaque</div>
-            <div class="news-img-wrapper" style="height: 180px;">
+            <div class="news-img-wrapper">
               <img id="featured-img-2" src="./assets/images/blog/blog-02.webp" width="800" height="533" alt="Featured image" onerror="this.src='https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=800&auto=format&fit=crop'">
             </div>
             <div class="news-content" style="padding: 1.5rem;">
               <div id="featured-date-2" class="news-date">18 Mai 2026</div>
-              <h3 id="featured-title-2" class="news-title" style="font-size: 1.5rem;">Como funcionam os pagamentos internacionais para o Brasil</h3>
+              <h3 id="featured-title-2" class="news-title">Como funcionam os pagamentos internacionais para o Brasil</h3>
             </div>
           </a>
 
           <!-- Side Featured 3 -->
           <a id="featured-link-3" href="artigo.html" class="news-card reveal-scale delay-200">
             <div class="news-badge" id="featured-badge-3">Destaque</div>
-            <div class="news-img-wrapper" style="height: 180px;">
+            <div class="news-img-wrapper">
               <img id="featured-img-3" src="./assets/images/blog/blog-03.webp" width="800" height="533" style="object-position: center top;" alt="Featured image" onerror="this.src='https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?q=80&w=800&auto=format&fit=crop'">
             </div>
             <div class="news-content" style="padding: 1.5rem;">
               <div id="featured-date-3" class="news-date">10 Mai 2026</div>
-              <h3 id="featured-title-3" class="news-title" style="font-size: 1.5rem;">Rotas de liquidação e eficiência para fornecedores na Ásia</h3>
+              <h3 id="featured-title-3" class="news-title">Rotas de liquidação e eficiência para fornecedores na Ásia</h3>
             </div>
           </a>
         </div>
