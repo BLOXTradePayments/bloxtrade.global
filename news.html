@@ -317,26 +317,28 @@
       .featured-card-main {
         grid-column: 1 / -1;
         min-height: auto;
+        background: var(--color-bg-dark) !important;
       }
       .featured-card-main .news-img-wrapper,
       .featured-card-side .news-img-wrapper {
-        height: 260px;
+        height: auto !important;
+        aspect-ratio: 16 / 9;
         min-height: auto;
       }
       .featured-card-main .news-content {
         position: relative;
-        background: var(--color-bg-primary);
-        padding: 2rem;
+        background: transparent !important;
+        padding: 2.5rem 2rem;
       }
       .featured-card-main .news-title {
         font-size: 2.2rem;
-        color: var(--color-text-primary);
+        color: white !important;
       }
       .featured-card-main .news-date {
-        color: var(--color-text-muted);
+        color: rgba(255, 255, 255, 0.7) !important;
       }
       .featured-card-main .news-read-more {
-        color: var(--color-accent-hover);
+        color: var(--color-accent) !important;
       }
       .featured-card-side {
         grid-template-rows: auto;
