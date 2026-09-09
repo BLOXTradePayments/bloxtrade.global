@@ -80,6 +80,14 @@ function setFeaturedArticle(article) {
 
 function setFeaturedCard(article, slot) {
   if (!article || !slot) return;
+  
+  let currentLang = 'pt';
+  try {
+    currentLang = localStorage.getItem('bloxtrade_lang') || 'pt';
+  } catch (e) {
+    console.warn("localStorage is not available, defaulting to 'pt'", e);
+  }
+
   try {
     const link = document.getElementById(`featured-link-${slot}`) || document.getElementById('featured-link');
     const img = document.getElementById(`featured-img-${slot}`) || document.getElementById('featured-img');
@@ -91,13 +99,15 @@ function setFeaturedCard(article, slot) {
     if (img) img.src = article.image_url || img.src;
     if (dateEl && article.created_at) {
       const d = new Date(article.created_at);
-      dateEl.textContent = d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+      dateEl.textContent = d.toLocaleDateString(currentLang === 'pt' ? 'pt-BR' : (currentLang === 'es' ? 'es-ES' : 'en-US'), { day: '2-digit', month: 'short', year: 'numeric' });
     }
     if (titleEl) {
-      const title = article.title && (article.title.pt || article.title.en || article.title.es) || '';
+      const title = article.title && (article.title[currentLang] || article.title['en'] || article.title['pt'] || article.title['es']) || '';
       titleEl.textContent = title;
     }
-    if (readEl) readEl.textContent = 'Ler Artigo Completo →';
+    if (readEl) {
+      readEl.textContent = currentLang === 'pt' ? 'Ler Artigo Completo →' : (currentLang === 'es' ? 'Leer Artículo Completo →' : 'Read Full Article →');
+    }
     // ensure visible
     try { link && link.classList.add('in-view'); } catch(e){}
   } catch (e) {
@@ -155,6 +165,11 @@ document.querySelectorAll('[data-lang-toggle]').forEach(btn => {
     // Wait a brief moment to allow i18n.js to update the localStorage
     setTimeout(() => {
       if (cachedArticles) {
+        if (cachedArticles.length > 0) {
+          setFeaturedArticle(cachedArticles[0]);
+          setFeaturedCard(cachedArticles[1], 2);
+          setFeaturedCard(cachedArticles[2], 3);
+        }
         renderArticles(cachedArticles);
       }
     }, 50);
